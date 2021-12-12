@@ -5,6 +5,7 @@
      import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
+     import {Dropdown} from '@ubeac/svelte-components'
 
 </script>
 
@@ -69,5 +70,18 @@
      <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
 </Card>
 </div>
+
+<h1 class="text-lg m-2">Dropdown</h1>
+<Dropdown position="right" class="menu">
+     // TODO: fix this after adding Menu and MenuItem components
+     <svelte:fragment slot="title">
+          Dropdown
+     </svelte:fragment>
+     <ul class="menu w-56 bg-base-100 text-base-content">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+     </ul>     
+</Dropdown>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

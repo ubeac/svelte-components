@@ -5,6 +5,7 @@
      import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
+     import {Carousel, CarouselItem} from '@ubeac/svelte-components'
 
 </script>
 
@@ -45,6 +46,17 @@
      <Button active>Medium</Button>
      <Button>Hard</Button>
 </ButtonGroup>
+
+
+<h1 class="text-lg m-2">Carousel</h1>
+<Carousel class="max-w-md" center>
+     {#each Array.from({length: 7}).fill(0) as item, index}
+          <CarouselItem class="m-1 rounded-box shadow overflow-hidden">
+               <img class="max-w-sm" alt="carousel {index}" src="/example/images/small/img-{index+1}.jpg">
+          </CarouselItem>
+     {/each}
+
+</Carousel>
 
 
 

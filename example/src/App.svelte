@@ -6,6 +6,9 @@
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
+     import {Drawer} from '@ubeac/svelte-components'
+
+     let drawerOpen = false;
 
 </script>
 
@@ -81,5 +84,10 @@
      <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
 </Card>
 </div>
+
+<Button on:click={() => drawerOpen = true}>Open Drawer</Button>
+<Drawer position="right" bind:show={drawerOpen}>
+     This should open from right side 
+</Drawer>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

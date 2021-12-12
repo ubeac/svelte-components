@@ -7,7 +7,7 @@
   "module": "dist/index.mjs",
   "scripts": {
     "build": "rollup -c",
-    "build:example": "rollup --config ./example/rollup.config.js",
+    "build:example": "npm run build && rollup --config ./example/rollup.config.js",
     "prepublishOnly": "npm run build"
   },
   "repository": {

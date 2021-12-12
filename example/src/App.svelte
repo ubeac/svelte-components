@@ -1,5 +1,6 @@
 <script>
-     import {Card, Alert} from '@ubeac/svelte-components'
+     import Alert from './components/Alert.svelte'
+     import Card from './components/Card.svelte'
 
 </script>
 

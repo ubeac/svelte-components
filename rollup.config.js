@@ -4,8 +4,6 @@ import postcss from 'rollup-plugin-postcss'
 import typescript from 'rollup-plugin-typescript'
 import preprocess from 'svelte-preprocess'
 
-// import packageJson from './package.json' 
-
 import fs from 'fs'
 
 /**

@@ -1,4 +1,5 @@
 import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
 import svelte from 'rollup-plugin-svelte'
 import postcss from 'rollup-plugin-postcss'
 import typescript from 'rollup-plugin-typescript'
@@ -29,10 +30,12 @@ export default [
             preprocess: preprocess()
         }),
         resolve({
+            browser: true,
             dedupe: [
                 "svelte"
             ]
         }),
+        commonjs(),
     ]
     }, 
     {

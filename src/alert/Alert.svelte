@@ -37,7 +37,7 @@
 			</div>
 			<slot name="action">
 				<div
-					class="w-5 h-5 flex items-center justify-center text-center rounded-full bg-black bg-opacity-10 hover:bg-opacity-20"
+					class="w-5 h-5 flex items-center justify-center text-center rounded-full text-white bg-black bg-opacity-20 hover:bg-opacity-30"
 					on:click={() => (open = !open)}>
 					&times;
 				</div>

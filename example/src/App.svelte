@@ -4,6 +4,7 @@
      import {Avatar, AvatarGroup} from '@ubeac/svelte-components'
      import { Badge } from '@ubeac/svelte-components'
      import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
+     import {Button, ButtonGroup} from '@ubeac/svelte-components'
 
 </script>
 
@@ -33,5 +34,16 @@
      <BreadcrumbItem active>123</BreadcrumbItem>
 </Breadcrumb>
 
+
+<h1 class="text-lg m-2">Button</h1>
+<Button class="m-2" variant="secondary">Secondary</Button>
+<Button class="m-2" size="sm" variant="accent">Small</Button>
+<Button class="m-2" wide>wide</Button>
+
+<ButtonGroup class="m-2" size="lg">
+     <Button>Easy</Button>
+     <Button active>Medium</Button>
+     <Button>Hard</Button>
+</ButtonGroup>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

@@ -1,9 +1,9 @@
 <script>
      import Alert from './components/Alert.svelte'
-     import Card from './components/Card.svelte'
      import {Avatar, AvatarGroup} from '@ubeac/svelte-components'
      import { Badge } from '@ubeac/svelte-components'
      import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
+     import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
 
 </script>
 
@@ -33,5 +33,28 @@
      <BreadcrumbItem active>123</BreadcrumbItem>
 </Breadcrumb>
 
+
+<h1 class="text-lg m-2">Card</h1>
+
+<div class="flex space-x-2 space-y-2 flex-col sm:flex-row">
+
+<Card>
+     <CardTitle slot="title">Card Title</CardTitle>
+     <CardActions slot="actions">
+          <div>Action 1</div>
+          <div>Action 2</div>
+     </CardActions>
+     this is content of card
+</Card>
+
+<Card shadow position="full">
+     <CardTitle slot="title">Another Card</CardTitle>
+     <CardActions slot="actions">
+          <div>Action</div>
+     </CardActions>
+     this is content of card
+     <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
+</Card>
+</div>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

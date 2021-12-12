@@ -5,6 +5,13 @@
      import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
+     import {Countdown} from '@ubeac/svelte-components'
+
+     let count = 0;
+
+     setInterval(() => {
+          count = count + 1
+     }, 1000);
 
 </script>
 
@@ -70,4 +77,7 @@
 </Card>
 </div>
 
+
+<h1 class="text-lg font-bold">Countdown</h1>
+<Countdown class="p-6 m-4 bg-gray-900 rounded-box shadow text-neutral-content" value={count} />
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

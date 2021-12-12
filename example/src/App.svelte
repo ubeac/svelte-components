@@ -5,6 +5,7 @@
      import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
+     import {Divider} from '@ubeac/svelte-components'
 
 </script>
 
@@ -59,6 +60,7 @@
      </CardActions>
      this is content of card
 </Card>
+<Divider vertical>VS</Divider>
 
 <Card shadow position="full">
      <CardTitle slot="title">Another Card</CardTitle>
@@ -69,5 +71,6 @@
      <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
 </Card>
 </div>
+<Divider/>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

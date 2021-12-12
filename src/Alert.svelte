@@ -1,5 +1,5 @@
-<script lang="ts">
-    let a: number = 0
+<script>
+    let a = 0
 
     a = a + 5
 

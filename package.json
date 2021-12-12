@@ -1,7 +1,8 @@
 {
-  "name": "svelte-components",
+  "name": "@ubeac/svelte-components",
   "version": "0.0.1",
   "description": "Svelte components for uBeac",
+  "svelte": "./src/index.js",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "scripts": {

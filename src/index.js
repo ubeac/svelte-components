@@ -1,7 +1,2 @@
-export function log(...message) {
-    console.log(message)
-}
-
-export {add, sub} from './functions'
-
 export {default as Alert} from './Alert.svelte'
+export {default as Card} from './Card.svelte'

@@ -26,12 +26,15 @@ export default [
         }
     ],
     plugins: [
-        resolve(),
         typescript(),
         svelte({
-            include: './src/*.svelte',
             preprocess: preprocess()
-        })
+        }),
+        resolve({
+            dedupe: [
+                "svelte"
+            ]
+        }),
     ]
     }, 
     {

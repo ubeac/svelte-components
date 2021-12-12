@@ -5,6 +5,7 @@
      import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
+     import {Collapse} from '@ubeac/svelte-components'
 
 </script>
 
@@ -68,6 +69,24 @@
      this is content of card
      <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
 </Card>
+</div>
+
+
+<h1 class="text-lg m-2">Collapse</h1>
+<div class="flex p-2 space-x-2">
+
+<Collapse arrow>
+     <svelte:fragment slot="title">
+          Title of collapse
+     </svelte:fragment>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+</Collapse>
+<Collapse plus click>
+     <svelte:fragment slot="title">
+          Title of collapse
+     </svelte:fragment>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+</Collapse>
 </div>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

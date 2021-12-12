@@ -1,4 +1,5 @@
-.github
+n.github
+example
 rollup.config.js
 postcss.config.cjs
 tailwind.config.cjs

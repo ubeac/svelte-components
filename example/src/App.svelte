@@ -6,6 +6,7 @@
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
+     import {Icon} from '@ubeac/svelte-components'
 
 </script>
 
@@ -81,5 +82,11 @@
      <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
 </Card>
 </div>
+
+
+<h1 class="text-lg m-2">Icon</h1>
+
+<Icon name="bell"/>
+<Icon class="text-red-800" name="bell"/>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

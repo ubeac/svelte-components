@@ -1,4 +1,8 @@
 export {default as Alert} from './alert/Alert.svelte'
+export {default as Avatar} from './avatar/Avatar.svelte'
+export {default as AvatarGroup} from './avatar/AvatarGroup.svelte'
+export {default as Badge} from './badge/Badge.svelte'
 export {default as Card} from './Card.svelte'
 export {default as Breadcrumb} from './breadcrumb/Breadcrumb.svelte'
 export {default as BreadcrumbItem} from './breadcrumb/BreadcrumbItem.svelte'
+export {default as Card} from './Card.svelte'

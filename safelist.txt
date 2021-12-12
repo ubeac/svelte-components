@@ -2,3 +2,12 @@ alert-info
 alert-success
 alert-warning
 alert-error
+
+badge-primary      badge-xs 
+badge-secondary    badge-sm 
+badge-accent       badge-md 
+badge-ghost        badge-lg 
+badge-info                 
+badge-success                 
+badge-warning                 
+badge-error                 

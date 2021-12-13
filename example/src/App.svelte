@@ -5,8 +5,11 @@
      import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
-     import {Countdown} from '@ubeac/svelte-components'
+     import {Carousel, CarouselItem} from '@ubeac/svelte-components'
+     import {Countdown} from '@ubeac/svelte-components'   
+     import {Drawer} from '@ubeac/svelte-components'
 
+     let drawerOpen = false;
      let count = 0;
 
      setInterval(() => {
@@ -14,7 +17,6 @@
      }, 1000);
 
 </script>
-
 <Alert />
 <Card />
 
@@ -54,6 +56,17 @@
 </ButtonGroup>
 
 
+<h1 class="text-lg m-2">Carousel</h1>
+<Carousel class="max-w-md" center>
+     {#each Array.from({length: 7}).fill(0) as item, index}
+          <CarouselItem class="m-1 rounded-box shadow overflow-hidden">
+               <img class="max-w-sm" alt="carousel {index}" src="/example/images/small/img-{index+1}.jpg">
+          </CarouselItem>
+     {/each}
+
+</Carousel>
+
+
 
 <h1 class="text-lg m-2">Card</h1>
 <div class="flex space-x-2 space-y-2 flex-col sm:flex-row">
@@ -80,4 +93,11 @@
 
 <h1 class="text-lg font-bold">Countdown</h1>
 <Countdown class="p-6 m-4 bg-gray-900 rounded-box shadow text-neutral-content" value={count} />
+
+
+<Button on:click={() => drawerOpen = true}>Open Drawer</Button>
+<Drawer position="right" bind:show={drawerOpen}>
+     This should open from right side 
+</Drawer>
+
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

@@ -11,6 +11,7 @@
      import {Drawer} from '@ubeac/svelte-components'
      import {Dropdown} from '@ubeac/svelte-components'
      import {Link} from '@ubeac/svelte-components'
+     import {Image} from '@ubeac/svelte-components'
 
      let drawerOpen = false;
      let count = 0;
@@ -101,6 +102,7 @@
 
 
 
+
 <Button on:click={() => drawerOpen = true}>Open Drawer</Button>
 <Drawer position="right" bind:show={drawerOpen}>
      This should open from right side 
@@ -121,10 +123,15 @@
 </Dropdown>
 
 
+<h1 class="text-lg m-2">Image</h1>
+<Image rounded shadow src="/example/images/small/img-4.jpg" alt="something"/>
+
+
 <h1 class="text-lg m-2">Link</h1>
 <Link hover href="#">
 top
 </Link>
+
 
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

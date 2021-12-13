@@ -10,6 +10,7 @@
      import {Divider} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
      import {Dropdown} from '@ubeac/svelte-components'
+     import {Link} from '@ubeac/svelte-components'
 
      let drawerOpen = false;
      let count = 0;
@@ -99,6 +100,7 @@
 <Countdown class="p-6 m-4 bg-gray-900 rounded-box shadow text-neutral-content" value={count} />
 
 
+
 <Button on:click={() => drawerOpen = true}>Open Drawer</Button>
 <Drawer position="right" bind:show={drawerOpen}>
      This should open from right side 
@@ -117,6 +119,12 @@
           <li><a href="#">Item 3</a></li>
      </ul>     
 </Dropdown>
+
+
+<h1 class="text-lg m-2">Link</h1>
+<Link hover href="#">
+top
+</Link>
 
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

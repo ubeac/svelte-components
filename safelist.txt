@@ -26,3 +26,12 @@ dropdown-xs
 dropdown-sm
 dropdown-md
 dropdown-lg
+
+progress-primary
+progress-secondary
+progress-accent
+progress-ghost
+progress-info
+progress-success
+progress-warning
+progress-error

@@ -17,11 +17,11 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
+     import {Progress} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
      let modalOpen = false;
-     let drawerOpen = false;
      let count = 0;
 
      setInterval(() => {
@@ -130,7 +130,7 @@
 
 
 <Button on:click={() => drawerOpen = true}>Open Drawer</Button>
-<Drawer position="right" bind:show={drawerOpen}>
+<Drawer hover position="right" bind:show={drawerOpen}>
      This should open from right side 
 </Drawer>
 
@@ -193,9 +193,16 @@ top
 
 <h1 class="text-lg m-2">Popover</h1>
 <Button id="pop-target">Open</Button>
-<Popover target="pop-target">
+<Popover hover target="pop-target">
      <div>Hello from Popover</div>
 </Popover>
+
+
+<h1 class="text-lg m-2">Progress</h1>
+
+<Progress value={40} />
+<Progress variant="accent" value={90} />
+
 
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

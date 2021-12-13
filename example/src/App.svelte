@@ -14,6 +14,7 @@
      import {Image} from '@ubeac/svelte-components'
      import {MenuItem, Menu, MenuTitle} from '@ubeac/svelte-components'
      import {Modal, ModalActions} from '@ubeac/svelte-components'
+     import {Navbar} from '@ubeac/svelte-components';
 
      let drawerOpen = false;
      let modalOpen = false;
@@ -23,8 +24,26 @@
      setInterval(() => {
           count = count + 1
      }, 1000);
-
 </script>
+
+
+<Navbar fixed shadow>
+     <svelte:fragment slot="start">
+          <Button variant="ghost">Left</Button>          
+          <Button variant="ghost">Another</Button>          
+     </svelte:fragment>
+
+     <svelte:fragment slot="center">
+          Svelte Components
+     </svelte:fragment>
+
+     <svelte:fragment slot="end">
+          Right
+     </svelte:fragment>
+     
+</Navbar>
+
+
 <Alert />
 <Card />
 

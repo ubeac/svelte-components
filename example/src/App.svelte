@@ -7,6 +7,7 @@
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
      import {Countdown} from '@ubeac/svelte-components'   
+     import {Divider} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
      import {Dropdown} from '@ubeac/svelte-components'
 
@@ -80,6 +81,7 @@
      </CardActions>
      this is content of card
 </Card>
+<Divider vertical>VS</Divider>
 
 <Card shadow position="full">
      <CardTitle slot="title">Another Card</CardTitle>
@@ -90,6 +92,7 @@
      <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
 </Card>
 </div>
+<Divider/>
 
 
 <h1 class="text-lg font-bold">Countdown</h1>

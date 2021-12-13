@@ -6,12 +6,26 @@
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
+     import {Countdown} from '@ubeac/svelte-components'   
+     import {Divider} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
+     import {Dropdown} from '@ubeac/svelte-components'
+     import {Link} from '@ubeac/svelte-components'
+     import {Image} from '@ubeac/svelte-components'
+     import {MenuItem, Menu, MenuTitle} from '@ubeac/svelte-components'
+     import {Modal, ModalActions} from '@ubeac/svelte-components'
      import {Navbar} from '@ubeac/svelte-components';
 
      let drawerOpen = false;
+     let modalOpen = false;
+     let drawerOpen = false;
+     let count = 0;
 
+     setInterval(() => {
+          count = count + 1
+     }, 1000);
 </script>
+
 
 <Navbar fixed shadow>
      <svelte:fragment slot="start">
@@ -28,6 +42,7 @@
      </svelte:fragment>
      
 </Navbar>
+
 
 <Alert />
 <Card />
@@ -91,6 +106,7 @@
      </CardActions>
      this is content of card
 </Card>
+<Divider vertical>VS</Divider>
 
 <Card shadow position="full">
      <CardTitle slot="title">Another Card</CardTitle>
@@ -101,10 +117,64 @@
      <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
 </Card>
 </div>
+<Divider/>
+
+
+<h1 class="text-lg font-bold">Countdown</h1>
+<Countdown class="p-6 m-4 bg-gray-900 rounded-box shadow text-neutral-content" value={count} />
+
+
+
 
 <Button on:click={() => drawerOpen = true}>Open Drawer</Button>
 <Drawer position="right" bind:show={drawerOpen}>
      This should open from right side 
 </Drawer>
+
+
+<h1 class="text-lg m-2">Dropdown</h1>
+<Dropdown position="right" class="menu">
+     // TODO: fix this after adding Menu and MenuItem components
+     <svelte:fragment slot="title">
+          Dropdown
+     </svelte:fragment>
+     <ul class="menu w-56 bg-base-100 text-base-content">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+     </ul>     
+</Dropdown>
+
+
+<h1 class="text-lg m-2">Image</h1>
+<Image rounded shadow src="/example/images/small/img-4.jpg" alt="something"/>
+
+
+<h1 class="text-lg m-2">Link</h1>
+<Link hover href="#">
+top
+</Link>
+
+
+<h1 class="text-lg m-2">Menu</h1>
+<Menu class="m-2 w-80 bg-gray-200" rounded compact>
+     <MenuTitle>first</MenuTitle>
+     <MenuItem>Item 1</MenuItem>
+     <MenuItem>Item 2</MenuItem>
+     <MenuTitle>second</MenuTitle>
+     <MenuItem>Item 3</MenuItem>
+     <MenuItem>Item 4</MenuItem>
+     <MenuItem>Item 5</MenuItem>
+</Menu>
+
+
+<h1 class="text-lg m-2">Modal</h1>
+<Button on:click={() => modalOpen = true}>Open Modal</Button>
+<Modal bind:open={modalOpen}>
+     Lorem, ipsum dolor sit amet consectetur adipisicinde leniti animi, ducimus provident quis. At fugit votate moll iquid molestias ipsam sed vel beatae optio ducimus.
+     <ModalActions center>
+          <Button on:click={() => modalOpen = false}>Close</Button>
+     </ModalActions>
+</Modal>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

@@ -8,6 +8,7 @@
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
      import {Countdown} from '@ubeac/svelte-components'   
      import {Drawer} from '@ubeac/svelte-components'
+     import {Dropdown} from '@ubeac/svelte-components'
 
      let drawerOpen = false;
      let count = 0;
@@ -99,5 +100,20 @@
 <Drawer position="right" bind:show={drawerOpen}>
      This should open from right side 
 </Drawer>
+
+
+<h1 class="text-lg m-2">Dropdown</h1>
+<Dropdown position="right" class="menu">
+     // TODO: fix this after adding Menu and MenuItem components
+     <svelte:fragment slot="title">
+          Dropdown
+     </svelte:fragment>
+     <ul class="menu w-56 bg-base-100 text-base-content">
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+     </ul>     
+</Dropdown>
+
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

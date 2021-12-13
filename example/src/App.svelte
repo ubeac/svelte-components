@@ -16,6 +16,8 @@
      import {Modal, ModalActions} from '@ubeac/svelte-components'
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
+     import {Popover} from '@ubeac/svelte-components'
+  
 
      let drawerOpen = false;
      let modalOpen = false;
@@ -187,6 +189,13 @@ top
      <PaginationItem>4</PaginationItem>
      <PaginationItem>Next</PaginationItem>
 </Pagination>
+
+
+<h1 class="text-lg m-2">Popover</h1>
+<Button id="pop-target">Open</Button>
+<Popover target="pop-target">
+     <div>Hello from Popover</div>
+</Popover>
 
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

@@ -7,6 +7,7 @@
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
+     import {MenuItem, Menu, MenuTitle} from '@ubeac/svelte-components'
 
      let drawerOpen = false;
 
@@ -89,5 +90,20 @@
 <Drawer position="right" bind:show={drawerOpen}>
      This should open from right side 
 </Drawer>
+
+
+
+
+<h1 class="text-lg m-2">Menu</h1>
+<Menu class="m-2 w-80 bg-gray-200" rounded compact>
+     <MenuTitle>first</MenuTitle>
+     <MenuItem>Item 1</MenuItem>
+     <MenuItem>Item 2</MenuItem>
+     <MenuTitle>second</MenuTitle>
+     <MenuItem>Item 3</MenuItem>
+     <MenuItem>Item 4</MenuItem>
+     <MenuItem>Item 5</MenuItem>
+</Menu>
+
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

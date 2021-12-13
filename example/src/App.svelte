@@ -17,6 +17,7 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
+     import {Spinner} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -196,6 +197,11 @@ top
 <Popover target="pop-target">
      <div>Hello from Popover</div>
 </Popover>
+
+
+<h1 class="text-lg m-2">Spinner</h1>
+<Spinner />
+<Spinner variant="error" size="xs"/>
 
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

@@ -7,8 +7,10 @@
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
+     import {Modal, ModalActions} from '@ubeac/svelte-components'
 
      let drawerOpen = false;
+     let modalOpen = false;
 
 </script>
 
@@ -89,5 +91,15 @@
 <Drawer position="right" bind:show={drawerOpen}>
      This should open from right side 
 </Drawer>
+
+
+<h1 class="text-lg m-2">Modal</h1>
+<Button on:click={() => modalOpen = true}>Open Modal</Button>
+<Modal bind:open={modalOpen}>
+     Lorem, ipsum dolor sit amet consectetur adipisicinde leniti animi, ducimus provident quis. At fugit votate moll iquid molestias ipsam sed vel beatae optio ducimus.
+     <ModalActions center>
+          <Button on:click={() => modalOpen = false}>Close</Button>
+     </ModalActions>
+</Modal>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

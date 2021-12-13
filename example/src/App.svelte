@@ -15,6 +15,7 @@
      import {MenuItem, Menu, MenuTitle} from '@ubeac/svelte-components'
      import {Modal, ModalActions} from '@ubeac/svelte-components'
      import {Navbar} from '@ubeac/svelte-components';
+     import {Pagination, PaginationItem} from '@ubeac/svelte-components'
 
      let drawerOpen = false;
      let modalOpen = false;
@@ -176,5 +177,16 @@ top
           <Button on:click={() => modalOpen = false}>Close</Button>
      </ModalActions>
 </Modal>
+
+<h1 class="text-lg m-2">Pagination</h1>
+<Pagination variant="secondary">
+     <PaginationItem>Prev</PaginationItem>
+     <PaginationItem>1</PaginationItem>
+     <PaginationItem>2</PaginationItem>
+     <PaginationItem active>3</PaginationItem>
+     <PaginationItem>4</PaginationItem>
+     <PaginationItem>Next</PaginationItem>
+</Pagination>
+
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

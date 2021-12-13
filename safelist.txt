@@ -26,3 +26,13 @@ dropdown-xs
 dropdown-sm
 dropdown-md
 dropdown-lg
+
+tooltip-primary      tooltip-xs 
+tooltip-secondary    tooltip-sm 
+tooltip-accent       tooltip-md 
+tooltip-ghost        tooltip-lg 
+tooltip-info                 
+tooltip-success                 
+tooltip-warning                 
+tooltip-error                 
+tooltip-link

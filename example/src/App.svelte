@@ -17,6 +17,7 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
+     import {Tooltip} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -196,5 +197,10 @@ top
      <div>Hello from Popover</div>
 </Popover>
 
+
+<h1 class="text-lg m-2">Tooltip</h1>
+<Tooltip text="Hello World!">
+     <Button>Tooltip</Button>
+</Tooltip>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

@@ -13,7 +13,10 @@
      import {Link} from '@ubeac/svelte-components'
      import {Image} from '@ubeac/svelte-components'
      import {MenuItem, Menu, MenuTitle} from '@ubeac/svelte-components'
+     import {Modal, ModalActions} from '@ubeac/svelte-components'
 
+     let drawerOpen = false;
+     let modalOpen = false;
      let drawerOpen = false;
      let count = 0;
 
@@ -145,5 +148,14 @@ top
      <MenuItem>Item 5</MenuItem>
 </Menu>
 
+
+<h1 class="text-lg m-2">Modal</h1>
+<Button on:click={() => modalOpen = true}>Open Modal</Button>
+<Modal bind:open={modalOpen}>
+     Lorem, ipsum dolor sit amet consectetur adipisicinde leniti animi, ducimus provident quis. At fugit votate moll iquid molestias ipsam sed vel beatae optio ducimus.
+     <ModalActions center>
+          <Button on:click={() => modalOpen = false}>Close</Button>
+     </ModalActions>
+</Modal>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

@@ -7,6 +7,7 @@
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
+     import {Pagination, PaginationItem} from '@ubeac/svelte-components'
 
      let drawerOpen = false;
 
@@ -89,5 +90,17 @@
 <Drawer position="right" bind:show={drawerOpen}>
      This should open from right side 
 </Drawer>
+
+
+<h1 class="text-lg m-2">Pagination</h1>
+<Pagination variant="secondary">
+     <PaginationItem>Prev</PaginationItem>
+     <PaginationItem>1</PaginationItem>
+     <PaginationItem>2</PaginationItem>
+     <PaginationItem active>3</PaginationItem>
+     <PaginationItem>4</PaginationItem>
+     <PaginationItem>Next</PaginationItem>
+</Pagination>
+
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

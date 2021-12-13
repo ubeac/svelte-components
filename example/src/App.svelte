@@ -6,13 +6,18 @@
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
+     import {Countdown} from '@ubeac/svelte-components'   
      import {Drawer} from '@ubeac/svelte-components'
      import {Dropdown} from '@ubeac/svelte-components'
 
      let drawerOpen = false;
+     let count = 0;
+
+     setInterval(() => {
+          count = count + 1
+     }, 1000);
 
 </script>
-
 <Alert />
 <Card />
 
@@ -85,6 +90,10 @@
      <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
 </Card>
 </div>
+
+
+<h1 class="text-lg font-bold">Countdown</h1>
+<Countdown class="p-6 m-4 bg-gray-900 rounded-box shadow text-neutral-content" value={count} />
 
 
 <Button on:click={() => drawerOpen = true}>Open Drawer</Button>

@@ -21,7 +21,6 @@
 
      let drawerOpen = false;
      let modalOpen = false;
-     let drawerOpen = false;
      let count = 0;
 
      setInterval(() => {

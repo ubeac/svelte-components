@@ -7,10 +7,27 @@
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
+     import {Navbar} from '@ubeac/svelte-components';
 
      let drawerOpen = false;
 
 </script>
+
+<Navbar fixed shadow>
+     <svelte:fragment slot="start">
+          <Button variant="ghost">Left</Button>          
+          <Button variant="ghost">Another</Button>          
+     </svelte:fragment>
+
+     <svelte:fragment slot="center">
+          Svelte Components
+     </svelte:fragment>
+
+     <svelte:fragment slot="end">
+          Right
+     </svelte:fragment>
+     
+</Navbar>
 
 <Alert />
 <Card />

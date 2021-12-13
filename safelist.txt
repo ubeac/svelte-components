@@ -21,3 +21,8 @@ btn-success
 btn-warning                 
 btn-error                 
 btn-link
+
+dropdown-xs
+dropdown-sm
+dropdown-md
+dropdown-lg

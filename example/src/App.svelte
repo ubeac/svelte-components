@@ -17,6 +17,8 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
+     import {Step, Steps} from '@ubeac/svelte-components'
+
   
 
      let drawerOpen = false;
@@ -195,6 +197,18 @@ top
 <Popover target="pop-target">
      <div>Hello from Popover</div>
 </Popover>
+
+
+<h1 class="text-lg m-2">Step</h1>
+<Steps>
+     <Step variant="primary">First</Step>
+     <Step variant="accent">Second</Step>
+     <Step variant="accent">Third</Step>
+     <Step variant="accent">Fourth</Step>
+     <Step>Fifth</Step>
+</Steps>
+
+
 
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

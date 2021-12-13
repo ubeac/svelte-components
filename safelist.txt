@@ -26,3 +26,13 @@ dropdown-xs
 dropdown-sm
 dropdown-md
 dropdown-lg
+
+step-primary
+step-secondary
+step-accent
+step-ghost
+step-info
+step-success
+step-warning
+step-error
+step-link

@@ -5,7 +5,11 @@
      import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
+     import {Carousel, CarouselItem} from '@ubeac/svelte-components'
+     import {Drawer} from '@ubeac/svelte-components'
      import {Dropdown} from '@ubeac/svelte-components'
+
+     let drawerOpen = false;
 
 </script>
 
@@ -48,6 +52,17 @@
 </ButtonGroup>
 
 
+<h1 class="text-lg m-2">Carousel</h1>
+<Carousel class="max-w-md" center>
+     {#each Array.from({length: 7}).fill(0) as item, index}
+          <CarouselItem class="m-1 rounded-box shadow overflow-hidden">
+               <img class="max-w-sm" alt="carousel {index}" src="/example/images/small/img-{index+1}.jpg">
+          </CarouselItem>
+     {/each}
+
+</Carousel>
+
+
 
 <h1 class="text-lg m-2">Card</h1>
 <div class="flex space-x-2 space-y-2 flex-col sm:flex-row">
@@ -71,6 +86,13 @@
 </Card>
 </div>
 
+
+<Button on:click={() => drawerOpen = true}>Open Drawer</Button>
+<Drawer position="right" bind:show={drawerOpen}>
+     This should open from right side 
+</Drawer>
+
+
 <h1 class="text-lg m-2">Dropdown</h1>
 <Dropdown position="right" class="menu">
      // TODO: fix this after adding Menu and MenuItem components
@@ -83,5 +105,6 @@
           <li><a href="#">Item 3</a></li>
      </ul>     
 </Dropdown>
+
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

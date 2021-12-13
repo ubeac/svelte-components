@@ -7,6 +7,7 @@
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
+     import {Popover} from '@ubeac/svelte-components'
 
      let drawerOpen = false;
 
@@ -89,5 +90,14 @@
 <Drawer position="right" bind:show={drawerOpen}>
      This should open from right side 
 </Drawer>
+
+
+<h1 class="text-lg m-2">Popover</h1>
+
+
+<Button id="pop-target">Open</Button>
+<Popover target="pop-target">
+     <div>Hello from Popover</div>
+</Popover>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

@@ -17,7 +17,7 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
-     import {FormGroup, Label, Input} from '@ubeac/svelte-components'
+     import {FormGroup, Label, Input, Checkbox} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -212,6 +212,30 @@ top
           <Input size="xs" variant="error" type="email"/>
      </FormGroup>
 
+     <FormGroup inline>
+          <Checkbox>Item 1</Checkbox>
+          <Checkbox>Item 2</Checkbox>
+          <Checkbox>Item 3</Checkbox>
+          <Checkbox>Item 4</Checkbox>
+     </FormGroup>
+
+     <FormGroup>
+          <Checkbox>Item 1</Checkbox>
+          <Checkbox>Item 2</Checkbox>
+          <Checkbox>Item 3</Checkbox>
+          <Checkbox>Item 4</Checkbox>
+     </FormGroup>
+
+     <FormGroup>
+          <Label>Checks: </Label>
+          <FormGroup inline>
+
+               <Checkbox size="xs">Item 1</Checkbox>
+               <Checkbox size="xs">Item 2</Checkbox>
+               <Checkbox size="xs">Item 3</Checkbox>
+               <Checkbox size="xs">Item 4</Checkbox>
+          </FormGroup>
+     </FormGroup>
 </form>
 
 

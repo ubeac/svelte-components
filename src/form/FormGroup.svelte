@@ -14,10 +14,15 @@
 	 */
 	export let id = name ?? ''
 
+	/** 
+	 * place elements in one line
+	*/
+	export let inline = false;
+
 	setContext('form:name', name)
 	setContext('form:id', id)
 </script>
 
-<div class="form-control p-1 w-full {className}">
+<div class="form-control mr-1 p-1 w-full {className}" class:flex-row={inline}>
 	<slot />
 </div>

@@ -12,7 +12,7 @@
 </script>
 
 <label for={id} class="label pb-0.5 {className}">
-	<span class="label-text">
+	<span class="label-text font-bold">
 		<slot />
 	</span>
 </label>

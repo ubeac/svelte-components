@@ -36,3 +36,13 @@ input-info
 input-success                 
 input-warning                 
 input-error                 
+
+
+checkbox-primary      checkbox-xs 
+checkbox-secondary    checkbox-sm 
+checkbox-accent       checkbox-md 
+checkbox-ghost        checkbox-lg 
+checkbox-info                 
+checkbox-success                 
+checkbox-warning                 
+checkbox-error                 

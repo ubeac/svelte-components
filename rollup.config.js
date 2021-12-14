@@ -29,6 +29,8 @@ export default [
         svelte({
             preprocess: preprocess()
         }),
+        // extract all css of components in temp.css file 
+        postcss({extract: 'temp.css'}),
         resolve({
             browser: true,
             dedupe: [
@@ -47,11 +49,19 @@ export default [
             postcss({
                 config: './postcss.config.js',
                 extract: 'styles.css'
-            }), 
+            }), {
+                name: 'Merge css files',
+                writeBundle (options) {
+                    // copy content of ./dist/temp.css to styles
+                    fs.appendFileSync('./dist/styles.css', 
+                        fs.readFileSync('./dist/temp.css'))
+                }
+            },
             {
                 name: "remove style.js", 
                 writeBundle (options) {
                     fs.unlinkSync(options.file)
+                    fs.unlinkSync('./dist/temp.css') // remove temp.css at the end
                 }
             }
         ]

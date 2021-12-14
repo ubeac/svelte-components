@@ -1,6 +1,8 @@
-n.github
+.github
 example
+safelist.txt
 rollup.config.js
-postcss.config.cjs
-tailwind.config.cjs
+postcss.config.js
+tailwind.config.js
 svelte.config.js
+src/styles.css

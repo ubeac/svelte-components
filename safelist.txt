@@ -54,4 +54,13 @@ radio-ghost        radio-lg
 radio-info                 
 radio-success                 
 radio-warning                 
-radio-error                 
+radio-error   
+
+textarea-primary
+textarea-secondary
+textarea-accent
+textarea-ghost
+textarea-info
+textarea-success
+textarea-warning
+textarea-error

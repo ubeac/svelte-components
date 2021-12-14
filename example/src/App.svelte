@@ -18,6 +18,9 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
+     import {Step, Steps} from '@ubeac/svelte-components'
+     import {TabContent, TabPane} from '@ubeac/svelte-components'
+     import {Table, Cell, TableRow, TableHeader} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -127,6 +130,23 @@
 <Countdown class="p-6 m-4 bg-gray-900 rounded-box shadow text-neutral-content" value={count} />
 
 
+<h1 class="text-lg m-2">Collapse</h1>
+<div class="flex p-2 space-x-2">
+
+<Collapse arrow>
+     <svelte:fragment slot="title">
+          Title of collapse
+     </svelte:fragment>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+</Collapse>
+<Collapse plus click>
+     <svelte:fragment slot="title">
+          Title of collapse
+     </svelte:fragment>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+</Collapse>
+</div>
+
 
 
 <Button on:click={() => drawerOpen = true}>Open Drawer</Button>
@@ -198,22 +218,63 @@ top
 </Popover>
 
 
+<h1 class="text-lg m-2">Table</h1>
 
-<h1 class="text-lg m-2">Collapse</h1>
-<div class="flex p-2 space-x-2">
+<Table>
+     <TableHeader>
+          <Cell>ID</Cell>
+          <Cell>Name</Cell>
+          <Cell>LastName</Cell>
+     </TableHeader>
+     <TableRow>
+          <Cell>ID1</Cell>
+          <Cell>Name1</Cell>
+          <Cell>LastName1</Cell>
+     </TableRow>
+     <TableRow>
+          <Cell>ID2</Cell>
+          <Cell>Name2</Cell>
+          <Cell>LastName2</Cell>
+     </TableRow>
+     <TableRow>
+          <Cell>ID3</Cell>
+          <Cell>Name3</Cell>
+          <Cell>LastName3</Cell>
+     </TableRow>
+</Table>
 
-<Collapse arrow>
-     <svelte:fragment slot="title">
-          Title of collapse
-     </svelte:fragment>
-     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
-</Collapse>
-<Collapse plus click>
-     <svelte:fragment slot="title">
-          Title of collapse
-     </svelte:fragment>
-     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
-</Collapse>
-</div>
+
+<h1 class="text-lg m-2">Step</h1>
+<Steps>
+     <Step variant="primary">First</Step>
+     <Step variant="accent">Second</Step>
+     <Step variant="accent">Third</Step>
+     <Step variant="accent">Fourth</Step>
+     <Step>Fifth</Step>
+</Steps>
+
+
+<h1 class="text-lg m-2">Tab</h1>
+
+<TabContent bordered>
+     <TabPane name="first">
+          Hello World!
+     </TabPane>
+
+     <TabPane name="second">
+          Second Tab
+     </TabPane>
+
+     <TabPane disabled name="disabled">
+          You can't see this text
+     </TabPane>
+
+     <TabPane name="third">
+          another Tab
+     </TabPane>
+
+
+</TabContent>
+
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

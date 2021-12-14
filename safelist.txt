@@ -27,6 +27,74 @@ dropdown-sm
 dropdown-md
 dropdown-lg
 
+
+input-primary      input-xs 
+input-secondary    input-sm 
+input-accent       input-md 
+input-ghost        input-lg 
+input-info                 
+input-success                 
+input-warning                 
+input-error                 
+
+
+checkbox-primary      checkbox-xs 
+checkbox-secondary    checkbox-sm 
+checkbox-accent       checkbox-md 
+checkbox-ghost        checkbox-lg 
+checkbox-info                 
+checkbox-success                 
+checkbox-warning                 
+checkbox-error                 
+
+toggle-primary      toggle-xs 
+toggle-secondary    toggle-sm 
+toggle-accent       toggle-md 
+toggle-ghost        toggle-lg 
+toggle-info                 
+toggle-success                 
+toggle-warning                 
+toggle-error                 
+
+
+radio-primary      radio-xs 
+radio-secondary    radio-sm 
+radio-accent       radio-md 
+radio-ghost        radio-lg 
+radio-info                 
+radio-success                 
+radio-warning                 
+radio-error   
+
+
+range-primary      range-xs 
+range-secondary    range-sm 
+range-accent       range-md 
+range-ghost        range-lg 
+range-info                 
+range-success                 
+range-warning                 
+range-error   
+
+select-primary      select-xs 
+select-secondary    select-sm 
+select-accent       select-md 
+select-ghost        select-lg 
+select-info                 
+select-success                 
+select-warning                 
+select-error   
+
+
+textarea-primary
+textarea-secondary
+textarea-accent
+textarea-ghost
+textarea-info
+textarea-success
+textarea-warning
+textarea-error
+
 border-primary
 border-secondary
 border-accent

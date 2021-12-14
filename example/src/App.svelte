@@ -24,6 +24,7 @@
      import {TabContent, TabPane} from '@ubeac/svelte-components'
      import {Table, Cell, TableRow, TableHeader} from '@ubeac/svelte-components'
      import {Tooltip} from '@ubeac/svelte-components'
+     import {FormGroup, Label, Input, Checkbox, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -47,7 +48,7 @@
      </svelte:fragment>
 
      <svelte:fragment slot="end">
-          Right
+          <Toggle>Dark Mode</Toggle>
      </svelte:fragment>
      
 </Navbar>
@@ -219,6 +220,74 @@ top
 <Popover target="pop-target">
      <div>Hello from Popover</div>
 </Popover>
+
+<form>
+
+     <FormGroup id="email" name="email">
+          <Label>Email:</Label>
+          <Input variant="success" type="email"/>
+     </FormGroup>
+     <FormGroup id="email" name="email">
+          <Label>Email:</Label>
+          <Input variant="accent" bordered type="email"/>
+     </FormGroup>
+     <FormGroup id="email" name="email">
+          <Label>Email:</Label>
+          <Input size="xs" variant="error" type="email"/>
+     </FormGroup>
+
+     <FormGroup inline>
+          <Checkbox>Item 1</Checkbox>
+          <Checkbox>Item 2</Checkbox>
+          <Checkbox>Item 3</Checkbox>
+          <Checkbox>Item 4</Checkbox>
+     </FormGroup>
+
+     <FormGroup>
+          <Checkbox>Item 1</Checkbox>
+          <Checkbox>Item 2</Checkbox>
+          <Checkbox>Item 3</Checkbox>
+          <Checkbox>Item 4</Checkbox>
+     </FormGroup>
+
+     <FormGroup>
+          <Label>Checks: </Label>
+          <FormGroup inline>
+
+               <Checkbox size="xs">Item 1</Checkbox>
+               <Checkbox size="xs">Item 2</Checkbox>
+               <Checkbox size="xs">Item 3</Checkbox>
+               <Checkbox size="xs">Item 4</Checkbox>
+          </FormGroup>
+     </FormGroup>
+     <FormGroup>
+          <Label>Radio Buttons:</Label>
+          <RadioGroup inline name="radios" options={["option 1", "option 2", "option 3"]} />
+     </FormGroup>
+     <FormGroup>
+          <Label>Enter some text: </Label>
+          <TextArea variant="error" />
+     </FormGroup>
+
+     <Toggle size="xs">Toggle 1</Toggle>
+     <Toggle variant="secondary">Toggle 2</Toggle>
+     <Toggle variant="accent">Toggle 3</Toggle>
+
+     <FormGroup>
+          <Label>Range:</Label>
+          <Range value=50/>
+     </FormGroup>
+     <FormGroup>
+          <Label>Select something:</Label>
+          <Select>
+               <Option value="First" />
+               <Option value="Second" />
+               <Option value="Third" />
+               <Option value="Fourth" />
+          </Select>
+     </FormGroup>
+     
+</form>
 
 
 

@@ -21,6 +21,7 @@
      import {Step, Steps} from '@ubeac/svelte-components'
      import {TabContent, TabPane} from '@ubeac/svelte-components'
      import {Table, Cell, TableRow, TableHeader} from '@ubeac/svelte-components'
+     import {Tooltip} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -276,5 +277,9 @@ top
 
 </TabContent>
 
+<h1 class="text-lg m-2">Tooltip</h1>
+<Tooltip text="Hello World!">
+     <Button>Tooltip</Button>
+</Tooltip>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

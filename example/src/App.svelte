@@ -18,7 +18,7 @@
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
      import {Step, Steps} from '@ubeac/svelte-components'
-
+     import {TabContent, TabPane} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -209,6 +209,27 @@ top
 </Steps>
 
 
+<h1 class="text-lg m-2">Tab</h1>
+
+<TabContent bordered>
+     <TabPane name="first">
+          Hello World!
+     </TabPane>
+
+     <TabPane name="second">
+          Second Tab
+     </TabPane>
+
+     <TabPane disabled name="disabled">
+          You can't see this text
+     </TabPane>
+
+     <TabPane name="third">
+          another Tab
+     </TabPane>
+
+
+</TabContent>
 
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

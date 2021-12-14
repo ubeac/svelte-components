@@ -17,6 +17,7 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
+     import {FormGroup, Label, Input} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -195,6 +196,23 @@ top
 <Popover target="pop-target">
      <div>Hello from Popover</div>
 </Popover>
+
+<form>
+
+     <FormGroup id="email" name="email">
+          <Label>Email:</Label>
+          <Input variant="success" type="email"/>
+     </FormGroup>
+     <FormGroup id="email" name="email">
+          <Label>Email:</Label>
+          <Input variant="accent" bordered type="email"/>
+     </FormGroup>
+     <FormGroup id="email" name="email">
+          <Label>Email:</Label>
+          <Input size="xs" variant="error" type="email"/>
+     </FormGroup>
+
+</form>
 
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>

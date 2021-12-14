@@ -26,3 +26,13 @@ dropdown-xs
 dropdown-sm
 dropdown-md
 dropdown-lg
+
+
+input-primary      input-xs 
+input-secondary    input-sm 
+input-accent       input-md 
+input-ghost        input-lg 
+input-info                 
+input-success                 
+input-warning                 
+input-error                 

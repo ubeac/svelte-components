@@ -19,6 +19,7 @@
      import {Popover} from '@ubeac/svelte-components'
      import {Step, Steps} from '@ubeac/svelte-components'
      import {TabContent, TabPane} from '@ubeac/svelte-components'
+     import {Table, Cell, TableRow, TableHeader} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -197,6 +198,32 @@ top
 <Popover target="pop-target">
      <div>Hello from Popover</div>
 </Popover>
+
+
+<h1 class="text-lg m-2">Table</h1>
+
+<Table>
+     <TableHeader>
+          <Cell>ID</Cell>
+          <Cell>Name</Cell>
+          <Cell>LastName</Cell>
+     </TableHeader>
+     <TableRow>
+          <Cell>ID1</Cell>
+          <Cell>Name1</Cell>
+          <Cell>LastName1</Cell>
+     </TableRow>
+     <TableRow>
+          <Cell>ID2</Cell>
+          <Cell>Name2</Cell>
+          <Cell>LastName2</Cell>
+     </TableRow>
+     <TableRow>
+          <Cell>ID3</Cell>
+          <Cell>Name3</Cell>
+          <Cell>LastName3</Cell>
+     </TableRow>
+</Table>
 
 
 <h1 class="text-lg m-2">Step</h1>

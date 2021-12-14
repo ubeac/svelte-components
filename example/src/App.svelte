@@ -17,7 +17,7 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
-     import {FormGroup, Label, Input, Checkbox, Radio, RadioGroup, TextArea} from '@ubeac/svelte-components'
+     import {FormGroup, Label, Input, Checkbox, Radio, RadioGroup, TextArea, Toggle} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -41,7 +41,7 @@
      </svelte:fragment>
 
      <svelte:fragment slot="end">
-          Right
+          <Toggle>Dark Mode</Toggle>
      </svelte:fragment>
      
 </Navbar>
@@ -244,6 +244,11 @@ top
           <Label>Enter some text: </Label>
           <TextArea variant="error" />
      </FormGroup>
+
+     <Toggle size="xs">Toggle 1</Toggle>
+     <Toggle variant="secondary">Toggle 2</Toggle>
+     <Toggle variant="accent">Toggle 3</Toggle>
+
 </form>
 
 

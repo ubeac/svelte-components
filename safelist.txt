@@ -46,3 +46,12 @@ checkbox-info
 checkbox-success                 
 checkbox-warning                 
 checkbox-error                 
+
+radio-primary      radio-xs 
+radio-secondary    radio-sm 
+radio-accent       radio-md 
+radio-ghost        radio-lg 
+radio-info                 
+radio-success                 
+radio-warning                 
+radio-error                 

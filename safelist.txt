@@ -27,6 +27,14 @@ dropdown-sm
 dropdown-md
 dropdown-lg
 
+progress-primary
+progress-secondary
+progress-accent
+progress-ghost
+progress-info
+progress-success
+progress-warning
+progress-error
 
 input-primary      input-xs 
 input-secondary    input-sm 
@@ -84,7 +92,6 @@ select-info
 select-success                 
 select-warning                 
 select-error   
-
 
 textarea-primary
 textarea-secondary

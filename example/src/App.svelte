@@ -6,6 +6,7 @@
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
+     import {Collapse} from '@ubeac/svelte-components'
      import {Countdown} from '@ubeac/svelte-components'   
      import {Divider} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
@@ -128,6 +129,23 @@
 <h1 class="text-lg font-bold">Countdown</h1>
 <Countdown class="p-6 m-4 bg-gray-900 rounded-box shadow text-neutral-content" value={count} />
 
+
+<h1 class="text-lg m-2">Collapse</h1>
+<div class="flex p-2 space-x-2">
+
+<Collapse arrow>
+     <svelte:fragment slot="title">
+          Title of collapse
+     </svelte:fragment>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+</Collapse>
+<Collapse plus click>
+     <svelte:fragment slot="title">
+          Title of collapse
+     </svelte:fragment>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+</Collapse>
+</div>
 
 
 

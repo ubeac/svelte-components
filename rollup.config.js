@@ -1,10 +1,9 @@
 import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
 import svelte from 'rollup-plugin-svelte'
 import postcss from 'rollup-plugin-postcss'
 import typescript from 'rollup-plugin-typescript'
 import preprocess from 'svelte-preprocess'
-
-// import packageJson from './package.json' 
 
 import fs from 'fs'
 
@@ -30,11 +29,15 @@ export default [
         svelte({
             preprocess: preprocess()
         }),
+        // extract all css of components in temp.css file 
+        postcss({extract: 'temp.css'}),
         resolve({
+            browser: true,
             dedupe: [
                 "svelte"
             ]
         }),
+        commonjs(),
     ]
     }, 
     {
@@ -46,11 +49,19 @@ export default [
             postcss({
                 config: './postcss.config.js',
                 extract: 'styles.css'
-            }), 
+            }), {
+                name: 'Merge css files',
+                writeBundle (options) {
+                    // copy content of ./dist/temp.css to styles
+                    fs.appendFileSync('./dist/styles.css', 
+                        fs.readFileSync('./dist/temp.css'))
+                }
+            },
             {
                 name: "remove style.js", 
                 writeBundle (options) {
                     fs.unlinkSync(options.file)
+                    fs.unlinkSync('./dist/temp.css') // remove temp.css at the end
                 }
             }
         ]

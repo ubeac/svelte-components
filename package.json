@@ -1,6 +1,6 @@
 {
   "name": "@ubeac/svelte-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Svelte components for uBeac",
   "svelte": "./src/index.js",
   "main": "dist/index.cjs",

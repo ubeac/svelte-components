@@ -76,6 +76,16 @@ range-success
 range-warning                 
 range-error   
 
+select-primary      select-xs 
+select-secondary    select-sm 
+select-accent       select-md 
+select-ghost        select-lg 
+select-info                 
+select-success                 
+select-warning                 
+select-error   
+
+
 textarea-primary
 textarea-secondary
 textarea-accent

@@ -17,7 +17,7 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
-     import {FormGroup, Label, Input, Checkbox, Radio, RadioGroup, Range, TextArea, Toggle} from '@ubeac/svelte-components'
+     import {FormGroup, Label, Input, Checkbox, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -252,6 +252,15 @@ top
      <FormGroup>
           <Label>Range:</Label>
           <Range value=50/>
+     </FormGroup>
+     <FormGroup>
+          <Label>Select something:</Label>
+          <Select>
+               <Option value="First" />
+               <Option value="Second" />
+               <Option value="Third" />
+               <Option value="Fourth" />
+          </Select>
      </FormGroup>
      
 </form>

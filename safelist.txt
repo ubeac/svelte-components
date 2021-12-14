@@ -66,6 +66,16 @@ radio-success
 radio-warning                 
 radio-error   
 
+
+range-primary      range-xs 
+range-secondary    range-sm 
+range-accent       range-md 
+range-ghost        range-lg 
+range-info                 
+range-success                 
+range-warning                 
+range-error   
+
 textarea-primary
 textarea-secondary
 textarea-accent

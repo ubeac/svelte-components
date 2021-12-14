@@ -5,6 +5,9 @@
   "svelte": "./src/index.js",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rollup -c",
     "build:example": "npm run build && rollup --config ./example/rollup.config.js",
@@ -40,5 +43,8 @@
     "svelte-preprocess": "^4.9.8",
     "tailwindcss": "^3.0.1",
     "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.0"
   }
 }

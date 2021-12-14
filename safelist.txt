@@ -36,3 +36,23 @@ border-success
 border-warning
 border-error
 border-link
+
+tooltip-primary      tooltip-xs 
+tooltip-secondary    tooltip-sm 
+tooltip-accent       tooltip-md 
+tooltip-ghost        tooltip-lg 
+tooltip-info                 
+tooltip-success                 
+tooltip-warning                 
+tooltip-error                 
+tooltip-link
+
+step-primary
+step-secondary
+step-accent
+step-ghost
+step-info
+step-success
+step-warning
+step-error
+step-link

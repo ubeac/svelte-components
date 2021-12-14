@@ -18,6 +18,7 @@
      import {Navbar} from '@ubeac/svelte-components';
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
+     import {Spinner} from '@ubeac/svelte-components'
      import {Step, Steps} from '@ubeac/svelte-components'
      import {TabContent, TabPane} from '@ubeac/svelte-components'
      import {Table, Cell, TableRow, TableHeader} from '@ubeac/svelte-components'
@@ -217,6 +218,11 @@ top
 <Popover target="pop-target">
      <div>Hello from Popover</div>
 </Popover>
+
+
+<h1 class="text-lg m-2">Spinner</h1>
+<Spinner />
+<Spinner variant="error" size="xs"/>
 
 
 <h1 class="text-lg m-2">Table</h1>

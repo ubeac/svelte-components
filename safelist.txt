@@ -27,6 +27,16 @@ dropdown-sm
 dropdown-md
 dropdown-lg
 
+border-primary
+border-secondary
+border-accent
+border-ghost
+border-info
+border-success
+border-warning
+border-error
+border-link
+
 tooltip-primary      tooltip-xs 
 tooltip-secondary    tooltip-sm 
 tooltip-accent       tooltip-md 

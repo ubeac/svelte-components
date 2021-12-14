@@ -6,6 +6,7 @@
      import {Button, ButtonGroup} from '@ubeac/svelte-components'
      import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
      import {Carousel, CarouselItem} from '@ubeac/svelte-components'
+     import {Collapse} from '@ubeac/svelte-components'
      import {Countdown} from '@ubeac/svelte-components'   
      import {Divider} from '@ubeac/svelte-components'
      import {Drawer} from '@ubeac/svelte-components'
@@ -18,6 +19,13 @@
      import {Pagination, PaginationItem} from '@ubeac/svelte-components'
      import {Popover} from '@ubeac/svelte-components'
      import {Progress} from '@ubeac/svelte-components'
+     import {Stack} from '@ubeac/svelte-components'
+     import {Spinner} from '@ubeac/svelte-components'
+     import {Step, Steps} from '@ubeac/svelte-components'
+     import {TabContent, TabPane} from '@ubeac/svelte-components'
+     import {Table, Cell, TableRow, TableHeader} from '@ubeac/svelte-components'
+     import {Tooltip} from '@ubeac/svelte-components'
+     import {FormGroup, Label, Input, Checkbox, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
@@ -41,7 +49,7 @@
      </svelte:fragment>
 
      <svelte:fragment slot="end">
-          Right
+          <Toggle>Dark Mode</Toggle>
      </svelte:fragment>
      
 </Navbar>
@@ -127,6 +135,23 @@
 <Countdown class="p-6 m-4 bg-gray-900 rounded-box shadow text-neutral-content" value={count} />
 
 
+<h1 class="text-lg m-2">Collapse</h1>
+<div class="flex p-2 space-x-2">
+
+<Collapse arrow>
+     <svelte:fragment slot="title">
+          Title of collapse
+     </svelte:fragment>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+</Collapse>
+<Collapse plus click>
+     <svelte:fragment slot="title">
+          Title of collapse
+     </svelte:fragment>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta, libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+</Collapse>
+</div>
+
 
 
 <Button on:click={() => drawerOpen = true}>Open Drawer</Button>
@@ -197,6 +222,149 @@ top
      <div>Hello from Popover</div>
 </Popover>
 
+<form>
+
+     <FormGroup id="email" name="email">
+          <Label>Email:</Label>
+          <Input variant="success" type="email"/>
+     </FormGroup>
+     <FormGroup id="email" name="email">
+          <Label>Email:</Label>
+          <Input variant="accent" bordered type="email"/>
+     </FormGroup>
+     <FormGroup id="email" name="email">
+          <Label>Email:</Label>
+          <Input size="xs" variant="error" type="email"/>
+     </FormGroup>
+
+     <FormGroup inline>
+          <Checkbox>Item 1</Checkbox>
+          <Checkbox>Item 2</Checkbox>
+          <Checkbox>Item 3</Checkbox>
+          <Checkbox>Item 4</Checkbox>
+     </FormGroup>
+
+     <FormGroup>
+          <Checkbox>Item 1</Checkbox>
+          <Checkbox>Item 2</Checkbox>
+          <Checkbox>Item 3</Checkbox>
+          <Checkbox>Item 4</Checkbox>
+     </FormGroup>
+
+     <FormGroup>
+          <Label>Checks: </Label>
+          <FormGroup inline>
+
+               <Checkbox size="xs">Item 1</Checkbox>
+               <Checkbox size="xs">Item 2</Checkbox>
+               <Checkbox size="xs">Item 3</Checkbox>
+               <Checkbox size="xs">Item 4</Checkbox>
+          </FormGroup>
+     </FormGroup>
+     <FormGroup>
+          <Label>Radio Buttons:</Label>
+          <RadioGroup inline name="radios" options={["option 1", "option 2", "option 3"]} />
+     </FormGroup>
+     <FormGroup>
+          <Label>Enter some text: </Label>
+          <TextArea variant="error" />
+     </FormGroup>
+
+     <Toggle size="xs">Toggle 1</Toggle>
+     <Toggle variant="secondary">Toggle 2</Toggle>
+     <Toggle variant="accent">Toggle 3</Toggle>
+
+     <FormGroup>
+          <Label>Range:</Label>
+          <Range value=50/>
+     </FormGroup>
+     <FormGroup>
+          <Label>Select something:</Label>
+          <Select>
+               <Option value="First" />
+               <Option value="Second" />
+               <Option value="Third" />
+               <Option value="Fourth" />
+          </Select>
+     </FormGroup>
+     
+</form>
+
+
+
+<h1 class="text-lg m-2">Spinner</h1>
+<Spinner />
+<Spinner variant="error" size="xs"/>
+
+<h1 class="text-lg m-2">Stack</h1>
+<Stack>
+     <div class="w-96 h-64 bg-gray-800 text-white text-2xl">3</div>
+     <div class="w-96 h-64 bg-gray-800 text-white text-2xl">2</div>
+     <div class="w-96 h-64 bg-gray-800 text-white text-2xl">1</div>
+</Stack>
+
+<h1 class="text-lg m-2">Table</h1>
+
+<Table>
+     <TableHeader>
+          <Cell>ID</Cell>
+          <Cell>Name</Cell>
+          <Cell>LastName</Cell>
+     </TableHeader>
+     <TableRow>
+          <Cell>ID1</Cell>
+          <Cell>Name1</Cell>
+          <Cell>LastName1</Cell>
+     </TableRow>
+     <TableRow>
+          <Cell>ID2</Cell>
+          <Cell>Name2</Cell>
+          <Cell>LastName2</Cell>
+     </TableRow>
+     <TableRow>
+          <Cell>ID3</Cell>
+          <Cell>Name3</Cell>
+          <Cell>LastName3</Cell>
+     </TableRow>
+</Table>
+
+
+<h1 class="text-lg m-2">Step</h1>
+<Steps>
+     <Step variant="primary">First</Step>
+     <Step variant="accent">Second</Step>
+     <Step variant="accent">Third</Step>
+     <Step variant="accent">Fourth</Step>
+     <Step>Fifth</Step>
+</Steps>
+
+
+<h1 class="text-lg m-2">Tab</h1>
+
+<TabContent bordered>
+     <TabPane name="first">
+          Hello World!
+     </TabPane>
+
+     <TabPane name="second">
+          Second Tab
+     </TabPane>
+
+     <TabPane disabled name="disabled">
+          You can't see this text
+     </TabPane>
+
+     <TabPane name="third">
+          another Tab
+     </TabPane>
+
+
+</TabContent>
+
+<h1 class="text-lg m-2">Tooltip</h1>
+<Tooltip text="Hello World!">
+     <Button>Tooltip</Button>
+</Tooltip>
 
 <h1 class="text-lg m-2">Progress</h1>
 

@@ -5,6 +5,9 @@
   "svelte": "./src/index.js",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rollup -c",
     "build:example": "npm run build && rollup --config ./example/rollup.config.js",

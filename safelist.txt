@@ -22,10 +22,10 @@ btn-warning
 btn-error                 
 btn-link
 
-dropdown-xs
-dropdown-sm
-dropdown-md
-dropdown-lg
+dropdown-left
+dropdown-top
+dropdown-right
+dropdown-bottm
 
 progress-primary
 progress-secondary
@@ -112,10 +112,10 @@ border-warning
 border-error
 border-link
 
-tooltip-primary      tooltip-xs 
-tooltip-secondary    tooltip-sm 
-tooltip-accent       tooltip-md 
-tooltip-ghost        tooltip-lg 
+tooltip-primary      tooltip-left 
+tooltip-secondary    tooltip-top
+tooltip-accent       tooltip-right
+tooltip-ghost        tooltip-bottom
 tooltip-info                 
 tooltip-success                 
 tooltip-warning                 

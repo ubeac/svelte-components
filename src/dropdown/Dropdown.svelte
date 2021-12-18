@@ -29,7 +29,7 @@
 	class:dropdown-end={end}
 	class:dropdown-open={open}
 	class:dropdown-hover={hover}>
-	<div tabindex="0" class="m-1 btn">
+	<div tabindex="0">
 		<slot name="title" />
 	</div>
 	<div tabindex="0" class="w-max dropdown-content">

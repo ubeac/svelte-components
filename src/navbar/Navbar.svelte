@@ -43,10 +43,16 @@
 		error: 'bg-error text-error-content',
 	}
 
+	/**
+	 * you can bind this value to a state for getting height of navbar
+	 * @example <Navbar bind:clientHeight={navHeight} ...>
+	 */
+	export let clientHeight;
+
 	$: positoinClasses = fixed ? 'fixed w-full' : ''
 </script>
 
-<nav
+<nav bind:clientHeight={clientHeight}
 	class="navbar z-30 {variants[variant]} {transparencies[
 		transparency
 	]} {className} {positoinClasses}"

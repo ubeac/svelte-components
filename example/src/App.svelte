@@ -78,7 +78,7 @@
 <h1 class="text-lg m-2">Breadcrumb</h1>
 <Breadcrumb>
      <BreadcrumbItem>Hello</BreadcrumbItem>
-     <BreadcrumbItem>World</BreadcrumbItem>
+     <BreadcrumbItem href="#">World</BreadcrumbItem>
      <BreadcrumbItem active>123</BreadcrumbItem>
 </Breadcrumb>
 
@@ -162,16 +162,18 @@
 
 
 <h1 class="text-lg m-2">Dropdown</h1>
-<Dropdown position="right" class="menu">
-     // TODO: fix this after adding Menu and MenuItem components
+<Dropdown position="right" end class="w-32">
      <svelte:fragment slot="title">
           Dropdown
      </svelte:fragment>
-     <ul class="menu w-56 bg-base-100 text-base-content">
-          <li><a href="#">Item 1</a></li>
-          <li><a href="#">Item 2</a></li>
-          <li><a href="#">Item 3</a></li>
-     </ul>     
+     <Menu>
+          <MenuItem>
+               <Icon slot="prefix" name="fas-user"/>
+               Item 1
+          </MenuItem>
+          <MenuItem>Item 2</MenuItem>
+          <MenuItem>Item 3</MenuItem>
+     </Menu>    
 </Dropdown>
 
 

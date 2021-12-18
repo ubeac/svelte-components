@@ -19,6 +19,9 @@
 	/** specify disabled state*/
 	export let disabled = false
 
+	/** checked state of radio */
+	export let checked = false
+
 	/**
 	 * @type {string}
 	 */
@@ -34,7 +37,7 @@
 	].join(' ')
 </script>
 
-<label class="flex flex-row items-center form-control">
-	<input {disabled} type="radio" {name} class={classes} on:change />
+<label class="flex flex-row items-baseline form-control">
+	<input {disabled} type="radio" {name} class={classes} on:change {checked} />
 	<slot />
 </label>

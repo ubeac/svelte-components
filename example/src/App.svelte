@@ -78,7 +78,7 @@
 <h1 class="text-lg m-2">Breadcrumb</h1>
 <Breadcrumb>
      <BreadcrumbItem>Hello</BreadcrumbItem>
-     <BreadcrumbItem>World</BreadcrumbItem>
+     <BreadcrumbItem href="#">World</BreadcrumbItem>
      <BreadcrumbItem active>123</BreadcrumbItem>
 </Breadcrumb>
 
@@ -167,7 +167,10 @@
           Dropdown
      </svelte:fragment>
      <Menu>
-          <MenuItem>Item 1</MenuItem>
+          <MenuItem>
+               <Icon slot="prefix" name="fas-user"/>
+               Item 1
+          </MenuItem>
           <MenuItem>Item 2</MenuItem>
           <MenuItem>Item 3</MenuItem>
      </Menu>    

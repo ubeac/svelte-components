@@ -22,13 +22,6 @@
 	 */
 	export let size = 'md'
 
-	let sizes = {
-		xs: 'checkbox-xs',
-		sm: 'checkbox-sm',
-		md: 'checkbox-md',
-		lg: 'checkbox-lg',
-	}
-
 	/** name for input tag */
 	export let name
 </script>
@@ -39,6 +32,6 @@
 		{name}
 		type="checkbox"
 		bind:checked
-		class="checkbox mx-2  mt-1 checkbox-{variant} checkbox-{size}" />
+		class="checkbox mx-2 rounded mt-1 checkbox-{variant} checkbox-{size}" />
 	<slot />
 </label>

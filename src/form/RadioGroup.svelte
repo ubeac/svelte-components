@@ -73,6 +73,6 @@
 
 <FormGroup {name} {inline} class={className}>
 	{#each options as option}
-		<Radio {variant} {size} on:change={(e) => valueChanged(option)}>{getText(option)}</Radio>
+		<Radio {variant} {size} checked={getKey(option) === value ? true: false} on:change={(e) => valueChanged(option)}>{getText(option)}</Radio>
 	{/each}
 </FormGroup>

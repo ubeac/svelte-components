@@ -8,6 +8,6 @@
 	export let center = false
 </script>
 
-<h2 class="card-title text-3xl {className}" class:text-center={center}>
+<h2 class="card-title text-lg {className}" class:text-center={center}>
 	<slot />
 </h2>

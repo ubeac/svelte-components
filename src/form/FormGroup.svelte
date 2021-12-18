@@ -23,6 +23,6 @@
 	setContext('form:id', id)
 </script>
 
-<div class="form-control mr-1 p-1 w-full {className}" class:flex-row={inline}>
+<div class="form-control mr-1 p-1 w-full {className}" class:flex-wrap={inline} class:flex-row={inline}>
 	<slot />
 </div>

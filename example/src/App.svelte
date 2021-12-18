@@ -256,12 +256,7 @@ top
 
      <FormGroup>
           <Label>Checks: </Label>
-          <FormGroup inline>
-
-               <Checkbox size="xs">Item 1</Checkbox>
-               <Checkbox size="xs">Item 2</Checkbox>
-               <Checkbox size="xs">Item 3</Checkbox>
-               <Checkbox size="xs">Item 4</Checkbox>
+               <CheckboxGroup inline size="xs" options={['Item 1', 'Item 2', 'Item 3', 'Item 4']}/>
           </FormGroup>
      </FormGroup>
      <FormGroup>

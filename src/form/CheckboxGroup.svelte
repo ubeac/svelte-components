@@ -1,6 +1,6 @@
 <script>
-    import {Checkbox} from './Checkbox.svelte'
-    import {FormGroup} from './FormGroup.svelte'
+    import Checkbox from './Checkbox.svelte'
+    import FormGroup from './FormGroup.svelte'
 
     /**
      * list of options to select

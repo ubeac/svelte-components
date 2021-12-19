@@ -48,7 +48,7 @@
 </script>
 
 <div class="flex {className}" class:flex-col={!vertical}>
-	<div class="tabs mb-1 mr-1" class:flex-col={vertical} class:tabs-boxed={boxed}>
+	<div class="tabs" class:flex-col={vertical} class:tabs-boxed={boxed}>
 		{#each names as { name, disabled }}
 			<div
 				class="tab tab-{size} {borderedClasses} {liftedClasses}"
@@ -62,7 +62,7 @@
 		{/each}
 		<div class="{liftedClasses} {borderedClasses} flex-1" />
 	</div>
-	<div class="flex-1">
+	<div class="p-4 flex-1 bg-base-100 border-base-300 border-l border-r border-b rounded-b-lg">
 		<slot />
 	</div>
 </div>

@@ -69,7 +69,7 @@
 	{disabled}
 	{placeholder}
 	{value}
-	on:change={(e) => (value = /* TODO: use bind value */ e.target.value)}
+	on:input={(e) => (value = /* TODO: use bind value */ e.target.value)}
 	class="input w-full input-{size} input-{variant} {className}"
 	class:input-bordered={bordered}
 	class:input-disabled={disabled}

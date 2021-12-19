@@ -30,7 +30,7 @@
 
 <div
 	tabindex="0"
-	class="collapse {className}"
+	class="collapse pb-0 {className}"
 	class:collapse-open={open}
 	class:collapse-close={close}
 	class:collapse-plus={plus}
@@ -42,7 +42,10 @@
 		<slot name="title" />
 	</div>
 
-	<div class="collapse-content">
-		<slot />
+	<!-- tailwind: !p-0 => !important -->
+	<div class="collapse-content !p-0">
+		<div class="bg-transparent border-l border-r border-b border-base-300 p-4 w-full h-full">
+			<slot />
+		</div>
 	</div>
 </div>

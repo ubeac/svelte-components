@@ -98,11 +98,11 @@
 	<span
 		data-show={isOpen}
 		role="tooltip"
-		class="bg-base-200 border border-opacity-50 border-base-content rounded p-1 {className}"
+		class="bg-base-200 border border-opacity-50 border-base-300 rounded p-1 {className}"
 		bind:this={content}>
 		<div data-popper-arrow class="arrow" />
 		{#if $$slots['title']}
-			<span class="w-full bg-gray-100 font-bold py-2 px-8">
+			<span class="w-full bg-base-300 font-bold py-2 px-8">
 				<slot name="title" />
 			</span>
 		{/if}
@@ -124,7 +124,7 @@
 	.arrow::before {
 		content: '';
 		transform: rotate(45deg);
-		background-color: white;
+		background-color: var(--b2);
 	}
 
 	:global(span[data-popper-placement^='bottom'] > .arrow) {

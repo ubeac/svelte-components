@@ -32,7 +32,6 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "autoprefixer": "^10.4.0",
-    "clsx": "^1.1.1",
     "daisyui": "^1.16.2",
     "rollup": "^2.61.0",
     "rollup-plugin-alias": "^2.2.0",
@@ -46,6 +45,7 @@
     "typescript": "^4.5.3"
   },
   "dependencies": {
+    "clsx": "^1.1.1",
     "@popperjs/core": "^2.11.0"
   }
 }

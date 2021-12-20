@@ -45,7 +45,8 @@
 		'duration-300', 'border-base-200', 'bg-base-100', 'z-[60]',
 		positions[position],
 		show && showPositions[position],
-		!show && hidePositions[position]
+		!show && hidePositions[position],
+		className
 	)
 
 </script>

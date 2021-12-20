@@ -12,13 +12,13 @@
 	 * color of radio
 	 * @type { import('./types').Variant }
 	 *  */
-	export let variant = 'primary'
+	export let variant = undefined
 
 	/**
 	 * size of radio
 	 * @type {import('./types').Size}
 	 */
-	export let size = 'md'
+	export let size = undefined
 
 	/**
 	 * list of options inside radio group
@@ -73,6 +73,13 @@
 
 <FormGroup {name} {inline} class={className}>
 	{#each options as option}
-		<Radio {variant} {size} checked={getKey(option) === value ? true: false} on:change={(e) => valueChanged(option)}>{getText(option)}</Radio>
+		<Radio 
+			{variant} 
+			{size} 
+			checked={getKey(option) === value ? true: false} 
+			on:change={(e) => valueChanged(option)}
+		>
+			{getText(option)}
+		</Radio>
 	{/each}
 </FormGroup>

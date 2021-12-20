@@ -1,4 +1,6 @@
 <script>
+	import clsx from 'clsx'
+	
 	let className = ''
 	export { className as class }
 
@@ -17,9 +19,11 @@
 	 * color of link
 	 * @type {import('./types').Variant}
 	 */
-	export let variant = 'primary'
+	export let variant = undefined
+
+	$: classes = clsx('link', variant && 'link-'+variant, hover && 'link-hover', className)
 </script>
 
-<a on:click {href} class="link link-{variant} {className}" class:link-hover={hover}>
+<a on:click {href} class={classes}>
 	<slot />
 </a>

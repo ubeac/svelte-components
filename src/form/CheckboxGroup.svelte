@@ -27,12 +27,12 @@
     /**
      * variant of checkboxes
      */
-    export let variant = 'primary'
+    export let variant = undefined
 
     /**
      * size of checkboxes
      */
-    export let size = "md"
+    export let size = undefined
 
     /**
      * text of checkbox option

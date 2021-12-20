@@ -26,12 +26,19 @@
      import {TabContent, TabPane} from '@ubeac/svelte-components'
      import {Table, Cell, TableRow, TableHeader} from '@ubeac/svelte-components'
      import {Tooltip} from '@ubeac/svelte-components'
-     import {FormGroup, Label, Input, Checkbox, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '@ubeac/svelte-components'
+     import {FormGroup, Label, Input, Checkbox, CheckboxGroup, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '@ubeac/svelte-components'
   
 
      let drawerOpen = false;
      let modalOpen = false;
      let count = 0;
+     let dark = false
+
+     $: {
+          console.log({dark})
+          document.body.parentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
+     }
+
 
      setInterval(() => {
           count = count + 1
@@ -50,7 +57,7 @@
      </svelte:fragment>
 
      <svelte:fragment slot="end">
-          <Toggle>Dark Mode</Toggle>
+          <Toggle bind:checked={dark}>Dark Mode</Toggle>
      </svelte:fragment>
      
 </Navbar>
@@ -256,8 +263,7 @@ top
 
      <FormGroup>
           <Label>Checks: </Label>
-               <CheckboxGroup inline size="xs" options={['Item 1', 'Item 2', 'Item 3', 'Item 4']}/>
-          </FormGroup>
+          <CheckboxGroup inline size="xs" options={['Item 1', 'Item 2', 'Item 3', 'Item 4']}/>
      </FormGroup>
      <FormGroup>
           <Label>Radio Buttons:</Label>

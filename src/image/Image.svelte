@@ -1,4 +1,5 @@
 <script>
+	import clsx from 'clsx'
 	let className = ''
 	export { className as class }
 
@@ -20,12 +21,13 @@
 	/** draws border around image*/
 	export let bordered = false
 
-	$: classes = [
-		rounded && rounded === 'full' ? 'rounded-full' : rounded ? 'rounded-box' : '',
-		shadow ? 'shadow-lg' : '',
-		bordered ? 'border border-base-300' : '',
-		className,
-	].join(' ')
+	$: classes = clsx({
+		'rounded-full': rounded === 'full',
+		'rounded-box': rounded === true,
+		'shadow-lg': shadow,
+		'border border-base-300': bordered,
+		className
+	})
 </script>
 
 <img class={classes} {src} {alt} />

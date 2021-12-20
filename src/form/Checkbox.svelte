@@ -1,4 +1,6 @@
 <script>
+  import clsx from "clsx";
+
 	let className = ''
 	export { className as class }
 
@@ -14,24 +16,29 @@
 	 * checkbox variant
 	 * @type {import('./types').Variant}
 	 *  */
-	export let variant = 'primary'
+	export let variant = undefined
 
 	/**
 	 * size of checkbox
 	 * @type {import('./types').Size}
 	 */
-	export let size = 'md'
+	export let size = undefined
 
 	/** name for input tag */
 	export let name
+
+	$: classes = clsx(
+		"checkbox",
+		"mx-2",
+		"rounded",
+		"my-1",
+		variant && "checkbox-" + variant,
+		size && "checkbox-" + size,
+		className
+	);
 </script>
 
-<label class="flex flex-row items-center form-control {className}">
-	<input
-		{disabled}
-		{name}
-		type="checkbox"
-		bind:checked
-		class="checkbox mx-2 rounded mt-1 checkbox-{variant} checkbox-{size}" />
-	<slot />
+<label class="flex flex-row items-center form-control">
+  <input {disabled} {name} type="checkbox" bind:checked class={classes} />
+  <slot />
 </label>

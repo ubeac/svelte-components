@@ -1,4 +1,5 @@
 <script>
+	import clsx from 'clsx'
 	import { getContext } from 'svelte'
 
 	let className = ''
@@ -23,13 +24,13 @@
 	 * specify the variant of select
 	 * @type {import('./types').Variant}
 	 */
-	export let variant = 'primary'
+	export let variant = undefined
 
 	/**
 	 * size of select
 	 * @type {import('./types').Size}
 	 */
-	export let size = 'md'
+	export let size = undefined
 
 	/**
 	 * selected item
@@ -48,16 +49,17 @@
 	 * @type {string}
 	 * */
 	export let id = getContext('form:id') ?? name
+
+	$: classes = clsx(
+		'select',
+		variant && 'select-' + variant,
+		size && 'select-' + size,
+		bordered && 'select-bordered',
+		className,
+	)
 </script>
 
-<select
-	bind:value
-	{disabled}
-	tabindex="0"
-	{id}
-	{name}
-	class="select select-{variant} select-{size} {className}"
-	class:select-bordered={bordered}>
+<select bind:value {disabled} tabindex="0" {id} {name} class={classes}>
 	<option disabled selected>{placeholder}</option>
 	<slot />
 </select>

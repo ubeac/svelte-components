@@ -1,5 +1,6 @@
 <script>
 	import { getContext } from 'svelte'
+	import clsx from 'clsx'
 
 	let className = ''
 	export { className as class }
@@ -8,13 +9,13 @@
 	 * color of range
 	 * @type { import('./types').Variant }
 	 *  */
-	export let variant = 'primary'
+	export let variant = undefined
 
 	/**
 	 * size of range
 	 * @type {import('./types').Size}
 	 */
-	export let size = 'md'
+	export let size = undefined
 
 	/** current value of range */
 	export let value = 0
@@ -33,12 +34,13 @@
 	 * @type {string}
 	 */
 	export let id = getContext('form:id') ?? name
+
+	$:classes = clsx(
+		"range",
+		size && 'range-' + size,
+		variant && 'range-' + variant,
+		className
+	)
 </script>
 
-<input
-	type="range"
-	{id}
-	{name}
-	{max}
-	bind:value
-	class="range range-{size} range-{variant} {className}" />
+<input type="range"	{id} {name} {max} bind:value class={classes} />

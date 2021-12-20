@@ -1,4 +1,5 @@
 <script>
+	import clsx from 'clsx'
 	import { getContext } from 'svelte'
 
 	let className = ''
@@ -29,25 +30,30 @@
 	/**
 	 * value of input
 	 */
-	export let value
+	export let value = type === 'number' ? 0 : ''
+
+	/**
+	 * make input readonly
+	 */
+	export let readonly = false;
 
 	/**
 	 * specify the variant of input
 	 * @type { import('./types').Variant }
 	 */
-	export let variant = 'primary'
+	export let variant = undefined
 
 	/**
 	 * size of input
 	 * @type { import('./types').Size }
 	 */
-	export let size = "md"
+	export let size = undefined
 
 	/**
 	 * placeholder of input
 	 * @type {string}
 	 */
-	export let placeholder
+	export let placeholder = ''
 
 	/**
 	 * name of input
@@ -60,6 +66,20 @@
 	 * @type {string}
 	 */
 	export let id = getContext('form:id') ?? ''
+
+	$: classes = clsx(
+		'input',
+		'w-full',
+		size && 'input-' + size,
+		variant &&  'input-' + variant,
+		{
+			'input-bordered': bordered,
+			'input-disabled': disabled,
+			'shadow': shadow,
+			'hover:shadow-lg': shadow
+		},
+		className
+	)
 </script>
 
 <input
@@ -69,9 +89,6 @@
 	{disabled}
 	{placeholder}
 	{value}
+	{readonly}
 	on:input={(e) => (value = /* TODO: use bind value */ e.target.value)}
-	class="input w-full input-{size} input-{variant} {className}"
-	class:input-bordered={bordered}
-	class:input-disabled={disabled}
-	class:shadow
-	class:hover:shadow-lg={shadow} />
+	class={classes} />

@@ -1,5 +1,6 @@
 <script>
 	import { getContext } from 'svelte'
+	import clsx from 'clsx'
 
 	let className = ''
 	export { className as class }
@@ -25,7 +26,7 @@
 	 * specify the color of textarea
 	 * @type {import('./types').Variant}
 	 */
-	export let variant = 'primary'
+	export let variant = undefined
 
 	/**
 	 * name of input
@@ -39,12 +40,13 @@
 	 */
 	 export let id = getContext('id') ?? name
 	
+	$: classes = clsx(
+		'textarea',
+		'w-full',
+		variant && 'textarea-' + variant,
+		bordered && 'textarea-bordered',
+		className,
+	)
 </script>
 
-<textarea
-	{id}
-	{name}
-	bind:value
-	{disabled}
-	class="textarea w-full textarea-{variant} {className}"
-	class:textarea-bordered={bordered} />
+<textarea {id} {name} bind:value {disabled} class={classes}/>

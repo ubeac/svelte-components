@@ -1,5 +1,6 @@
 <script>
 	import { setContext } from 'svelte'
+	import clsx from 'clsx'
 
 	let className = ''
 	export { className as class }
@@ -21,8 +22,20 @@
 
 	setContext('form:name', name)
 	setContext('form:id', id)
+
+	$: classes = clsx(
+		'form-control',
+		'mr-1',
+		'p-1',
+		'w-full',
+		inline && [
+			'flex-wrap',
+			'flex-row'
+	 	],
+		className
+	)
 </script>
 
-<div class="form-control mr-1 p-1 w-full {className}" class:flex-wrap={inline} class:flex-row={inline}>
+<div class={classes}>
 	<slot />
 </div>

@@ -1,4 +1,6 @@
 <script>
+	import clsx from 'clsx'
+	
 	let className = ''
 	export { className as class }
 
@@ -14,24 +16,30 @@
 	 * variant of toggle
 	 * @type { import('./types').Variant }
 	 *  */
-	export let variant = 'primary'
+	export let variant = undefined
 
 	/**
 	 * size of toggle
 	 * @type {import('./types').Size}
 	 */
-	export let size = 'md'
+	export let size = undefined
 
 	/** name for input tag */
-	export let name
+	export let name;
+
+	$: classes = clsx(
+		'toggle',
+		'mx-2',
+		'my-1',
+		variant && 'toggle-' + variant,
+		size && 'toggle-' + size,
+		className
+	)
+	
+
 </script>
 
 <label class="flex flex-row items-center form-control">
-	<input
-		{disabled}
-		{name}
-		type="checkbox"
-		bind:checked
-		class="toggle mx-2  mt-1 toggle-{variant} toggle-{size} {className}" />
+	<input {disabled} {name} type="checkbox" bind:checked class={classes} />
 	<slot />
 </label>

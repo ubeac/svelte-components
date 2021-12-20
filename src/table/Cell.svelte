@@ -6,11 +6,11 @@
 </script>
 
 {#if head}
-	<th>
+	<th class="!whitespace-pre-wrap">
 		<slot />
 	</th>
 {:else}
-	<td>
+	<td class="!whitespace-pre-wrap">
 		<slot />
 	</td>
 {/if}

@@ -1,4 +1,6 @@
 <script>
+	import clsx from 'clsx';
+
 	let className = ''
 	export { className as class }
 
@@ -38,20 +40,14 @@
 		bottom: 'bottom-0 translate-y-full',
 	}
 
-	$: classes = [
-		'fixed',
-		'flex',
-		'flex-col',
-		'p-2',
-		'transition-transform',
-		'duration-300',
-		'border-base-200',
-		'bg-base-100',
-		'z-[60]',
+	$: classes = clsx(
+		'fixed', 'flex', 'flex-col', 'p-2', 'transition-transform',
+		'duration-300', 'border-base-200', 'bg-base-100', 'z-[60]',
 		positions[position],
-		show ? showPositions[position] : hidePositions[position],
-		className,
-	].join(' ')
+		show && showPositions[position],
+		!show && hidePositions[position]
+	)
+
 </script>
 
 {#if show}

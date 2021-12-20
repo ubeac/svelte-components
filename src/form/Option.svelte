@@ -7,6 +7,10 @@
 
 {#if value}
 	<option {value}>
-		{value}
+		{#if $$slots.default}
+			<slot/>
+		{:else}
+			{value}
+		{/if}
 	</option>
 {/if}

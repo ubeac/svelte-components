@@ -1,17 +1,19 @@
 <script>
+	import clsx from 'clsx'
 	let className = ''
 	export { className as class }
 
 	/**
 	 * navbar variant
+	 * @default 'neutral'
 	 */
-	export let variant = "primary"
+	export let variant = 'neutral'
 
-	/**
+	/**"primary"
 	 * set transparency of navbar
-	 * @type {"none"|"low"|"medium"|"high"|"full"}
+	 * @type {"none"|"low"|"medium"|"high"|"full"|undefined}
 	 */
-	export let transparency = 'none'
+	export let transparency = undefined
 
 	/**
 	 * always show navbar on top
@@ -49,14 +51,18 @@
 	 */
 	export let clientHeight;
 
-	$: positoinClasses = fixed ? 'fixed w-full' : ''
+	$: classes = clsx(
+		'navbar',
+		'z-30',
+		variant && `bg-${variant} text-${variant}-content`,
+		fixed && 'fixed w-full',
+		shadow && 'shadow-lg',
+		transparency && transparencies[transparency],
+		className
+	)
 </script>
 
-<nav bind:clientHeight={clientHeight}
-	class="navbar z-30 {variants[variant]} {transparencies[
-		transparency
-	]} {className} {positoinClasses}"
-	class:shadow-lg={shadow}>
+<nav bind:clientHeight={clientHeight} class={classes}>
 	<div class="navbar-start">
 		<slot name="start" />
 	</div>

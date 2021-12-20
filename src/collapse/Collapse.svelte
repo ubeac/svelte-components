@@ -44,7 +44,7 @@
 
 	<!-- tailwind: !p-0 => !important -->
 	<div class="collapse-content !p-0">
-		<div class="bg-transparent border-l border-r border-b border-base-300 p-4 w-full h-full">
+		<div class="bg-base-100 border-l border-r border-b border-base-300 p-4 w-full h-full">
 			<slot />
 		</div>
 	</div>

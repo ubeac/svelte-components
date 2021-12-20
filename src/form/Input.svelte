@@ -30,7 +30,12 @@
 	/**
 	 * value of input
 	 */
-	export let value = ''
+	export let value = type === 'number' ? 0 : ''
+
+	/**
+	 * make input readonly
+	 */
+	export let readonly = false;
 
 	/**
 	 * specify the variant of input
@@ -84,5 +89,6 @@
 	{disabled}
 	{placeholder}
 	{value}
+	{readonly}
 	on:input={(e) => (value = /* TODO: use bind value */ e.target.value)}
 	class={classes} />

@@ -1,32 +1,33 @@
 <script>
-     import Alert from './components/Alert.svelte'
-     import {Avatar, AvatarGroup} from '@ubeac/svelte-components'
-     import { Badge } from '@ubeac/svelte-components'
-     import {Breadcrumb, BreadcrumbItem} from '@ubeac/svelte-components'
-     import {Button, ButtonGroup} from '@ubeac/svelte-components'
-     import {Card, CardTitle, CardActions } from '@ubeac/svelte-components'
-     import {Carousel, CarouselItem} from '@ubeac/svelte-components'
-     import {Icon} from '@ubeac/svelte-components'
-     import {Collapse} from '@ubeac/svelte-components'
-     import {Countdown} from '@ubeac/svelte-components'   
-     import {Divider} from '@ubeac/svelte-components'
-     import {Drawer} from '@ubeac/svelte-components'
-     import {Dropdown} from '@ubeac/svelte-components'
-     import {Link} from '@ubeac/svelte-components'
-     import {Image} from '@ubeac/svelte-components'
-     import {MenuItem, Menu, MenuTitle} from '@ubeac/svelte-components'
-     import {Modal, ModalActions} from '@ubeac/svelte-components'
-     import {Navbar} from '@ubeac/svelte-components';
-     import {Pagination, PaginationItem} from '@ubeac/svelte-components'
-     import {Popover} from '@ubeac/svelte-components'
-     import {Progress} from '@ubeac/svelte-components'
-     import {Stack} from '@ubeac/svelte-components'
-     import {Spinner} from '@ubeac/svelte-components'
-     import {Step, Steps} from '@ubeac/svelte-components'
-     import {TabContent, TabPane} from '@ubeac/svelte-components'
-     import {Table, Cell, TableRow, TableHeader} from '@ubeac/svelte-components'
-     import {Tooltip} from '@ubeac/svelte-components'
-     import {FormGroup, Label, Input, Checkbox, CheckboxGroup, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '@ubeac/svelte-components'
+     import '../styles.css'
+     import {Alert} from '$lib/index.js'
+     import {Avatar, AvatarGroup} from '$lib/index.js'
+     import { Badge } from '$lib/index.js'
+     import {Breadcrumb, BreadcrumbItem} from '$lib/index.js'
+     import {Button, ButtonGroup} from '$lib/index.js'
+     import {Card, CardTitle, CardActions } from '$lib/index.js'
+     import {Carousel, CarouselItem} from '$lib/index.js'
+     import {Icon} from '$lib/index.js'
+     import {Collapse} from '$lib/index.js'
+     import {Countdown} from '$lib/index.js'   
+     import {Divider} from '$lib/index.js'
+     import {Drawer} from '$lib/index.js'
+     import {Dropdown} from '$lib/index.js'
+     import {Link} from '$lib/index.js'
+     import {Image} from '$lib/index.js'
+     import {MenuItem, Menu, MenuTitle} from '$lib/index.js'
+     import {Modal, ModalActions} from '$lib/index.js'
+     import {Navbar} from '$lib/index.js';
+     import {Pagination, PaginationItem} from '$lib/index.js'
+     import {Popover} from '$lib/index.js'
+     import {Progress} from '$lib/index.js'
+     import {Stack} from '$lib/index.js'
+     import {Spinner} from '$lib/index.js'
+     import {Step, Steps} from '$lib/index.js'
+     import {TabContent, TabPane} from '$lib/index.js'
+     import {Table, Cell, TableRow, TableHeader} from '$lib/index.js'
+     import {Tooltip} from '$lib/index.js'
+     import {FormGroup, Label, Input, Checkbox, CheckboxGroup, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '$lib/index.js'
   
 
      let drawerOpen = false;
@@ -36,7 +37,8 @@
 
      $: {
           console.log({dark})
-          document.body.parentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
+          if(typeof document !== 'undefined')
+               document.body.parentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
      }
 
 
@@ -70,9 +72,9 @@
 <Avatar size="md" online label="MD"/>
 
 <AvatarGroup size="lg">
-     <Avatar image="/example/images/users/avatar-1.jpg" />
-     <Avatar image="/example/images/users/avatar-1.jpg" />
-     <Avatar image="/example/images/users/avatar-1.jpg" />
+     <Avatar image="/users/avatar-1.jpg" />
+     <Avatar image="/users/avatar-2.jpg" />
+     <Avatar image="/users/avatar-3.jpg" />
 </AvatarGroup>
 
 
@@ -106,7 +108,7 @@
 <Carousel class="max-w-md" center>
      {#each Array.from({length: 7}).fill(0) as item, index}
           <CarouselItem class="m-1 rounded-box shadow overflow-hidden">
-               <img class="max-w-sm" alt="carousel {index}" src="/example/images/small/img-{index+1}.jpg">
+               <img class="max-w-sm" alt="carousel {index}" src="/small/img-{index+1}.jpg">
           </CarouselItem>
      {/each}
 
@@ -133,7 +135,7 @@
           <div>Action</div>
      </CardActions>
      this is content of card
-     <img class="max-w-sm" slot="image" src="/example/images/small/img-1.jpg" alt="test">
+     <img class="max-w-sm" slot="image" src="/small/img-1.jpg" alt="test">
 </Card>
 </div>
 <Divider/>
@@ -185,7 +187,7 @@
 
 
 <h1 class="text-lg m-2">Image</h1>
-<Image rounded shadow src="/example/images/small/img-4.jpg" alt="something"/>
+<Image rounded shadow src="/small/img-4.jpg" alt="something"/>
 
 
 <h1 class="text-lg m-2">Link</h1>

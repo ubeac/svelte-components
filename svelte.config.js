@@ -5,6 +5,13 @@ export default {
     preprocess: preprocess(),
     kit: {
         adapter: adapter(),
-        target: '#svelte'
+        target: '#svelte',
+        vite: {
+            resolve: {
+                alias: {
+                    '@ubeac/svelte-components': '$lib'
+                }
+            }
+        }
     }
 }

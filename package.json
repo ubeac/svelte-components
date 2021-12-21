@@ -1,6 +1,6 @@
 {
   "name": "@ubeac/svelte-components",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Svelte components for uBeac",
   "svelte": "./src/index.js",
   "type": "module",
@@ -13,9 +13,10 @@
     "dev": "svelte-kit dev",
     "prepackage": "npm run build:tailwind",
     "package": "svelte-kit package",
+    "publish": "svelte-kit package && npm publish ./package",
     "build": "svelte-kit build",
-    "build:tailwind": "tailwindcss -i ./src/styles.css -o ./src/lib/styles.css --content ./src/**/*.svelte --content safelist.txt -c ./tailwind.config.cjs",
-    "prepublishOnly": "npm run build"
+    "preview": "svelte-kit preview",
+    "build:tailwind": "tailwindcss -i ./src/styles.css -o ./src/lib/styles.css --content ./src/**/*.svelte --content safelist.txt -c ./tailwind.config.cjs"
   },
   "repository": {
     "type": "git",
@@ -33,18 +34,10 @@
   },
   "homepage": "https://github.com/ubeac/svelte-components#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.0.6",
     "@sveltejs/adapter-static": "^1.0.0-next.22",
     "@sveltejs/kit": "^1.0.0-next.202",
     "autoprefixer": "^10.4.0",
     "daisyui": "^1.16.2",
-    "rollup": "^2.61.0",
-    "rollup-plugin-alias": "^2.2.0",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-svelte": "^7.1.0",
-    "rollup-plugin-typescript": "^1.0.1",
     "svelte": "^3.44.2",
     "svelte-preprocess": "^4.9.8",
     "svelte2tsx": "^0.4.12",

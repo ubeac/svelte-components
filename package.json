@@ -1,11 +1,9 @@
 {
   "name": "@ubeac/svelte-components",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Svelte components for uBeac",
-  "svelte": "./src/index.js",
+  "svelte": "./index.js",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
   "publishConfig": {
     "access": "public"
   },
@@ -16,7 +14,7 @@
     "publish": "svelte-kit package && npm publish ./package",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
-    "build:tailwind": "tailwindcss -i ./src/styles.css -o ./src/lib/styles.css --content ./src/**/*.svelte --content safelist.txt -c ./tailwind.config.cjs"
+    "build:tailwind": "tailwindcss -i ./src/styles.css -o ./src/lib/styles.css -c ./tailwind.config.cjs"
   },
   "repository": {
     "type": "git",

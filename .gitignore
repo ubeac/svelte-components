@@ -4,3 +4,4 @@ dist
 .svelte-kit
 package
 build
+src/lib/styles.css

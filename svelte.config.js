@@ -1,5 +1,17 @@
-const preprocess = require('svelte-preprocess')
+import preprocess from 'svelte-preprocess'
+import adapter from '@sveltejs/adapter-static'
 
-module.exports = {
-    preprocess: preprocess()
+export default {
+    preprocess: preprocess(),
+    kit: {
+        adapter: adapter(),
+        target: '#svelte',
+        vite: {
+            resolve: {
+                alias: {
+                    '@ubeac/svelte-components': '$lib'
+                }
+            }
+        }
+    }
 }

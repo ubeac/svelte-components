@@ -1,7 +1,7 @@
 <script>
 	let className = ''
 	export { className as class }
-	import { getIcon } from './utils.ts'
+	import { getIcon } from './utils'
 
 	/** name of icon
 	 * @example fas-check fab-apple far-bell, ...
@@ -35,13 +35,13 @@
 {#await getIcon(name, library) then result}
 	{#if result.ok}
 		<div
-			class="icon-component min-w-max min-h-max fill-current flex items-center justify-center text-{variant} {sizes[
+			class="icon-component min-w-max min-h-max shrink-0 fill-current flex items-center justify-center text-{variant} {sizes[
 				size
 			]} {className}">
 			{@html result.svg}
 		</div>
 	{:else}
-		<div class="{sizes[size]} {className}" />
+		<div class="shrink-0 {sizes[size]} {className}" />
 	{/if}
 {/await}
 

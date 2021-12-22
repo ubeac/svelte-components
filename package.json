@@ -1,6 +1,6 @@
 {
   "name": "@ubeac/svelte-components",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Svelte components for uBeac",
   "svelte": "./index.js",
   "type": "module",
@@ -11,7 +11,7 @@
     "dev": "svelte-kit dev",
     "prepackage": "npm run build:tailwind",
     "package": "svelte-kit package",
-    "publish": "svelte-kit package && npm publish ./package",
+    "publish": "npm run package && npm publish ./package",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
     "build:tailwind": "tailwindcss -i ./src/styles.css -o ./src/lib/styles.css -c ./tailwind.config.cjs"

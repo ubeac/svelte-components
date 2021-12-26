@@ -1,7 +1,10 @@
 <script>
-    import Checkbox from './Checkbox.svelte'
-    import FormGroup from './FormGroup.svelte'
+    import clsx from 'clsx';
 
+    import FormGroup from './FormGroup.svelte'
+    
+    let className = ""
+    export {className as class}
     /**
      * list of options to select
      * @type {Array}
@@ -68,12 +71,23 @@
             selected = [...selected, key]
         }
     }
+
+    $: classes = clsx(
+        "checkbox",
+        "mx-2",
+        "rounded",
+        "my-1",
+        variant && "checkbox-" + variant,
+        size && "checkbox-" + size,
+        className
+    )
 </script>
 
 <FormGroup {inline}>
     {#each options as option}
-        <Checkbox {variant} {size} on:change={() => change(option)}>
+        <label class="flex flex-row items-center form-control">
+            <input {name} bind:group={selected} type="checkbox" value={getKey(option)} class={classes} />
             {getText(option)}
-        </Checkbox>
+        </label>
     {/each}
 </FormGroup>

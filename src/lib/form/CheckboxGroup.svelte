@@ -14,10 +14,11 @@
      */
     export let selected = []
 
-    // converet array to object
-    let selectedObj = selected.reduce((acc, val) => {
-        return {...acc, [val]: true}
-    }, {})
+
+    /**
+     * name of input
+     */
+    export let name = '';
 
     /**
      * inline prop for FormGroup
@@ -59,20 +60,19 @@
         return option
     }
 
-    $: {
-        // convert object to array
-        selected = Object.entries(selectedObj).map(params => {
-            if(params[1]) {
-                return params[0]
-            }
-            return false
-        }).filter(a => a !== false)
+    function change(option) {
+        const key = getKey(option)
+        if(selected.includes(key)) {
+            selected = selected.filter(i => i !== key)
+        } else {
+            selected = [...selected, key]
+        }
     }
 </script>
 
 <FormGroup {inline}>
     {#each options as option}
-        <Checkbox {variant} {size} bind:checked={selectedObj[getKey(option)]}>
+        <Checkbox {variant} {size} on:change={() => change(option)}>
             {getText(option)}
         </Checkbox>
     {/each}

@@ -1,5 +1,6 @@
 <script>
   import clsx from "clsx";
+	import { getContext } from "svelte";
 
 	let className = ''
 	export { className as class }
@@ -25,7 +26,7 @@
 	export let size = undefined
 
 	/** name for input tag */
-	export let name
+	export let name = getContext('form:name') ?? ''
 
 	$: classes = clsx(
 		"checkbox",
@@ -39,6 +40,6 @@
 </script>
 
 <label class="flex flex-row items-center form-control">
-  <input {disabled} {name} type="checkbox" bind:checked class={classes} />
+  <input {...$$restProps} {disabled} {name} on:change type="checkbox" bind:checked class={classes} />
   <slot />
 </label>

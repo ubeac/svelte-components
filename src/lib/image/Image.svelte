@@ -26,8 +26,8 @@
 		'rounded-box': rounded === true,
 		'shadow-lg': shadow,
 		'border border-base-300': bordered,
-		className
-	})
+	}, className)
+
 </script>
 
-<img class={classes} {src} {alt} />
+<img {...$$restProps} class={classes} {src} {alt} />

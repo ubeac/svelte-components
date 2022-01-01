@@ -1,6 +1,6 @@
 <script>
 	import clsx from 'clsx'
-	import { getContext } from 'svelte'
+	import { getContext, setContext } from 'svelte'
 
 	let className = ''
 	export { className as class }
@@ -49,6 +49,8 @@
 	 * @type {string}
 	 * */
 	export let id = getContext('form:id') ?? name
+
+	$: setContext('select:value', value)
 
 	$: classes = clsx(
 		'select',

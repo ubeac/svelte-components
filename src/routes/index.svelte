@@ -36,7 +36,6 @@
      let dark = false
 
      $: {
-          console.log({dark})
           if(typeof document !== 'undefined')
                document.body.parentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
      }

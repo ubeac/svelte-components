@@ -59,7 +59,7 @@
 			shadow = 'none'
 		}
 	}
-	$: console.log(shadow)
+
 </script>
 
 <div

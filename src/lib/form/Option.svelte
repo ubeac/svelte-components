@@ -3,10 +3,13 @@
 	 * @type {string}
 	 */
 	export let value
+
+	/** selected state of option*/
+	export let selected = false
 </script>
 
 {#if value}
-	<option {value}>
+	<option {selected} {value}>
 		{#if $$slots.default}
 			<slot/>
 		{:else}

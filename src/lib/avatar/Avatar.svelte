@@ -1,10 +1,6 @@
 <script lang="ts">
 	import {getContext} from 'svelte'
 
-	let x: number = 4;
-
-	console.log({x})
-
 	let className = ''
 	export { className as class }
 

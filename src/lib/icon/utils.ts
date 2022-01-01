@@ -20,8 +20,6 @@ export function getIconURL(name, library) {
 
 export async function getIcon(name, library) {
 	let url = getIconURL(name, library)
-	// console.log('getIcon', url)
-	// console.log(libraries)
 
 	if (!url) {
 		return `<div>cannot find icon ${library}.${name}</div>`

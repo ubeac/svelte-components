@@ -13,7 +13,7 @@
 	/**
 	 * draw border around input
 	 */
-	export let bordered = false
+	export let bordered = true
 
 	/**
 	 * draw shadow around input
@@ -85,8 +85,7 @@
 <input
 	{id}
 	{name}
-	{type}
-	{disabled}
+	{...$$restProps}
 	{placeholder}
 	{value}
 	{readonly}

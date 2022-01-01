@@ -18,7 +18,7 @@
 	/**
 	 * draws border around select
 	 */
-	export let bordered = false
+	export let bordered = true
 
 	/**
 	 * specify the variant of select

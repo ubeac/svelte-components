@@ -15,7 +15,7 @@
 	/**
 	 * draws border around textarea
 	 */
-	export let bordered = false
+	export let bordered = true
 
 	/** content of textarea
 	 * @type {string}
@@ -49,4 +49,4 @@
 	)
 </script>
 
-<textarea {id} {name} bind:value {disabled} class={classes}/>
+<textarea {id} {...$$restProps} bind:value {disabled} class={classes}/>

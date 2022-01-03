@@ -104,7 +104,7 @@
 
 
 <h1 class="text-lg m-2">Carousel</h1>
-<Carousel class="max-w-md" center>
+<Carousel buttons indicators class="max-w-md" center>
      {#each Array.from({length: 7}).fill(0) as item, index}
           <CarouselItem class="m-1 rounded-box shadow overflow-hidden">
                <img class="max-w-sm" alt="carousel {index}" src="/small/img-{index+1}.jpg">

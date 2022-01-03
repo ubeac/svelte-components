@@ -9,18 +9,18 @@
 <Layout sidebarMode="open" navbarMode="wide">
   <span slot="navbar"> navbar </span>
   <span slot="sidebar">
-    <Menu>
+    <Menu class="h-full bg-transparent">
       <MenuItem>
         <Icon slot="prefix" name="fas-user" />
-        <span class="hidden">Item 1</span>
+        Item 1
       </MenuItem>
       <MenuItem>
         <Icon slot="prefix" name="fas-user" />
-        <span class="hidden">Item 2</span>
+        Item 2
       </MenuItem>
       <MenuItem>
         <Icon slot="prefix" name="fas-user" />
-        <span class="hidden">Item 3</span>
+        Item 3
       </MenuItem>
     </Menu>
   </span>

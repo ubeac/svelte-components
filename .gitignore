@@ -5,3 +5,4 @@ dist
 package
 build
 src/lib/styles.css
+.DS_Store

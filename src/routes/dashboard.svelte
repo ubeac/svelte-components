@@ -27,17 +27,17 @@
         
         <FormGroup>
           <Label>Sidebar mode</Label>
-          <RadioGroup name="sidebar" options={["open", "close", "mini"]} value={sidebarMode} />
+          <RadioGroup name="sidebarMode" options={["open", "close", "mini"]} bind:value={sidebarMode} />
         </FormGroup>
 
         <FormGroup>
           <Label>Navbar mode</Label>
-          <RadioGroup name="navbar" options={["wide", "tight"]} value={navbarMode} />
+          <RadioGroup name="navbarMode" options={["wide", "tight"]} bind:value={navbarMode} />
         </FormGroup>
 
         <FormGroup>
           <Label>Navbar color</Label>
-          <RadioGroup name="navbar" options={["neutral", "base", "primary"]} value={navbarColor} />
+          <RadioGroup name="navbarColor" options={["neutral", "base", "primary"]} bind:value={navbarColor} />
         </FormGroup>
 
       </Card>

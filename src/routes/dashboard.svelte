@@ -27,7 +27,7 @@
         
         <FormGroup>
           <Label>Sidebar mode</Label>
-          <RadioGroup name="sidebarMode" options={["open", "close", "mini"]} bind:value={sidebarMode} />
+          <RadioGroup name="sidebarMode" options={["close", "open", "mini"]} bind:value={sidebarMode} />
         </FormGroup>
 
         <FormGroup>
@@ -46,15 +46,15 @@
 
   <svelte:fragment slot="sidebar">
     <Menu class="h-full bg-transparent">
-      <MenuItem>
+      <MenuItem iconOnly={sidebarMode == "mini" ? false : true}>
         <Icon slot="prefix" name="fas-user" />
         Item 1
       </MenuItem>
-      <MenuItem>
+      <MenuItem iconOnly={sidebarMode == "mini" ? false : true}>
         <Icon slot="prefix" name="fas-user" />
         Item 2
       </MenuItem>
-      <MenuItem>
+      <MenuItem iconOnly={sidebarMode == "mini" ? false : true}>
         <Icon slot="prefix" name="fas-user" />
         Item 3
       </MenuItem>

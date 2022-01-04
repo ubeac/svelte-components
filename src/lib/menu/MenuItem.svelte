@@ -6,17 +6,20 @@
 	 * href for `a` element
 	 */
 	export let href = undefined
+	export let iconOnly = false
 
 	/** draw border */
 	export let bordered = false
 </script>
 
 <li class="w-full {className}" class:bordered>
-	<a class="flex gap-2 w-full" {href}>
+	<a class="flex w-full gap-2" {href}>
 		<slot name="prefix" />
-		<div class="w-full">
-			<slot />
-		</div>
+    {#if iconOnly !== false}
+      <div class="w-full">
+        <slot />
+      </div>
+    {/if}
 		<slot name="suffix" />
 	</a>
 </li>

@@ -8,12 +8,11 @@
   import { FormGroup ,Label ,RadioGroup } from "$lib/index.js";
   import { MenuItem, Menu, MenuTitle } from "$lib/index.js";
 
-  let sidebarMode = "open"
-  let navbarMode = "wide"
-  let navbarColor = "neutral"
+  import { layoutSettings } from '$lib/store.js'
+
 </script>
 
-<Layout {sidebarMode} {navbarMode} {navbarColor}>
+<Layout>
 
   <svelte:fragment slot="navbar">
     <Dropdown position="bottom" end>
@@ -27,17 +26,17 @@
         
         <FormGroup>
           <Label>Sidebar mode</Label>
-          <RadioGroup name="sidebarMode" options={["close", "open", "mini"]} bind:value={sidebarMode} />
+          <RadioGroup name="sidebarMode" options={["close", "open", "mini"]} bind:value={$layoutSettings.sidebarMode} />
         </FormGroup>
 
         <FormGroup>
           <Label>Navbar mode</Label>
-          <RadioGroup name="navbarMode" options={["wide", "tight"]} bind:value={navbarMode} />
+          <RadioGroup name="navbarMode" options={["wide", "tight"]} bind:value={$layoutSettings.navbarMode} />
         </FormGroup>
 
         <FormGroup>
           <Label>Navbar color</Label>
-          <RadioGroup name="navbarColor" options={["neutral", "base", "primary"]} bind:value={navbarColor} />
+          <RadioGroup name="navbarColor" options={["neutral", "base", "primary"]} bind:value={$layoutSettings.navbarColor} />
         </FormGroup>
 
       </Card>
@@ -45,16 +44,16 @@
   </svelte:fragment>
 
   <svelte:fragment slot="sidebar">
-    <Menu class="h-full bg-transparent">
-      <MenuItem iconOnly={sidebarMode == "mini" ? false : true}>
+    <Menu class="bg-transparent grow">
+      <MenuItem iconOnly={$layoutSettings.sidebarMode == "mini" ? false : true}>
         <Icon slot="prefix" name="fas-user" />
         Item 1
       </MenuItem>
-      <MenuItem iconOnly={sidebarMode == "mini" ? false : true}>
+      <MenuItem iconOnly={$layoutSettings.sidebarMode == "mini" ? false : true}>
         <Icon slot="prefix" name="fas-user" />
         Item 2
       </MenuItem>
-      <MenuItem iconOnly={sidebarMode == "mini" ? false : true}>
+      <MenuItem iconOnly={$layoutSettings.sidebarMode == "mini" ? false : true}>
         <Icon slot="prefix" name="fas-user" />
         Item 3
       </MenuItem>

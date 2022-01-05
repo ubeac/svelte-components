@@ -1,5 +1,8 @@
 <script>
   import "../styles.css";
+  
+  import { layoutSettings } from '$lib/store.js'
+
   import { Layout } from "$lib/layouts";
   import { Button } from "$lib/index.js";
   import { Icon } from "$lib/index.js";
@@ -7,8 +10,8 @@
   import { Card, CardTitle } from "$lib/index.js";
   import { FormGroup ,Label ,RadioGroup } from "$lib/index.js";
   import { MenuItem, Menu, MenuTitle } from "$lib/index.js";
-
-  import { layoutSettings } from '$lib/store.js'
+  import {Table, Cell, TableRow, TableHeader} from '$lib/index.js'
+  import {Pagination, PaginationItem} from '$lib/index.js'
 
 </script>
 
@@ -17,7 +20,7 @@
   <svelte:fragment slot="navbar">
     <Dropdown position="bottom" end>
       <svelte:fragment slot="title">
-        <Button variant="neutral" square>
+        <Button variant="ghost" square>
           <Icon name="fas-cog" />
         </Button>
       </svelte:fragment>
@@ -60,6 +63,115 @@
     </Menu>
   </svelte:fragment>
 
-  <Button class="m-2" variant="secondary">Secondary</Button>
-  
+  <div class="flex flex-col gap-4">
+
+    <div class="flex items-center justify-end gap-4 p-6 bg-base-200 rounded-box">
+      <Button class="gap-2" size="sm">
+        <Icon name="fas-plus" size="sm" />
+        Add new
+      </Button>
+    </div>
+    
+    <Table>
+      <TableHeader>
+        <Cell>ID</Cell>
+        <Cell>Username</Cell>
+        <Cell>First Name</Cell>
+        <Cell>Last Name</Cell>
+        <Cell>Email</Cell>
+        <Cell>Last login</Cell>
+        <Cell></Cell>
+      </TableHeader>
+      <TableRow>
+        <Cell>1</Cell>
+        <Cell>michael23</Cell>
+        <Cell>Michael</Cell>
+        <Cell>Jordan</Cell>
+        <Cell>Mossie_Marvin@yahoo.com</Cell>
+        <Cell>2018-09-14</Cell>
+        <Cell>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-pen" size="sm" />
+          </Button>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-trash" size="sm" />
+          </Button>
+        </Cell>
+      </TableRow>
+      <TableRow>
+        <Cell>1</Cell>
+        <Cell>michael23</Cell>
+        <Cell>Michael</Cell>
+        <Cell>Jordan</Cell>
+        <Cell>Mossie_Marvin@yahoo.com</Cell>
+        <Cell>2018-09-14</Cell>
+        <Cell>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-pen" size="sm" />
+          </Button>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-trash" size="sm" />
+          </Button>
+        </Cell>
+      </TableRow>
+      <TableRow>
+        <Cell>1</Cell>
+        <Cell>michael23</Cell>
+        <Cell>Michael</Cell>
+        <Cell>Jordan</Cell>
+        <Cell>Mossie_Marvin@yahoo.com</Cell>
+        <Cell>2018-09-14</Cell>
+        <Cell>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-pen" size="sm" />
+          </Button>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-trash" size="sm" />
+          </Button>
+        </Cell>
+      </TableRow>
+      <TableRow>
+        <Cell>1</Cell>
+        <Cell>michael23</Cell>
+        <Cell>Michael</Cell>
+        <Cell>Jordan</Cell>
+        <Cell>Mossie_Marvin@yahoo.com</Cell>
+        <Cell>2018-09-14</Cell>
+        <Cell>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-pen" size="sm" />
+          </Button>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-trash" size="sm" />
+          </Button>
+        </Cell>
+      </TableRow>
+      <TableRow>
+        <Cell>1</Cell>
+        <Cell>michael23</Cell>
+        <Cell>Michael</Cell>
+        <Cell>Jordan</Cell>
+        <Cell>Mossie_Marvin@yahoo.com</Cell>
+        <Cell>2018-09-14</Cell>
+        <Cell>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-pen" size="sm" />
+          </Button>
+          <Button square variant="ghost" size="sm">
+            <Icon name="fas-trash" size="sm" />
+          </Button>
+        </Cell>
+      </TableRow>
+    </Table>
+
+    <div class="flex items-center justify-center gap-4 p-6 bg-base-200 rounded-box">
+      <span class="text-xs opacity-50">Showing items 1 to 10 of 100</span>
+      <Pagination>
+        <PaginationItem variant="neutral" size="sm">Prev</PaginationItem>
+        <PaginationItem variant="neutral" size="sm">Next</PaginationItem>
+      </Pagination>
+    </div>
+    
+  </div>
+
 </Layout>

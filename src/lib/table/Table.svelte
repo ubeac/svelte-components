@@ -9,11 +9,13 @@
 	export let compact = false
 </script>
 
-<table class="table w-full {className}" class:table-zebra={zebra} class:table-compact={compact}>
-	<thead>
-		<slot name="header" />
-	</thead>
-	<tbody>
-		<slot />
-	</tbody>
-</table>
+<div class="overflow-x-auto">
+  <table class="table w-full {className}" class:table-zebra={zebra} class:table-compact={compact}>
+    <thead>
+      <slot name="header" />
+    </thead>
+    <tbody>
+      <slot />
+    </tbody>
+  </table>
+</div>

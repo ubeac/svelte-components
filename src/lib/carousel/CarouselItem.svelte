@@ -1,17 +1,17 @@
 <script>
-import { getContext, onMount } from "svelte";
+  import { getContext, onDestroy, onMount } from "svelte";
 
-	const carousel = getContext('carousel')
+  const carousel = getContext("carousel");
 
-	let className = ''
-	export { className as class }
-	let id;
+  let className = "";
+	
+  export { className as class };
 
-	onMount(() => {
-		id = carousel.addItem()
-	})
+  onMount(() => carousel.add());
+
+  onDestroy(() => carousel.remove());
 </script>
 
-<div {id} class="flex flex-none {className}">
-	<slot />
+<div class="carousel-item {className}">
+  <slot />
 </div>

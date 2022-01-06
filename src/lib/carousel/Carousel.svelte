@@ -1,11 +1,6 @@
 <script>
-import { setContext } from "svelte";
-import { element, tick } from "svelte/internal";
-
+	import { onMount } from 'svelte'
 	let carouselEl = null;
-	let items = []
-	let active = 0
-
 	let className = ''
 	export { className as class }
 
@@ -35,23 +30,33 @@ import { element, tick } from "svelte/internal";
 	 */
 	export let end = false
 
-	setContext('carousel', {
-		addItem: () => {
-			const id = 'carousel-item' + items.length
-			items = [...items, id]
-			return id
-		}
+
+	let width = 0
+
+
+	onMount(() => {
+		width = carouselEl.children.item(0).offsetWidth
 	})
 
-	async function focusItem(id) {
-		const element = document.getElementById('carousel-item' + id)
-		if(!element) {
-			return;
+	async function focusPrev() {		
+		if(hasPrev) {
+			carouselEl.scrollBy(-width, 0)
+			carouselEl = carouselEl
 		}
-		active = id
-		
-		carouselEl.scrollLeft = element.offsetLeft
 	}
+
+	async function focusNext() {
+		if(hasNext) {
+			carouselEl.scrollBy(width, 0)
+			carouselEl = carouselEl
+		}
+
+	}
+
+	$: item_count = carouselEl?.childElementCount
+
+	$: hasNext = carouselEl?.scrollLeft < (item_count * width - (carouselEl?.offsetWidth ?? 0))
+	$: hasPrev = carouselEl?.scrollLeft > 0
 </script>
 
 <div class="relative w-min h-min">
@@ -62,30 +67,32 @@ import { element, tick } from "svelte/internal";
 		class:carousel-center={center}
 		class:carousel-end={end}
 		class:carousel-vertical={vertical}>
-		<slot />
+
+		<slot/>
+
 	</div>
 	{#if buttons}
-		{#if active !== 0}
-			<div on:click={() => focusItem(active-1)} class="absolute -translate-y-1/2 no-animation btn top-1/2 btn-xs btn-circle left-2">
+		{#if hasPrev}
+			<div on:click={focusPrev} class="absolute -translate-y-1/2 no-animation btn top-1/2 btn-xs btn-circle left-2">
 				<slot name="prev-btn">
 					&lt;
 				</slot>
 			</div>
 		{/if}
-		{#if active !== items.length -1}
-			<div on:click={() => focusItem(active+1)} class="absolute -translate-y-1/2 no-animation btn top-1/2 btn-xs btn-circle right-2">	
+		{#if hasNext}
+			<div on:click={focusNext} class="absolute -translate-y-1/2 no-animation btn top-1/2 btn-xs btn-circle right-2">	
 				<slot name="next-btn">
 					&gt;
 				</slot>
 			</div>
 		{/if}
 	{/if}
-
+<!-- 
 	{#if indicators}
 		<div class="absolute w-full bottom-2 flex flex-row items-center justify-center">
 			{#each items as item, i}
 				<div on:click={() => focusItem(i)} class="btn btn-xs btn-circle">{i+1}</div>
 			{/each}
 		</div>
-	{/if}
+	{/if} -->
 </div>

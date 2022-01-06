@@ -1,5 +1,5 @@
 <script>
-  import { onMount, setContext } from "svelte";
+  import { setContext } from "svelte";
 
   let className = "";
 
@@ -92,13 +92,13 @@
       </div>
     {/if}
   {/if}
-  <!-- 
+  
 	{#if indicators}
 		<div class="absolute w-full bottom-2 flex flex-row items-center justify-center">
-			{#each items as item, i}
-				<div on:click={() => focusItem(i)} class="btn btn-xs btn-circle">{i+1}</div>
+			{#each Array.from({length: total}).fill(0) as  _, i}
+				<div on:click={() => index = i} class="btn btn-xs btn-circle">{i+1}</div>
 			{/each}
 		</div>
 	{/if} 
-	-->
+
 </div>

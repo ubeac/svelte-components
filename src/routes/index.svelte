@@ -44,8 +44,9 @@
      setInterval(() => {
           count = count + 1
      }, 1000);
-</script>
 
+     var iamges = [1, 2, 3, 4, 5, 6, 7]
+</script>
 
 <Navbar fixed shadow>
      <svelte:fragment slot="start">
@@ -105,14 +106,14 @@
 
 <h1 class="text-lg m-2">Carousel</h1>
 <Carousel buttons indicators class="max-w-md" center>
-     {#each Array.from({length: 7}).fill(0) as item, index}
-          <CarouselItem class="m-1 rounded-box shadow overflow-hidden">
-               <img class="max-w-sm" alt="carousel {index}" src="/small/img-{index+1}.jpg">
+     {#each iamges as image}
+          <CarouselItem>
+               <img class="max-w-sm" alt="carousel" src="/small/img-{image}.jpg">
           </CarouselItem>
      {/each}
-
 </Carousel>
-
+<Button on:click={()=>{iamges = [3,4,5]}}>remove</Button>          
+<Button on:click={()=>{iamges = [4,5,6,7]}}>add</Button>          
 
 
 <h1 class="text-lg m-2">Card</h1>

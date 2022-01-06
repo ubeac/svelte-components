@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte'
+	import { onMount, setContext } from 'svelte'
 	let carouselEl = null;
 	let className = ''
 	export { className as class }
@@ -31,12 +31,19 @@
 	export let end = false
 
 
+	let item_count = 0
 	let width = 0
 
-
-	onMount(() => {
-		width = carouselEl.children.item(0).offsetWidth
+	setContext('carousel', {
+		addItem: () => {
+			item_count =item_count + 1
+			if(width === 0) {
+				width = carouselEl.children.item(0).offsetWidth;
+			}
+		},
+		removeItem: () => item_count = item_count - 1
 	})
+
 
 	async function focusPrev() {		
 		if(hasPrev) {
@@ -49,21 +56,23 @@
 		if(hasNext) {
 			carouselEl.scrollBy(width, 0)
 			carouselEl = carouselEl
+			console.log(carouselEl.scrollLeft, width, item_count, carouselEl.offsetWidth)
 		}
 
 	}
 
-	$: item_count = carouselEl?.childElementCount
-
-	$: hasNext = carouselEl?.scrollLeft < (item_count * width - (carouselEl?.offsetWidth ?? 0))
-	$: hasPrev = carouselEl?.scrollLeft > 0
+	$: console.log(item_count, width)
+	$: hasNext = carouselEl?.scrollLeft <= (item_count * width) - carouselEl?.offsetWidth - 10
+	$: console.log({hasNext}, carouselEl?.scrollLeft, item_count, width, carouselEl?.offsetWidth)
+	$: hasPrev = carouselEl?.scrollLeft > 10
+	$: console.log({hasPrev}, carouselEl?.scrollLeft, item_count, width)
 </script>
 
-<div class="relative w-min h-min">
+<div class="relative w-full h-full {className}">
 
 	<div
 		bind:this={carouselEl}
-		class="carousel {className}"
+		class="carousel w-full h-full"
 		class:carousel-center={center}
 		class:carousel-end={end}
 		class:carousel-vertical={vertical}>

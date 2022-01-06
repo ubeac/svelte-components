@@ -1,22 +1,17 @@
 <script>
-import { getContext, onDestroy, onMount } from "svelte";
+  import { getContext, onDestroy, onMount } from "svelte";
 
-	const carousel = getContext('carousel')
+  const carousel = getContext("carousel");
 
-	let className = ''
-	export { className as class }
-	let id;
+  let className = "";
+	
+  export { className as class };
 
-	onMount(() =>{
-		carousel.addItem()
-	})
+  onMount(() => carousel.add());
 
-	onDestroy(() => {
-		carousel.removeItem()
-	})
-
+  onDestroy(() => carousel.remove());
 </script>
 
-<div {id} class="carousel-item {className}">
-	<slot />
+<div class="carousel-item {className}">
+  <slot />
 </div>

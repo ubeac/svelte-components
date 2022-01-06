@@ -44,7 +44,26 @@
      setInterval(() => {
           count = count + 1
      }, 1000);
+
+     var iamges = [1, 2, 3, 4, 5, 6, 7]
 </script>
+
+<h1 class="text-lg m-2">Carousel</h1>
+<Carousel buttons indicators class="max-w-md" center>
+     {#each iamges as image}
+          <CarouselItem>{image}
+               <img class="max-w-sm" alt="carousel" src="/small/img-{image}.jpg">
+          </CarouselItem>
+     {/each}
+</Carousel>
+<Button on:click={()=>{iamges = [3,4,5]}}>remove</Button>          
+<Button on:click={()=>{iamges = [4,5,6,7]}}>add</Button>          
+
+
+
+
+
+
 
 
 <Navbar fixed shadow>
@@ -106,7 +125,9 @@
 <h1 class="text-lg m-2">Carousel</h1>
 <Carousel buttons indicators class="max-w-md" center>
      {#each [1, 2, 3, 4, 5, 6, 7] as image}
-          <img class="max-w-sm" alt="carousel" src="/small/img-{image}.jpg">
+          <CarouselItem>
+               <img class="max-w-sm" alt="carousel" src="/small/img-{image}.jpg">
+          </CarouselItem>
      {/each}
 </Carousel>
 

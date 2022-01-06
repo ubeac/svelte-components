@@ -62,6 +62,6 @@
 </script>
 
 <select bind:value {disabled} tabindex="0" {id} {name} class={classes}>
-	<option disabled selected>{placeholder}</option>
+	<option disabled selected value={null}>{placeholder}</option>
 	<slot />
 </select>

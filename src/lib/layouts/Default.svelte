@@ -47,7 +47,7 @@
         </svelte:fragment>
       </Navbar>
     {/if}
-    <div class="p-4"><slot/></div>
+    <slot/>
   </div>
   {#if $$slots.sidebar}
     <div class="drawer-side">

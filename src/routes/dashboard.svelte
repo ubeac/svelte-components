@@ -12,6 +12,8 @@
   import { MenuItem, Menu, MenuTitle } from "$lib/index.js";
   import {Table, Cell, TableRow, TableHeader} from '$lib/index.js'
   import {Pagination, PaginationItem} from '$lib/index.js'
+  import {Footer, FooterCol} from '$lib/index.js'
+  import {Link} from '$lib/index.js'
 
 </script>
 
@@ -173,5 +175,26 @@
     </div>
     
   </div>
+
+  <Footer>
+    <FooterCol title="About">
+      <Link hover href="#">Link title</Link>
+      <Link hover href="#">Link title</Link>
+      <Link hover href="#">Link title</Link>
+      <Link hover href="#">Link title</Link>
+    </FooterCol>
+    <FooterCol title="Social">
+      <Link hover href="#">Link title</Link>
+      <Link hover href="#">Link title</Link>
+      <Link hover href="#">Link title</Link>
+      <Link hover href="#">Link title</Link>
+    </FooterCol>
+    <FooterCol title="Links">
+      <Link hover href="#">Link title</Link>
+      <Link hover href="#">Link title</Link>
+      <Link hover href="#">Link title</Link>
+      <Link hover href="#">Link title</Link>
+    </FooterCol>
+  </Footer>
 
 </Layout>

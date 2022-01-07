@@ -67,7 +67,7 @@
 
   <div class="flex flex-col gap-4">
 
-    <div class="flex items-center justify-end gap-4 p-6 bg-base-200 rounded-box">
+    <div class="flex items-center justify-end gap-4 p-6 m-4 bg-base-200 rounded-box">
       <Button class="gap-2" size="sm">
         <Icon name="fas-plus" size="sm" />
         Add new
@@ -166,7 +166,7 @@
       </TableRow>
     </Table>
 
-    <div class="flex items-center justify-center gap-4 p-6 bg-base-200 rounded-box">
+    <div class="flex items-center justify-center gap-4 p-6 m-4 bg-base-200 rounded-box">
       <span class="text-xs opacity-50">Showing items 1 to 10 of 100</span>
       <Pagination>
         <PaginationItem variant="neutral" size="sm">Prev</PaginationItem>

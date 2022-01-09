@@ -41,9 +41,9 @@
 </script>
 
 <ul
-	class="menu bg-base-100 text-base-content {shadows[shadow]} {className}"
+	class="menu {shadows[shadow]} {className}"
 	class:rounded-box={rounded}
 	class:horizontal
-	class:menu-compact={compact}>
+	class:compact={compact}>
 	<slot />
 </ul>

@@ -13,7 +13,7 @@
 </script>
 
 <li class="w-full {className}" class:bordered>
-	<a class="flex w-full gap-2" {href}>
+	<a class="flex w-full gap-4" {href}>
 		<slot name="prefix" />
     {#if iconOnly !== false}
       <div class="w-full">

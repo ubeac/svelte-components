@@ -1,1 +1,1 @@
-export {default as Layout} from './Default.svelte'
+export {default as Layout} from './Dashboard.svelte'

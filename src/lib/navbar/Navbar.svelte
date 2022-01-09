@@ -64,13 +64,13 @@
 </script>
 
 <nav bind:clientHeight={clientHeight} class={classes}>
-	<div class="flex flex-row items-center">
+	<div class="flex flex-row items-center gap-2">
 		<slot name="start" />
 	</div>
-	<div class="flex flex-row items-center">
+	<div class="flex flex-row items-center gap-2">
 		<slot name="center" />
 	</div>
-	<div class="flex flex-row items-center">
+	<div class="flex flex-row items-center gap-2">
 		<slot name="end" />
 	</div>
 </nav>

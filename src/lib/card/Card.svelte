@@ -63,8 +63,8 @@
 </script>
 
 <div
-	class="card {shadows[shadow]} {bordered
-		? 'border border-gray-500 border-opacity-20'
+	class="card bg-base-100 {shadows[shadow]} {bordered
+		? 'border border-base-content border-opacity-10'
 		: ''} {className}"
 	class:image-full={full}
 	class:card-side={side}

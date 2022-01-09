@@ -45,6 +45,9 @@
           count = count + 1
      }, 1000);
 
+     let inputNumber = '';
+     $: console.log(inputNumber)
+
      var iamges = [1, 2, 3, 4, 5, 6, 7]
 </script>
 
@@ -103,6 +106,8 @@
      <Button>Hard</Button>
 </ButtonGroup>
 
+<h1 class="text-lg m-2">Input Number</h1>
+<Input type="number" bind:value={inputNumber}/>
 
 <h1 class="text-lg m-2">Carousel</h1>
 <Carousel buttons indicators class="max-w-md" center>

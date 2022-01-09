@@ -80,14 +80,23 @@
 		},
 		className
 	)
+
+	function onInput(e) {
+		if(type === 'number') {
+			value = Number(e.target.value)
+		} else {
+			value = e.target.value
+		}
+	}
 </script>
 
 <input
 	{id}
 	{name}
+	{type}
 	{...$$restProps}
 	{placeholder}
 	{value}
 	{readonly}
-	on:input={(e) => (value = /* TODO: use bind value */ e.target.value)}
+	on:input={onInput}
 	class={classes} />

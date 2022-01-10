@@ -1,27 +1,31 @@
 <script>
   import "../styles.css";
-  
-  import { layoutSettings } from '$lib/store.js'
-
   import { Layout } from "$lib/layouts";
-  import { Button } from "$lib/index.js";
-  import { Icon } from "$lib/index.js";
-  import { Dropdown } from "$lib/index.js";
-  import { Card, CardTitle } from "$lib/index.js";
-  import { FormGroup ,Label ,RadioGroup } from "$lib/index.js";
-  import { MenuItem, Menu, MenuTitle } from "$lib/index.js";
-  import {Table, Cell, TableRow, TableHeader} from '$lib/index.js'
-  import {Pagination, PaginationItem} from '$lib/index.js'
-  import {Footer, FooterCol} from '$lib/index.js'
-  import {Link} from '$lib/index.js'
-  import {Input} from '$lib/index.js'
-  import {Grid} from '$lib/index.js'
+  import {
+    Button,
+    Icon,
+    Dropdown,
+    Card, CardTitle,
+    FormGroup ,Label ,RadioGroup,
+    MenuItem, Menu, MenuTitle,
+    Table, Cell, TableRow, TableHeader,
+    Pagination, PaginationItem,
+    Footer, FooterCol,
+    Link,
+    Input,
+    Grid
+  } from '$lib/index.js'
+  
+  let sidebarMode = 'open'  // open | close | mini
+  let navbarMode = 'wide'  // wide | tight
+  let navbarColor = 'neutral'  // base | neutral | primary
+  let sidebarColor = 'base'  // base | neutral | primary
 
 </script>
 
-<Layout title="Dashboard">
+<Layout title="Dashboard" bind:sidebarMode bind:navbarMode bind:navbarColor bind:sidebarColor>
 
-  <svelte:fragment slot="navbar">
+  <svelte:fragment slot="navbar-end">
     <Input variant="ghost" size="sm" type="text" placeholder="Search"/>
     <Dropdown position="bottom" end>
       <svelte:fragment slot="title">
@@ -34,22 +38,22 @@
         
         <FormGroup>
           <Label>Sidebar mode</Label>
-          <RadioGroup size="xs" name="sidebarMode" options={["close", "open", "mini"]} bind:value={$layoutSettings.sidebarMode} />
+          <RadioGroup size="xs" name="sidebarMode" options={["close", "open", "mini"]} bind:value={sidebarMode} />
         </FormGroup>
 
         <FormGroup>
           <Label>Navbar mode</Label>
-          <RadioGroup size="xs" name="navbarMode" options={["wide", "tight"]} bind:value={$layoutSettings.navbarMode} />
+          <RadioGroup size="xs" name="navbarMode" options={["wide", "tight"]} bind:value={navbarMode} />
         </FormGroup>
 
         <FormGroup>
           <Label>Navbar color</Label>
-          <RadioGroup size="xs" name="navbarColor" options={["neutral", "base", "primary"]} bind:value={$layoutSettings.navbarColor} />
+          <RadioGroup size="xs" name="navbarColor" options={["neutral", "base", "primary"]} bind:value={navbarColor} />
         </FormGroup>
 
         <FormGroup>
           <Label>Sidebar color</Label>
-          <RadioGroup size="xs" name="sidebarColor" options={["neutral", "base", "primary"]} bind:value={$layoutSettings.sidebarColor} />
+          <RadioGroup size="xs" name="sidebarColor" options={["neutral", "base", "primary"]} bind:value={sidebarColor} />
         </FormGroup>
 
       </Card>
@@ -58,27 +62,27 @@
 
   <svelte:fragment slot="sidebar">
     <Menu class="py-2 bg-transparent grow" compact=true>
-      <MenuItem iconOnly={$layoutSettings.sidebarMode == "mini" ? false : true}>
+      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
         <Icon size="sm" slot="prefix" name="fas-home" />
         Item 1
       </MenuItem>
-      <MenuItem iconOnly={$layoutSettings.sidebarMode == "mini" ? false : true}>
+      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
         <Icon size="sm" slot="prefix" name="fas-th-large" />
         Item 2
       </MenuItem>
-      <MenuItem iconOnly={$layoutSettings.sidebarMode == "mini" ? false : true}>
+      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
         <Icon size="sm" slot="prefix" name="fas-file" />
         Item 3
       </MenuItem>
-      <MenuItem iconOnly={$layoutSettings.sidebarMode == "mini" ? false : true}>
+      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
         <Icon size="sm" slot="prefix" name="fas-magic" />
         Item 4
       </MenuItem>
-      <MenuItem iconOnly={$layoutSettings.sidebarMode == "mini" ? false : true}>
+      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
         <Icon size="sm" slot="prefix" name="fas-layer-group" />
         Item 5
       </MenuItem>
-      <MenuItem iconOnly={$layoutSettings.sidebarMode == "mini" ? false : true}>
+      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
         <Icon size="sm" slot="prefix" name="fas-table" />
         Item 6
       </MenuItem>

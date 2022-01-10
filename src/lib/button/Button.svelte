@@ -55,7 +55,6 @@
 <button
 	{...$$restProps}
 	class="btn btn-{variant} btn-{size} {className}"
-	class:btn-loading={loading}
 	class:btn-circle={circle}
 	class:btn-square={square}
 	class:btn-outline={outline}
@@ -65,6 +64,7 @@
 	class:btn-wide={wide}
 	class:btn-block={block}
 	class:glass
+	class:loading
 	class:p-0={compact}
 	on:click>
 	<slot name="prefix" />

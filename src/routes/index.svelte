@@ -118,7 +118,8 @@
      {/each}
 </Carousel>
 <Button on:click={()=>{iamges = [3,4,5]}}>remove</Button>          
-<Button on:click={()=>{iamges = [4,5,6,7]}}>add</Button>          
+<Button on:click={()=>{iamges = [4,5,6,7]}}>add</Button>           
+<Button loading on:click={()=>{iamges = [4,5,6,7]}}>loading</Button>          
 
 
 <h1 class="text-lg m-2">Card</h1>

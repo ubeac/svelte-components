@@ -22,25 +22,25 @@
 
 {#if open}
 	<div transition:fade={{ duration: 100 }} class="alert alert-{variant} {className}">
-		<div class="w-full flex">
-			<div class="mr-4 flex items-center justify-center text-center">
+		<div class="flex w-full">
+			<div class="flex items-center justify-center mr-4 text-center">
 				<slot name="icon">
                     <!-- TODO: add default icon -->
 					<!-- <Icon size="sm" name={defaults.states[state].icon} /> -->
 				</slot>
 			</div>
-			<div class="flex-1 flex flex-col">
+			<div class="flex flex-col flex-1">
 				<div class="font-semibold">
 					<slot class="font-semibold" name="title" />
 				</div>
 				<slot />
 			</div>
 			<slot name="action">
-				<div
-					class="w-5 h-5 flex items-center justify-center text-center rounded-full text-white bg-black bg-opacity-20 hover:bg-opacity-30"
-					on:click={() => (open = !open)}>
-					&times;
-				</div>
+        <button class="btn btn-xs btn-ghost btn-circle" on:click={() => (open = !open)}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current">   
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>                       
+          </svg>
+        </button>
 			</slot>
 		</div>
 	</div>

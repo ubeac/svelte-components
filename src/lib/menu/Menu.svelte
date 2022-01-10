@@ -16,12 +16,34 @@
 	 * make menu horizontal
 	 */
 	export let horizontal = false
+
+  /**
+   * draw shadow for menu
+   * @type {boolean | 'none' | import('./types').Size}
+   */
+  export let shadow = false
+  const shadows = {
+		none: '',
+		xs: 'shadow-sm',
+		sm: 'shadow-md',
+		md: 'shadow-lg',
+		lg: 'shadow-xl',
+	}
+
+	$: {
+		if (shadow === true) {
+			shadow = 'sm'
+		} else if (shadow === false) {
+			shadow = 'none'
+		}
+	}
+
 </script>
 
 <ul
-	class="menu bg-base-100 text-base-content shadow {className}"
+	class="menu bg-base-100 text-base-content overflow-y-auto {shadows[shadow]} {className}"
 	class:rounded-box={rounded}
 	class:horizontal
-	class:menu-compact={compact}>
+	class:compact={compact}>
 	<slot />
 </ul>

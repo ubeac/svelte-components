@@ -60,7 +60,7 @@
   $: hasPrev = total > 1 && index > 0;
   $: hasNext = total > 1 && index < total - 1;
 
-  $: left = ref?.children.item(index).offsetLeft;
+  $: left = ref?.children.item(index)?.offsetLeft;
   $: ref?.scrollTo(left, 0);
 </script>
 

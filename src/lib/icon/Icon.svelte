@@ -35,7 +35,7 @@
 {#await getIcon(name, library) then result}
 	{#if result.ok}
 		<div
-			class="icon-component min-w-max min-h-max shrink-0 fill-current flex items-center justify-center text-{variant} {sizes[
+			class="icon-component min-w-max min-h-max shrink-0 fill-current inline-flex items-center justify-center text-{variant} {sizes[
 				size
 			]} {className}">
 			{@html result.svg}

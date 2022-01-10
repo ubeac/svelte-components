@@ -53,7 +53,7 @@
 
 	$: classes = clsx(
 		'navbar',
-		'flex flex-row items-center justify-between',
+		'flex flex-row items-center justify-between border-b border-black border-opacity-5',
 		'z-30',
 		variant && `bg-${variant} text-${variant}-content`,
 		fixed && 'fixed w-full',
@@ -64,13 +64,13 @@
 </script>
 
 <nav bind:clientHeight={clientHeight} class={classes}>
-	<div class="flex flex-row items-center">
+	<div class="flex flex-row items-center gap-2">
 		<slot name="start" />
 	</div>
-	<div class="flex flex-row items-center">
+	<div class="flex flex-row items-center gap-2">
 		<slot name="center" />
 	</div>
-	<div class="flex flex-row items-center">
+	<div class="flex flex-row items-center gap-2">
 		<slot name="end" />
 	</div>
 </nav>

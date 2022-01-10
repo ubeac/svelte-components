@@ -68,8 +68,6 @@
 	class:p-0={compact}
 	on:click>
 	<slot name="prefix" />
-	<div class="m-1">
 		<slot />
-	</div>
 	<slot name="suffix" />
 </button>

@@ -53,7 +53,7 @@
 
 	$: classes = clsx(
 		'navbar',
-		'flex flex-row items-center justify-between',
+		'flex flex-row items-center justify-between border-b border-black border-opacity-5',
 		'z-30',
 		variant && `bg-${variant} text-${variant}-content`,
 		fixed && 'fixed w-full',

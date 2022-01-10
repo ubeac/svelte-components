@@ -38,13 +38,13 @@
 	{#if click}
 		<input type="checkbox" />
 	{/if}
-	<div class="border collapse-title">
+	<div class="border border-base-300 collapse-title">
 		<slot name="title" />
 	</div>
 
 	<!-- tailwind: !p-0 => !important -->
 	<div class="collapse-content !p-0">
-		<div class="bg-base-100 border-l border-r border-b border-base-300 p-4 w-full h-full">
+		<div class="w-full h-full p-4 border-b border-l border-r bg-base-100 border-base-300">
 			<slot />
 		</div>
 	</div>

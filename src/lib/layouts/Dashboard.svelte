@@ -74,9 +74,6 @@
     >
     <input id={id} type="checkbox" class="drawer-toggle"> 
     <div class="drawer-content">
-      <div class="p-2 px-5 text-xs font-bold border-b border-base-content border-opacity-10">
-        {title}
-      </div>
       {#if navbarMode === "tight"}
         <Navbar variant={navbarColor}>
           <svelte:fragment slot="start">
@@ -109,6 +106,13 @@
           </svelte:fragment>
         </Navbar>
       {/if}
+
+      {#if $$slots.breadcrumbs}
+        <div class="text-xs border-b border-base-content border-opacity-10">
+          <slot name="breadcrumbs" />
+        </div>
+      {/if}
+      
       <slot/>
     </div>
     {#if $$slots.sidebar}

@@ -41,7 +41,7 @@
 </script>
 
 <ul
-	class="menu bg-base-100 text-base-content overflow-y-auto {shadows[shadow]} {className}"
+	class="menu overflow-y-auto {shadows[shadow]} {className}"
 	class:rounded-box={rounded}
 	class:horizontal
 	class:compact={compact}>

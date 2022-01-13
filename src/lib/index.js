@@ -1,3 +1,5 @@
+export {default as Dashboard} from './layouts/Dashboard.svelte'
+
 export {default as Alert} from './alert/Alert.svelte'
 export {default as Avatar} from './avatar/Avatar.svelte'
 export {default as AvatarGroup} from './avatar/AvatarGroup.svelte'

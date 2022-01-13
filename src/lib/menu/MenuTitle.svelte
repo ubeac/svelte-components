@@ -4,7 +4,7 @@
 </script>
 
 <li class="menu-title {className}">
-	<span>
+	<span class="text-current">
 		<slot />
 	</span>
 </li>

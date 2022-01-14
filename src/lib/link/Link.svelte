@@ -24,6 +24,6 @@
 	$: classes = clsx('link', variant && 'link-'+variant, hover && 'link-hover', className)
 </script>
 
-<a on:click {href} class={classes}>
+<a {...$$restProps} on:click {href} class={classes}>
 	<slot />
 </a>

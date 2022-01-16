@@ -1665,10 +1665,7 @@ html {
   line-height: 2;
   --tab-padding: 1rem;
   --tw-text-opacity: 0.5;
-  --tab-color: hsla(var(--bc) / var(--tw-text-opacity, 1));
-  --tab-bg: hsla(var(--b1) / var(--tw-bg-opacity, 1));
-  --tab-border-color: hsla(var(--b3) / var(--tw-bg-opacity, 1));
-  color: var(--tab-color);
+  color: hsla(var(--bc) / var(--tw-text-opacity, 1));
   padding-left: var(--tab-padding, 1rem);
   padding-right: var(--tab-padding, 1rem);
 }
@@ -3461,6 +3458,8 @@ html {
 .tab.tab-active {
   border-color: hsla(var(--bc) / var(--tw-border-opacity, 1));
   --tw-border-opacity: 1;
+  --tw-text-opacity: 1;
+  color: hsla(var(--bc) / var(--tw-text-opacity, 1));
 }
 
 .tab:focus {
@@ -3483,21 +3482,22 @@ html {
   border-top-left-radius: var(--tab-radius, .5rem);
   border-top-right-radius: var(--tab-radius, .5rem);
   border: 0 solid transparent;
-  border-bottom: var(--tab-border, 1px) solid var(--tab-border-color);
+  border-bottom: var(--tab-border, 1px) solid hsla(var(--border-color, var(--b3)) / var(--tw-border-opacity, 1));
   padding-left: var(--tab-padding, 1rem);
   padding-right: var(--tab-padding, 1rem);
   padding-top: var(--tab-border, 1px);
 }
 
 .tab-lifted.tab-active {
-  background-color: var(--tab-bg);
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1));
   border-left-width: var(--tab-border, 1px);
   border-bottom-width: 0;
   border-right-width: var(--tab-border, 1px);
   border-top-width: var(--tab-border, 1px);
-  border-left-color: var(--tab-border-color);
-  border-right-color: var(--tab-border-color);
-  border-top-color: var(--tab-border-color);
+  border-left-color: hsla(var(--border-color, var(--b3)) / var(--tw-border-opacity, 1));
+  border-right-color: hsla(var(--border-color, var(--b3)) / var(--tw-border-opacity, 1));
+  border-top-color: hsla(var(--border-color, var(--b3)) / var(--tw-border-opacity, 1));
   padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
   padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
   padding-bottom: var(--tab-border, 1px);
@@ -3516,9 +3516,9 @@ html {
   --tab-corner-bg: radial-gradient(
         circle at var(--circle-pos),
         transparent var(--tab-grad),
-        var(--tab-border-color) calc(var(--tab-grad) + 0.3px),
-        var(--tab-border-color) calc(var(--tab-grad) + var(--tab-border, 1px)),
-        var(--tab-bg) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px)
+        hsla(var(--border-color, var(--b3)) / var(--tw-border-opacity, 1)) calc(var(--tab-grad) + 0.3px),
+        hsla(var(--border-color, var(--b3)) / var(--tw-border-opacity, 1)) calc(var(--tab-grad) + var(--tab-border, 1px)),
+        hsla(var(--b1) / var(--tw-border-opacity, 1)) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px)
       );
 }
 
@@ -4742,8 +4742,10 @@ html {
   height: 1.5rem;
 }
 
-.h-\[80vh\] {
-  height: 80vh;
+.h-min {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
 }
 
 .h-24 {
@@ -5174,10 +5176,6 @@ html {
   background-color: hsla(var(--p) / var(--tw-bg-opacity));
 }
 
-.bg-black\/20 {
-  background-color: rgb(0 0 0 / 0.2);
-}
-
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: hsla(var(--s) / var(--tw-bg-opacity));
@@ -5211,6 +5209,10 @@ html {
 .bg-base-300 {
   --tw-bg-opacity: 1;
   background-color: hsla(var(--b3) / var(--tw-bg-opacity));
+}
+
+.bg-opacity-40 {
+  --tw-bg-opacity: 0.4;
 }
 
 .bg-opacity-100 {

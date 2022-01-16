@@ -35,7 +35,7 @@ module.exports = {
           '--rounded-badge': '.2rem',
           '--animation-btn': '.1s',
           '--animation-input': '.1s',
-          '--padding-card:': '.5rem',
+          '--padding-card': '.5rem',
         },
         'light': {
           'primary': '#0088CC',
@@ -63,7 +63,7 @@ module.exports = {
           '--rounded-badge': '.2rem',
           '--animation-btn': '.1s',
           '--animation-input': '.1s',
-          '--padding-card:': '.5rem',
+          '--padding-card': '.5rem',
         },
       },
     ],

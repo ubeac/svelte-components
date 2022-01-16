@@ -17,13 +17,13 @@
 	<div
 		transition:fade={{ duration: 100 }}
 		on:click={() => (open = false)}
-		class="fixed w-full h-full z-30 left-0 top-0 bg-black/20 transition-all flex items-center justify-center " />
+		class="fixed top-0 left-0 z-30 flex items-center justify-center w-full h-full transition-all bg-black/20 " />
 	<div
-		class="fixed w-full h-full items-center justify-center top-0 left-0 flex z-50"
+		class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full"
 		class:text-center={center}
 		class:text-right={end}>
 		<div
-			class="z-[100] w-10/12 sm:w-8/12 md:w-6/12 lg:w-4/12 h-[90%] overflow-y-scroll bg-base-300 p-4 text-base-content rounded-lg shadow-2xl {className}">
+			class="h-[80vh] w-full md:max-w-xl xl:max-w-3xl overflow-y-scroll bg-base-100 p-4 text-base-content rounded-lg shadow-2xl {className}">
 			<slot />
 		</div>
 	</div>

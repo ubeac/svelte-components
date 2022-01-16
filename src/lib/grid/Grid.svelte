@@ -6,11 +6,14 @@
 	/** cols */
 	export let cols = 1
 
-	/** gap */
-	export let gap = 4
+  /** margin */
+  export let margin = 0
+
+  /** gap */
+  export let gap = 2
 
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-{cols} gap-{gap} m-{gap} {className}">
+<div class="grid grid-cols-1 md:grid-cols-{cols} gap-{gap} m-{margin} {className}">
   <slot/>
 </div>

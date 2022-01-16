@@ -60,9 +60,9 @@
 				{name}
 			</div>
 		{/each}
-		<div class="{liftedClasses} {borderedClasses} flex-1" />
+		<div class="tab {liftedClasses} {borderedClasses} flex-1" />
 	</div>
-	<div class="p-4 flex-1 bg-base-100 border-base-300 border-l border-r border-b rounded-b-lg">
+	<div class="flex-1 p-4 border-b border-l border-r rounded-b-lg bg-base-100 border-base-300">
 		<slot />
 	</div>
 </div>

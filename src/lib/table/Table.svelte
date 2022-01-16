@@ -9,7 +9,7 @@
 	export let compact = true
 </script>
 
-<div class="p-4 overflow-x-auto">
+<div class="overflow-x-auto">
   <table class="table w-full {className}" class:table-zebra={zebra} class:table-compact={compact}>
     <thead>
       <slot name="header" />

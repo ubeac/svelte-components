@@ -48,8 +48,6 @@
       </svelte:fragment>
       
       <svelte:fragment slot="end">
-        
-        <slot name="navbar-end" />
 
         <div>
           {#if browser && currentTheme == "light"}
@@ -63,6 +61,8 @@
             </button>
           {/if}
         </div>
+
+        <slot name="navbar-end" />
 
       </svelte:fragment>
     </Navbar>

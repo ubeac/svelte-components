@@ -22,6 +22,8 @@
 
     let el;
 
+    
+    // https://stackoverflow.com/questions/19424062/load-stylesheet-at-runtime
     function loadStyle(theme) {
         // 'dark' | 'light'
         const styleElement = document.getElementById('date-picker-style');

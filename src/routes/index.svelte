@@ -28,6 +28,7 @@
      import {Table, Cell, TableRow, TableHeader} from '$lib/index.js'
      import {Tooltip} from '$lib/index.js'
      import {FormGroup, Label, Input, Checkbox, CheckboxGroup, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '$lib/index.js'
+     import DatePicker from '$lib/form/DatePicker.svelte';
   
 
      let drawerOpen = false;
@@ -47,6 +48,12 @@
 
      let inputNumber = '';
      $: console.log(inputNumber)
+
+     let dateValue = new Date()
+     $: console.log(dateValue)
+
+     let dateRange = [new Date(), new Date()]
+     $: console.log("from " + dateRange[0]?.toDateString() + " to " + dateRange[1]?.toDateString())
 
      var iamges = [1, 2, 3, 4, 5, 6, 7]
 </script>
@@ -80,6 +87,14 @@
      <Avatar image="/users/avatar-3.jpg" />
 </AvatarGroup>
 
+<FormGroup>
+     <Label>Single Day</Label>
+     <DatePicker bind:value={dateValue} />
+</FormGroup>
+<FormGroup>
+     <Label>Date Range</Label>
+     <DatePicker range bind:value={dateRange} />
+</FormGroup>
 
 <h1 class="text-lg m-2">Badge</h1>
 <Badge variant="secondary">New</Badge>

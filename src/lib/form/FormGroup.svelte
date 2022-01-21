@@ -25,7 +25,6 @@
 
 	$: classes = clsx(
 		'form-control',
-		'mr-1',
 		'p-1',
 		'w-full',
 		inline && [

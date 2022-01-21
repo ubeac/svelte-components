@@ -1,6 +1,6 @@
 {
   "name": "@ubeac/svelte-components",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Svelte components for uBeac",
   "svelte": "./index.js",
   "type": "module",
@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.0",
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "flatpickr": "^4.6.9"
   }
 }

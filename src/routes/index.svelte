@@ -227,8 +227,12 @@ top
 <h1 class="text-lg m-2">Menu</h1>
 <Menu class="m-2 w-80 bg-gray-200" rounded compact>
      <MenuTitle>first</MenuTitle>
-     <MenuItem>Item 1</MenuItem>
-     <MenuItem>Item 2</MenuItem>
+     <MenuItem iconOnly>
+          <Icon slot="prefix" name="fas-cog"/>
+          Item 1</MenuItem>
+     <MenuItem iconOnly>
+          <Icon slot="prefix" name="fas-cog"/>
+          Item 2</MenuItem>
      <MenuTitle>second</MenuTitle>
      <MenuItem>Item 3</MenuItem>
      <MenuItem>Item 4</MenuItem>

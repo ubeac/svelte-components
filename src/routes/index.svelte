@@ -126,6 +126,13 @@
 
 <h1 class="text-lg m-2">Carousel</h1>
 <Carousel buttons indicators class="max-w-md" center>
+     <Button slot="prev-btn" size="sm" variant="neutral" class="border-opacity-60 bg-opacity-50" circle>
+       <Icon name="fas-angle-left"/>
+     </Button>
+     <Button slot="next-btn" size="sm" variant="neutral" class="border-opacity-60 bg-opacity-50" circle>
+       <Icon name="fas-angle-right"/>
+     </Button>    
+         
      {#each iamges as image}
           <CarouselItem>
                <img class="max-w-sm" alt="carousel" src="/small/img-{image}.jpg">

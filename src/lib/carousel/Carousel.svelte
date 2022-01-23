@@ -1,4 +1,6 @@
 <script>
+import Button from "$lib/button/Button.svelte";
+
   import { setContext } from "svelte";
 
   let className = "";
@@ -45,16 +47,12 @@
     },
   });
 
-  async function prev(event) {
-    event.preventDefault();
-    if (!hasPrev) return;
-    index--;
+  async function prev() {
+    if (hasPrev) index--;
   }
 
-  async function next(event) {
-    event.preventDefault();
-    if (!hasNext) return;
-    index++;
+  async function next() {
+    if (hasNext) index++;
   }
 
   $: hasPrev = total > 1 && index > 0;
@@ -77,18 +75,27 @@
   {#if buttons}
     {#if hasPrev}
       <div
-        on:click={prev}
-        class="absolute -translate-y-1/2 no-animation btn top-1/2 btn-xs btn-circle left-2"
+        on:click|preventDefault={prev}
+        class="absolute -translate-y-1/2 top-1/2 left-2"
       >
-        <slot name="prev-btn">&lt;</slot>
+        <slot name="prev-btn">
+          <Button size="xs" circle variant="neutral">    
+            &lt;
+          </Button>
+          
+        </slot>
       </div>
     {/if}
     {#if hasNext}
       <div
-        on:click={next}
-        class="absolute -translate-y-1/2 no-animation btn top-1/2 btn-xs btn-circle right-2"
+        on:click|preventDefault={next}
+        class="absolute -translate-y-1/2 top-1/2 right-2"
       >
-        <slot name="next-btn">&gt;</slot>
+        <slot name="next-btn">
+          <Button size="xs" circle variant="neutral">
+            &gt;
+          </Button>
+        </slot>
       </div>
     {/if}
   {/if}

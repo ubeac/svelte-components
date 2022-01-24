@@ -18,7 +18,7 @@
 <li class="w-full {className}" class:bordered>
 	<a class="flex w-full gap-4" class:active {href}>
 		<slot name="prefix" />
-    {#if iconOnly !== 'false'}
+    {#if !iconOnly }
       <div class="w-full">
         <slot />
       </div>

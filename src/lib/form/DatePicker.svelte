@@ -46,7 +46,8 @@
     }
 
     onMount(() => {
-
+        loadStyle("light")
+      
         flatpickr(el, {
             defaultDate: value,
             mode: range ? 'range' : 'single',

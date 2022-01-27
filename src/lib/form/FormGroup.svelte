@@ -25,7 +25,6 @@
 
 	$: classes = clsx(
 		'form-control',
-		'p-1',
 		'w-full',
 		inline && [
 			'flex-wrap',

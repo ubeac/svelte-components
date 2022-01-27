@@ -1,6 +1,6 @@
 <script>
   import "../styles.css";
-  import { Layout } from "$lib/layouts";
+  import { Dashboard } from "$lib";
   import {
     Button,
     Icon,
@@ -23,7 +23,7 @@
 
 </script>
 
-<Layout title="Dashboard" bind:sidebarMode bind:navbarMode bind:navbarColor bind:sidebarColor>
+<Dashboard title="Dashboard" bind:sidebarMode bind:navbarMode bind:navbarColor bind:sidebarColor>
 
   <svelte:fragment slot="navbar-end">
     <Input variant="ghost" size="sm" type="text" placeholder="Search"/>
@@ -62,27 +62,27 @@
 
   <svelte:fragment slot="sidebar">
     <Menu class="py-2 bg-transparent grow" compact=true>
-      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
+      <MenuItem iconOnly={sidebarMode == "mini"}>
         <Icon size="sm" slot="prefix" name="fas-home" />
         Item 1
       </MenuItem>
-      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
+      <MenuItem iconOnly={sidebarMode == "mini"}>
         <Icon size="sm" slot="prefix" name="fas-th-large" />
         Item 2
       </MenuItem>
-      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
+      <MenuItem iconOnly={sidebarMode == "mini"}>
         <Icon size="sm" slot="prefix" name="fas-file" />
         Item 3
       </MenuItem>
-      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
+      <MenuItem iconOnly={sidebarMode == "mini"}>
         <Icon size="sm" slot="prefix" name="fas-magic" />
         Item 4
       </MenuItem>
-      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
+      <MenuItem iconOnly={sidebarMode == "mini"}>
         <Icon size="sm" slot="prefix" name="fas-layer-group" />
         Item 5
       </MenuItem>
-      <MenuItem iconOnly={sidebarMode == "mini" ? 'false' : 'true'}>
+      <MenuItem iconOnly={sidebarMode === "mini"}>
         <Icon size="sm" slot="prefix" name="fas-table" />
         Item 6
       </MenuItem>
@@ -458,4 +458,4 @@
     </FooterCol>
   </Footer>
 
-</Layout>
+</Dashboard>

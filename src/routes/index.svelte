@@ -29,6 +29,7 @@
      import {Tooltip} from '$lib/index.js'
      import {FormGroup, Label, Input, Checkbox, CheckboxGroup, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '$lib/index.js'
      import DatePicker from '$lib/form/DatePicker.svelte';
+import GoogleMap from '$lib/map/GoogleMap.svelte'
   
 
      let drawerOpen = false;
@@ -223,6 +224,9 @@
 top
 </Link>
 
+
+<h1 class="text-lg m-2">Map</h1>
+<GoogleMap />
 
 <h1 class="text-lg m-2">Menu</h1>
 <Menu class="m-2 w-80 bg-gray-200" rounded compact>

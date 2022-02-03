@@ -44,6 +44,7 @@
 	class="menu overflow-y-auto {shadows[shadow]} {className}"
 	class:rounded-box={rounded}
 	class:horizontal
-	class:compact={compact}>
+	class:compact={compact}
+	role="menu">
 	<slot />
 </ul>

@@ -32,7 +32,7 @@
 	} 
 </script>
 
-<li class="w-full {className}" class:bordered>
+<li class="w-full {className}" class:bordered on:click={onClick}>
 	<a class="flex w-full gap-4" class:active {href}>
 		<slot name="prefix" />
     {#if !iconOnly }

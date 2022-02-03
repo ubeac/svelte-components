@@ -1,4 +1,9 @@
 <script>
+	import Icon from "$lib/icon/Icon.svelte";
+	import { createEventDispatcher } from "svelte";
+	const dispatch = createEventDispatcher()
+
+
 	let className = ''
 	export { className as class }
 
@@ -13,6 +18,18 @@
 
 	/** set active style */
 	export let active = false
+
+	export let isSubmenuOpen = false;
+
+	function toggleSubmenu() {
+		isSubmenuOpen = !isSubmenuOpen
+	}
+
+	function onClick() {
+		if($$slots.submenu)
+			toggleSubmenu()
+		dispatch('click')
+	} 
 </script>
 
 <li class="w-full {className}" class:bordered>
@@ -23,6 +40,20 @@
         <slot />
       </div>
     {/if}
-		<slot name="suffix" />
+    <slot name="suffix">
+
+    {#if $$slots.submenu}
+      {#if isSubmenuOpen}
+        <Icon name="fas-angle-up"/>
+      {:else}
+        <Icon name="fas-angle-down" />
+      {/if}
+    {/if}
+	
+	  </slot>
 	</a>
 </li>
+
+{#if $$slots.submenu && isSubmenuOpen}
+	<slot name="submenu"/>
+{/if}

@@ -30,6 +30,7 @@
      import {FormGroup, Label, Input, Checkbox, CheckboxGroup, Radio, RadioGroup, Option, Select, Range, TextArea, Toggle} from '$lib/index.js'
      import DatePicker from '$lib/form/DatePicker.svelte';
 import GoogleMap from '$lib/map/GoogleMap.svelte'
+     import AutoComplete from '$lib/form/AutoComplete.svelte';
   
 
      let drawerOpen = false;
@@ -57,6 +58,8 @@ import GoogleMap from '$lib/map/GoogleMap.svelte'
      $: console.log("from " + dateRange[0]?.toDateString() + " to " + dateRange[1]?.toDateString())
 
      var iamges = [1, 2, 3, 4, 5, 6, 7]
+
+     let autoCompleteValue = ''
 </script>
 
 <Navbar fixed shadow>
@@ -87,6 +90,25 @@ import GoogleMap from '$lib/map/GoogleMap.svelte'
      <Avatar image="/users/avatar-2.jpg" />
      <Avatar image="/users/avatar-3.jpg" />
 </AvatarGroup>
+
+<FormGroup>
+     <Label>Auto Complete (Accommodation types)</Label>
+     <AutoComplete 
+          key="id"
+          text="title"
+          fetch={async (query) => {
+               return fetch('https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes')
+               .then(res=> res.json())
+               .then(result => result.data)
+          }} 
+          bind:value={autoCompleteValue}
+          let:text
+          >
+          <div>{text}</div>
+
+     </AutoComplete>
+</FormGroup>
+
 
 <FormGroup>
      <Label>Single Day</Label>

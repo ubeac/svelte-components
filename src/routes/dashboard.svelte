@@ -71,8 +71,34 @@
         Item 2
       </MenuItem>
       <MenuItem iconOnly={sidebarMode == "mini"}>
-        <Icon size="sm" slot="prefix" name="fas-file" />
-        Item 3
+        <Icon size="sm" slot="prefix" name="fas-th-large" />
+        Some Nested Items
+        <Menu slot="submenu" class="py-2 bg-transparent" compact=true>
+          <MenuItem iconOnly={sidebarMode == "mini"}>
+            <Icon size="sm" slot="prefix" name="fas-home" />
+            Item 1
+          </MenuItem>
+          <MenuItem iconOnly={sidebarMode == "mini"}>
+            <Icon size="sm" slot="prefix" name="fas-th-large" />
+            Item 2
+          </MenuItem>
+          <MenuItem iconOnly={sidebarMode == "mini"}>
+            <Icon size="sm" slot="prefix" name="fas-file" />
+            Item 3
+          </MenuItem>
+          <MenuItem iconOnly={sidebarMode == "mini"}>
+            <Icon size="sm" slot="prefix" name="fas-magic" />
+            Item 4
+          </MenuItem>
+          <MenuItem iconOnly={sidebarMode == "mini"}>
+            <Icon size="sm" slot="prefix" name="fas-layer-group" />
+            Item 5
+          </MenuItem>
+          <MenuItem iconOnly={sidebarMode === "mini"}>
+            <Icon size="sm" slot="prefix" name="fas-table" />
+            Item 6
+          </MenuItem>
+        </Menu>
       </MenuItem>
       <MenuItem iconOnly={sidebarMode == "mini"}>
         <Icon size="sm" slot="prefix" name="fas-magic" />

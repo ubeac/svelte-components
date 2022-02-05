@@ -1,6 +1,6 @@
 <script>
-    import {Dropdown, Menu, MenuItem, Input} from "$lib";
-import Option from "./Option.svelte";
+    import {Dropdown, Menu, MenuItem, Input} from "$lib/index.js";
+    import Option from "./Option.svelte";
 
     /**
      * availabile options for suggestions

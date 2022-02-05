@@ -18,7 +18,7 @@ export { default as Drawer } from "./drawer/Drawer.svelte";
 export { default as Dropdown } from "./dropdown/Dropdown.svelte";
 export { default as Footer } from "./footer/Footer.svelte";
 export { default as FooterCol } from "./footer/FooterCol.svelte";
-export { default as AutoComplete } from "./form/AutoComplete.svelte";
+// export { default as AutoComplete } from "./form/AutoComplete.svelte";
 export { default as Checkbox } from "./form/Checkbox.svelte";
 export { default as CheckboxGroup } from "./form/CheckboxGroup.svelte";
 export { default as DatePicker } from "./form/DatePicker.svelte";

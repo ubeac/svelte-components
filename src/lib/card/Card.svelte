@@ -1,4 +1,8 @@
 <script>
+	import { Typography } from '$lib';
+	import clsx from 'clsx';
+
+
 	let className = ''
 	export { className as class }
 
@@ -55,17 +59,20 @@
 	$: {
 		if (shadow === true) {
 			shadow = 'sm'
-		} else if (shadow === false) {
-			shadow = 'none'
 		}
 	}
 
+	$: classes = clsx(
+		'card', 
+		'bg-base-100', 
+		shadow && shadows[shadow], 
+		bordered && 'border border-base-300', 
+		className
+	)
 </script>
 
 <div
-	class="card bg-base-100 {shadows[shadow]} {bordered
-		? 'border border-base-content border-opacity-10'
-		: ''} {className}"
+	class={classes}
 	class:image-full={full}
 	class:card-side={side}
 	class:compact>
@@ -75,9 +82,9 @@
 
 	<div class="card-body">
 		<slot name="title" />
-		<div class="flex-1">
+		<Typography size="body1" class="flex-1">
 			<slot />
-		</div>
+		</Typography>
 		<slot name="actions" />
 	</div>
 

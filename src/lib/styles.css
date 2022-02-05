@@ -2495,13 +2495,6 @@ html {
   margin-bottom: .25rem;
 }
 
-.card-title {
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  margin-bottom: .75rem;
-}
-
 .card-actions:first-child {
   margin-bottom: .5rem;
 }
@@ -4840,10 +4833,6 @@ html {
   margin-top: 0px;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .mr-4 {
   margin-right: 1rem;
 }
@@ -5283,11 +5272,6 @@ html {
   border-color: hsla(var(--er) / var(--tw-border-opacity));
 }
 
-.border-base-content {
-  --tw-border-opacity: 1;
-  border-color: hsla(var(--bc) / var(--tw-border-opacity));
-}
-
 .border-base-300 {
   --tw-border-opacity: 1;
   border-color: hsla(var(--b3) / var(--tw-border-opacity));
@@ -5296,6 +5280,11 @@ html {
 .border-base-200 {
   --tw-border-opacity: 1;
   border-color: hsla(var(--b2) / var(--tw-border-opacity));
+}
+
+.border-base-content {
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--bc) / var(--tw-border-opacity));
 }
 
 .border-black {

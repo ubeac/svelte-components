@@ -1,5 +1,5 @@
 <script>
-	import { Typography } from "$lib";
+	import { Typography } from "$lib/index.js";
 
 	let className = ''
 	export { className as class }

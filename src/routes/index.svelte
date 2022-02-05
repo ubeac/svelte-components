@@ -153,19 +153,19 @@
   <DatePicker range bind:value={dateRange} />
 </FormGroup>
 
-<h1 class="text-lg m-2">Badge</h1>
+<Typography size="headline4">Badge</Typography>
 <Badge variant="secondary">New</Badge>
-<Badge>prima ry</Badge>
+<Badge>primary</Badge>
 <Badge size="lg">lg</Badge>
 
-<h1 class="text-lg m-2">Breadcrumb</h1>
+<Typography size="headline4">Breadcrumb</Typography>
 <Breadcrumb>
   <BreadcrumbItem>Hello</BreadcrumbItem>
   <BreadcrumbItem href="#">World</BreadcrumbItem>
   <BreadcrumbItem active>123</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-lg m-2">Button</h1>
+<Typography size="headline4">Button</Typography>
 <Button class="m-2" variant="secondary">Secondary</Button>
 <Button class="m-2" size="sm" variant="accent">Small</Button>
 <Button class="m-2" wide>wide</Button>
@@ -176,10 +176,10 @@
   <Button>Hard</Button>
 </ButtonGroup>
 
-<h1 class="text-lg m-2">Input Number</h1>
+<Typography size="headline4">Input Number</Typography>
 <Input type="number" bind:value={inputNumber} />
 
-<h1 class="text-lg m-2">Carousel</h1>
+<Typography size="headline4">Carousel</Typography>
 <Carousel buttons indicators class="max-w-md" center>
   <Button
     slot="prev-btn"
@@ -223,7 +223,7 @@
   }}>loading</Button
 >
 
-<h1 class="text-lg m-2">Card</h1>
+<Typography size="headline4">Card</Typography>
 <div class="flex space-x-2 space-y-2 flex-col sm:flex-row">
   <Card>
     <CardTitle slot="title">Card Title</CardTitle>
@@ -246,13 +246,13 @@
 </div>
 <Divider />
 
-<h1 class="text-lg font-bold">Countdown</h1>
+<Typography size="headline4">Countdown</Typography>
 <Countdown
   class="p-6 m-4 bg-gray-900 rounded-box shadow text-neutral-content"
   value={count}
 />
 
-<h1 class="text-lg m-2">Collapse</h1>
+<Typography size="headline4">Collapse</Typography>
 <div class="flex p-2 space-x-2">
   <Collapse arrow>
     <svelte:fragment slot="title">Title of collapse</svelte:fragment>
@@ -273,7 +273,7 @@
   This should open from right side
 </Drawer>
 
-<h1 class="text-lg m-2">Dropdown</h1>
+<Typography size="headline4">Dropdown</Typography>
 <Dropdown position="right" end class="w-32">
   <svelte:fragment slot="title">Dropdown</svelte:fragment>
   <Menu>
@@ -286,16 +286,19 @@
   </Menu>
 </Dropdown>
 
-<h1 class="text-lg m-2">Image</h1>
+<Typography size="headline4">Image</Typography>
 <Image rounded shadow src="/small/img-4.jpg" alt="something" />
 
-<h1 class="text-lg m-2">Link</h1>
+<Typography size="headline4">Link</Typography>
 <Link hover href="#">top</Link>
 
-<h1 class="text-lg m-2">Map</h1>
-<GoogleMap />
+<Typography size="headline4">Map</Typography>
+<!-- <GoogleMap /> -->
+<Typography size="body1">
+  Cannot show GoogleMap Component without loading it's script
+</Typography>
 
-<h1 class="text-lg m-2">Menu</h1>
+<Typography size="headline4">Menu</Typography>
 <Menu class="m-2 w-80 bg-gray-200" rounded compact>
   <MenuTitle>first</MenuTitle>
   <MenuItem iconOnly>
@@ -312,7 +315,7 @@
   <MenuItem>Item 5</MenuItem>
 </Menu>
 
-<h1 class="text-lg m-2">Modal</h1>
+<Typography size="headline4">Modal</Typography>
 <Button on:click={() => (modalOpen = true)}>Open Modal</Button>
 <Modal bind:open={modalOpen}>
   Lorem, ipsum dolor sit amet consectetur adipisicinde leniti animi, ducimus
@@ -323,7 +326,7 @@
   </ModalActions>
 </Modal>
 
-<h1 class="text-lg m-2">Pagination</h1>
+<Typography size="headline4">Pagination</Typography>
 <Pagination variant="secondary">
   <PaginationItem>Prev</PaginationItem>
   <PaginationItem>1</PaginationItem>
@@ -333,7 +336,9 @@
   <PaginationItem>Next</PaginationItem>
 </Pagination>
 
-<h1 class="text-lg m-2">Popover</h1>
+<Typography size="headline4" class="typography-headline4"
+  >Popover</Typography
+>
 <Button id="pop-target">Open</Button>
 <Popover hover target="pop-target">
   <div>Hello from Popover</div>
@@ -407,18 +412,18 @@
   </FormGroup>
 </form>
 
-<h1 class="text-lg m-2">Spinner</h1>
+<Typography size="headline4">Spinner</Typography>
 <Spinner />
 <Spinner variant="error" size="xs" />
 
-<h1 class="text-lg m-2">Stack</h1>
+<Typography size="headline4">Stack</Typography>
 <Stack>
   <div class="w-96 h-64 bg-gray-800 text-white text-2xl">3</div>
   <div class="w-96 h-64 bg-gray-800 text-white text-2xl">2</div>
   <div class="w-96 h-64 bg-gray-800 text-white text-2xl">1</div>
 </Stack>
 
-<h1 class="text-lg m-2">Table</h1>
+<Typography size="headline4">Table</Typography>
 
 <Table>
   <TableHeader>
@@ -443,7 +448,7 @@
   </TableRow>
 </Table>
 
-<h1 class="text-lg m-2">Step</h1>
+<Typography size="headline4">Step</Typography>
 <Steps>
   <Step variant="primary">First</Step>
   <Step variant="accent">Second</Step>
@@ -452,7 +457,7 @@
   <Step>Fifth</Step>
 </Steps>
 
-<h1 class="text-lg m-2">Tab</h1>
+<Typography size="headline4">Tab</Typography>
 
 <TabContent bordered>
   <TabPane name="first">Hello World!</TabPane>
@@ -464,19 +469,27 @@
   <TabPane name="third">another Tab</TabPane>
 </TabContent>
 
-<h1 class="text-lg m-2">Tooltip</h1>
+<Typography size="headline4">Tooltip</Typography>
 <Tooltip text="Hello World!">
   <Button>Tooltip</Button>
 </Tooltip>
 
-<h1 class="text-lg m-2">Progress</h1>
+<Typography size="headline4">Progress</Typography>
 
 <Progress value={40} />
 <Progress variant="accent" value={90} />
 
-<h1 class="text-lg m-2">Icon</h1>
+<Typography size="headline4">Icon</Typography>
 
 <Icon name="bell" />
 <Icon class="text-red-800" name="bell" />
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>
+
+<style>
+  :global(.typography-headline4) {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+</style>

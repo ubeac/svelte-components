@@ -299,7 +299,7 @@
 </Typography>
 
 <Typography size="headline4">Menu</Typography>
-<Menu class="m-2 w-80 bg-gray-200" rounded compact>
+<Menu class="m-2 w-80" rounded compact>
   <MenuTitle>first</MenuTitle>
   <MenuItem iconOnly>
     <Icon slot="prefix" name="fas-cog" />
@@ -336,9 +336,7 @@
   <PaginationItem>Next</PaginationItem>
 </Pagination>
 
-<Typography size="headline4" class="typography-headline4"
-  >Popover</Typography
->
+<Typography size="headline4" class="typography-headline4">Popover</Typography>
 <Button id="pop-target">Open</Button>
 <Popover hover target="pop-target">
   <div>Hello from Popover</div>

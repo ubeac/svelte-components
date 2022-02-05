@@ -54,6 +54,7 @@
 
 	$: classes = clsx(
 		'select',
+		'w-full',
 		variant && 'select-' + variant,
 		size && 'select-' + size,
 		bordered && 'select-bordered',
@@ -61,7 +62,7 @@
 	)
 </script>
 
-<select bind:value {disabled} tabindex="0" {id} {name} class={classes}>
+<select {disabled} {id} {name} tabindex="0" class={classes} bind:value>
 	<option disabled selected value={null}>{placeholder}</option>
 	<slot />
 </select>

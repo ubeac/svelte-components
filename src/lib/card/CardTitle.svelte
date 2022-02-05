@@ -1,4 +1,6 @@
 <script>
+	import { Typography } from "$lib";
+
 	let className = ''
 	export { className as class }
 
@@ -8,6 +10,6 @@
 	export let center = false
 </script>
 
-<h2 class="card-title mx-2 text-lg {className}" class:text-center={center}>
+<Typography size="headline5" class="m-2 {className} {center ? 'text-center':''}">
 	<slot />
-</h2>
+</Typography>

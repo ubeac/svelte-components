@@ -54,7 +54,7 @@
 {#if show}
 	<div
 		on:click={close}
-		class="fixed w-screen h-screen top-0 left-0 z-50 bg-black opacity-0 transition-opacity duration-300"
+		class="fixed w-screen h-screen top-0 left-0 z-50 bg-black transition-opacity duration-300"
 		class:opacity-50={show} />
 {/if}
 <div class={classes}>

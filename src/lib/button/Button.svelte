@@ -1,4 +1,6 @@
 <script>
+import { Typography } from '$lib';
+
 	import { getContext } from 'svelte'
 
 	let className = ''
@@ -68,6 +70,8 @@
 	class:p-0={compact}
 	on:click>
 	<slot name="prefix" />
+	<Typography size="button">
 		<slot />
+	</Typography>
 	<slot name="suffix" />
 </button>

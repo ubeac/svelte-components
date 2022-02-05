@@ -2,7 +2,7 @@
   let className = "";
   export { className as class };
 
-  export let inline: Boolean;
+  export let inline: Boolean = false;
 
   /**
    * Size of typography

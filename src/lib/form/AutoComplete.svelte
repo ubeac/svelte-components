@@ -1,6 +1,6 @@
 <script>
     import {Dropdown, Menu, MenuItem, Input} from "$lib/index.js";
-    import Option from "./Option.svelte";
+    import FormInput from "./FormInput.svelte";
 
     /**
      * availabile options for suggestions
@@ -13,7 +13,9 @@
      * @type { string }
      */
 	export let placeholder;
-	
+
+    export let label = ''
+
 	export let text;
 	export let key;
 	
@@ -27,8 +29,12 @@
 	export let fetch = undefined;
 
 	export let debounce = 300;
-	
+
+    /** selected value (key) */
 	export let value = ''
+	
+    /** value of Input component (text) */
+    let inputValue = ''
     
 	function debounceFn(func, wait) {
 		let timeout;
@@ -40,7 +46,7 @@
 	
 	const debouncedInputValue = debounceFn(async () => {
 		if(fetch)
-			options = await fetch(value)
+			options = await fetch(inputValue)
 	}, debounce)
 	
 	
@@ -53,7 +59,8 @@
 	}
 
     function onSelect(option) {
-        value = getText(option)
+        inputValue = getText(option)
+        value = getKey(option)
     }
 	
 
@@ -66,19 +73,19 @@
 	$: matches = options.filter(option => {
         return getText(option)
 			.toLowerCase()
-			.includes(value.toLowerCase()) 
+			.includes(inputValue.toLowerCase()) 
 	});
 	
-	$: open = value !== '' && matches.length > 0
+	$: open = inputValue !== '' && matches.length > 0
 
 	$: {
-        console.log(value) // run deboundedInputValue on each key press
+        console.log(inputValue) // run deboundedInputValue on each key press
         debouncedInputValue()
     }
 </script>
 
-<Dropdown>
-    <Input slot="title" {variant} {size} {placeholder} bind:value />
+<Dropdown class="w-full">
+    <FormInput label={label} slot="title" {variant} {size} {placeholder} bind:value={inputValue} />
 	{#if open}
         <Menu compact class="bg-base-200 border border-base-300">
             {#each matches as option}

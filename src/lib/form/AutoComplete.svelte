@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
     import {Dropdown, Menu, MenuItem, Input} from "$lib/index.js";
-    import FormInput from "./FormInput.svelte";
+    import type { Size, Variant } from "$lib/types";
 
+    let className = ''
+    export {className as class}
     /**
      * availabile options for suggestions
      * @type { any[] }
@@ -19,9 +21,8 @@
 	export let text;
 	export let key;
 	
-
-    export let variant = 'primary';
-    export let size;
+    export let variant : Variant = 'neutral';
+    export let size : Size = 'md';
 
     /**
      * fetcher function to update options based on query
@@ -85,7 +86,7 @@
 </script>
 
 <Dropdown class="w-full">
-    <FormInput label={label} slot="title" {variant} {size} {placeholder} bind:value={inputValue} />
+    <Input slot="title" {variant} {size} {placeholder} bind:value={inputValue} class={className}/>
 	{#if open}
         <Menu compact class="bg-base-200 border border-base-300">
             {#each matches as option}

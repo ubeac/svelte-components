@@ -45,6 +45,7 @@
   import GoogleMap from "$lib/map/GoogleMap.svelte";
   import AutoComplete from "$lib/form/AutoComplete.svelte";
   import Typography from "$lib/typography/Typography.svelte";
+  import FormInput from "$lib/form/FormInput.svelte";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -80,6 +81,8 @@
   var iamges = [1, 2, 3, 4, 5, 6, 7];
 
   let autoCompleteValue = "";
+  let formInputValue = "";
+  $: console.log({ formInputValue });
 </script>
 
 <Navbar fixed shadow>
@@ -112,6 +115,22 @@
 <Typography size="caption">Caption</Typography>
 <Typography size="button">button</Typography>
 <Typography size="overline">overline</Typography>
+
+<Card class="max-w-sm m-4 gap-2">
+  <CardTitle>FormInput</CardTitle>
+  <FormInput
+    type="email"
+    label="email"
+    bind:value={formInputValue}
+    id="something"
+  />
+  <FormInput
+    type="password"
+    label="password"
+    bind:value={formInputValue}
+    id="something"
+  />
+</Card>
 
 <Alert />
 <Card />
@@ -479,8 +498,11 @@
 
 <Typography size="headline4">Icon</Typography>
 
-<Icon name="bell" />
-<Icon class="text-red-800" name="bell" />
+<Icon icon="mdi:alarm" />
+<Icon class="text-red-800 inline" icon="bx:bxs-dashboard" />
+<Icon class="text-red-800 inline" icon="uil:dashboard" />
+<Icon class="text-red-800 inline" icon="bx:bxs-ambulance" />
+<Icon class="text-red-800 inline" icon="bx:bx-hotel" />
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>
 

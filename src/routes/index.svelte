@@ -41,17 +41,20 @@
     TextArea,
     Toggle,
   } from "$lib/index.js";
-  import DatePicker from "$lib/form/DatePicker.svelte";
-  import GoogleMap from "$lib/map/GoogleMap.svelte";
-  import AutoComplete from "$lib/form/AutoComplete.svelte";
-  import Typography from "$lib/typography/Typography.svelte";
-  import FormInput from "$lib/form/FormInput.svelte";
-  import FormSelect from "$lib/form/FormSelect.svelte";
-  import Grid from "$lib/grid/Grid.svelte";
-  import FormRange from "$lib/form/FormRange.svelte";
-  import FormTextArea from "$lib/form/FormTextArea.svelte";
-  import FormDatePicker from "$lib/form/FormDatePicker.svelte";
-  import FormAutoComplete from "$lib/form/FormAutoComplete.svelte";
+  import { GoogleMap } from "$lib/index.js";
+  import { DatePicker } from "$lib/index.js";
+  import { AutoComplete } from "$lib/index.js";
+  import { Grid } from "$lib/index.js";
+  import { Typography } from "$lib/index.js";
+
+  import {
+    FormInput,
+    FormSelect,
+    FormRange,
+    FormTextArea,
+    FormDatePicker,
+    FormAutoComplete,
+  } from "$lib/index.js";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -242,6 +245,20 @@
         <div>{option.title}</div>
       </AutoComplete>
     </FormGroup>
+  </Card>
+
+  <Card>
+    <CardTitle>FormDatePicker</CardTitle>
+    <FormGroup>
+      <Label>Single Day (DatePicker)</Label>
+      <DatePicker bind:value={dateValue} />
+    </FormGroup>
+    <FormDatePicker
+      class="mt-2"
+      label="FormDatePicker Range"
+      range
+      bind:value={dateRange}
+    />
   </Card>
 </Grid>
 

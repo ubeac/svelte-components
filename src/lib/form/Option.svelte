@@ -12,7 +12,7 @@ import { getContext } from "svelte";
 </script>
 
 {#if value}
-	<option {selected} {value}>
+	<option {selected} {value} class="ubeac-option">
 		{#if $$slots.default}
 			<slot/>
 		{:else}

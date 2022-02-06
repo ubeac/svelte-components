@@ -36,6 +36,7 @@
 	export let id = getContext('form:id') ?? name
 
 	$:classes = clsx(
+		"ubeac-range",
 		"range",
 		size && 'range-' + size,
 		variant && 'range-' + variant,

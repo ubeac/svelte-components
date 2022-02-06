@@ -41,6 +41,7 @@
 	 export let id = getContext('id') ?? name
 	
 	$: classes = clsx(
+		'ubeac-textarea',
 		'textarea',
 		'w-full',
 		variant && 'textarea-' + variant,

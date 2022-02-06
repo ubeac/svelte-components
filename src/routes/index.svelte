@@ -49,6 +49,7 @@
   import FormSelect from "$lib/form/FormSelect.svelte";
   import Grid from "$lib/grid/Grid.svelte";
   import FormRange from "$lib/form/FormRange.svelte";
+  import FormTextArea from "$lib/form/FormTextArea.svelte";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -84,6 +85,7 @@
   var iamges = [1, 2, 3, 4, 5, 6, 7];
 
   let autoCompleteValue = "";
+  $: console.log({ autoCompleteValue });
 
   let formInputEmailValue = "";
   $: console.log({ type: typeof formInputEmailValue, formInputEmailValue });
@@ -103,6 +105,9 @@
 
   let formRangeValue = 0;
   $: console.log({ formRangeValue });
+
+  let formTextAreaValue = "";
+  $: console.log({ formTextAreaValue });
 </script>
 
 <Navbar fixed shadow>
@@ -188,6 +193,14 @@
       bind:value={formRangeValue}
     />
   </Card>
+  <Card>
+    <CardTitle>FormTextArea</CardTitle>
+    <FormTextArea
+      placeholder="this is placeholder of text area"
+      label="Text area"
+      bind:value={formTextAreaValue}
+    />
+  </Card>
 </Grid>
 
 <Alert />
@@ -202,24 +215,22 @@
   <Avatar image="/users/avatar-3.jpg" />
 </AvatarGroup>
 
-<FormGroup>
-  <Label>Auto Complete (Accommodation types)</Label>
-  <AutoComplete
-    key="id"
-    text="title"
-    fetch={async (query) => {
-      return fetch(
-        "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
-      )
-        .then((res) => res.json())
-        .then((result) => result.data);
-    }}
-    bind:value={autoCompleteValue}
-    let:text
-  >
-    <div>{text}</div>
-  </AutoComplete>
-</FormGroup>
+<AutoComplete
+  key="id"
+  text="title"
+  label="Auto Complete (Accommodation types)"
+  fetch={async (query) => {
+    return fetch(
+      "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
+    )
+      .then((res) => res.json())
+      .then((result) => result.data);
+  }}
+  bind:value={autoCompleteValue}
+  let:text
+>
+  <div>{text}</div>
+</AutoComplete>
 
 <FormGroup>
   <Label>Single Day</Label>

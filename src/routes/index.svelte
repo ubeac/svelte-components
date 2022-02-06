@@ -46,6 +46,8 @@
   import AutoComplete from "$lib/form/AutoComplete.svelte";
   import Typography from "$lib/typography/Typography.svelte";
   import FormInput from "$lib/form/FormInput.svelte";
+  import FormSelect from "$lib/form/FormSelect.svelte";
+  import Grid from "$lib/grid/Grid.svelte";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -81,8 +83,22 @@
   var iamges = [1, 2, 3, 4, 5, 6, 7];
 
   let autoCompleteValue = "";
-  let formInputValue = "";
-  $: console.log({ formInputValue });
+
+  let formInputEmailValue = "";
+  $: console.log({ type: typeof formInputEmailValue, formInputEmailValue });
+  let formInputPasswordValue = "";
+  $: console.log({
+    type: typeof formInputPasswordValue,
+    formInputPasswordValue,
+  });
+  let formInputNumberValue = "";
+  $: console.log({ type: typeof formInputNumberValue, formInputNumberValue });
+
+  let formSelectValue = "";
+  $: console.log({ formSelectValue });
+
+  let formSelectLanguageValue = "";
+  $: console.log({ formSelectLanguageValue });
 </script>
 
 <Navbar fixed shadow>
@@ -116,21 +132,51 @@
 <Typography size="button">button</Typography>
 <Typography size="overline">overline</Typography>
 
-<Card class="max-w-sm m-4 gap-2">
-  <CardTitle>FormInput</CardTitle>
-  <FormInput
-    type="email"
-    label="email"
-    bind:value={formInputValue}
-    id="something"
-  />
-  <FormInput
-    type="password"
-    label="password"
-    bind:value={formInputValue}
-    id="something"
-  />
-</Card>
+<Grid cols={2} class="p-4 gap-4">
+  <Card>
+    <CardTitle>FormInput</CardTitle>
+    <FormInput
+      type="email"
+      label="email"
+      class="mt-2"
+      bind:value={formInputEmailValue}
+      placeholder="Your Email address"
+      id="something"
+    />
+    <FormInput
+      type="password"
+      label="password"
+      class="mt-2"
+      bind:value={formInputPasswordValue}
+    />
+    <FormInput
+      type="number"
+      label="number"
+      class="mt-2"
+      bind:value={formInputNumberValue}
+    />
+  </Card>
+
+  <Card>
+    <CardTitle>FormSelect</CardTitle>
+    <FormSelect
+      options={["one", "two", "three", "four", "five"]}
+      placeholder="choose a number"
+      label="numbers"
+      class="mt-2"
+      bind:value={formSelectValue}
+      id="something"
+    />
+    <FormSelect
+      label="languages"
+      class="mt-2"
+      options={["js", "java", "c++", "python", "html", "css", "php"]}
+      placeholder="choose a language"
+      bind:value={formSelectLanguageValue}
+      id="something"
+    />
+  </Card>
+</Grid>
 
 <Alert />
 <Card />

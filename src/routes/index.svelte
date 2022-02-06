@@ -50,6 +50,8 @@
   import Grid from "$lib/grid/Grid.svelte";
   import FormRange from "$lib/form/FormRange.svelte";
   import FormTextArea from "$lib/form/FormTextArea.svelte";
+  import FormDatePicker from "$lib/form/FormDatePicker.svelte";
+  import FormAutoComplete from "$lib/form/FormAutoComplete.svelte";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -201,6 +203,46 @@
       bind:value={formTextAreaValue}
     />
   </Card>
+
+  <Card>
+    <CardTitle>FormAutoComplete</CardTitle>
+
+    <FormAutoComplete
+      key="id"
+      text="title"
+      label="FormAutoComplete (Accommodation types)"
+      fetch={async (query) => {
+        return fetch(
+          "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
+        )
+          .then((res) => res.json())
+          .then((result) => result.data);
+      }}
+      bind:value={autoCompleteValue}
+      let:option
+    >
+      <div>{option.title}</div>
+    </FormAutoComplete>
+
+    <FormGroup class="mt-2">
+      <Label>AutoComplete (Accommodation types)</Label>
+      <AutoComplete
+        key="id"
+        text="title"
+        fetch={async (query) => {
+          return fetch(
+            "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
+          )
+            .then((res) => res.json())
+            .then((result) => result.data);
+        }}
+        bind:value={autoCompleteValue}
+        let:option
+      >
+        <div>{option.title}</div>
+      </AutoComplete>
+    </FormGroup>
+  </Card>
 </Grid>
 
 <Alert />
@@ -215,31 +257,11 @@
   <Avatar image="/users/avatar-3.jpg" />
 </AvatarGroup>
 
-<AutoComplete
-  key="id"
-  text="title"
-  label="Auto Complete (Accommodation types)"
-  fetch={async (query) => {
-    return fetch(
-      "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
-    )
-      .then((res) => res.json())
-      .then((result) => result.data);
-  }}
-  bind:value={autoCompleteValue}
-  let:text
->
-  <div>{text}</div>
-</AutoComplete>
-
 <FormGroup>
   <Label>Single Day</Label>
   <DatePicker bind:value={dateValue} />
 </FormGroup>
-<FormGroup>
-  <Label>Date Range</Label>
-  <DatePicker range bind:value={dateRange} />
-</FormGroup>
+<FormDatePicker label="FormDatePicker Range" range bind:value={dateRange} />
 
 <Typography size="headline4">Badge</Typography>
 <Badge variant="secondary">New</Badge>

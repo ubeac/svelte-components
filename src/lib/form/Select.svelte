@@ -62,7 +62,7 @@
 	)
 </script>
 
-<select {disabled} {id} {name} tabindex="0" class={classes} bind:value>
+<select {...$$restProps} {placeholder} {disabled} {id} {name} tabindex="0" class={classes} bind:value>
 	<option disabled selected value={null}>{placeholder}</option>
 	<slot />
 </select>

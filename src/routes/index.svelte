@@ -48,6 +48,7 @@
   import FormInput from "$lib/form/FormInput.svelte";
   import FormSelect from "$lib/form/FormSelect.svelte";
   import Grid from "$lib/grid/Grid.svelte";
+  import FormRange from "$lib/form/FormRange.svelte";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -91,7 +92,7 @@
     type: typeof formInputPasswordValue,
     formInputPasswordValue,
   });
-  let formInputNumberValue = "";
+  let formInputNumberValue = 0;
   $: console.log({ type: typeof formInputNumberValue, formInputNumberValue });
 
   let formSelectValue = "";
@@ -99,6 +100,9 @@
 
   let formSelectLanguageValue = "";
   $: console.log({ formSelectLanguageValue });
+
+  let formRangeValue = 0;
+  $: console.log({ formRangeValue });
 </script>
 
 <Navbar fixed shadow>
@@ -174,6 +178,14 @@
       placeholder="choose a language"
       bind:value={formSelectLanguageValue}
       id="something"
+    />
+  </Card>
+  <Card>
+    <CardTitle>FormRange</CardTitle>
+    <FormRange
+      label="range input {formRangeValue}"
+      max={1000}
+      bind:value={formRangeValue}
     />
   </Card>
 </Grid>

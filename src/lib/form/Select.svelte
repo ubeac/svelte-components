@@ -53,6 +53,7 @@
 	$: setContext('select:value', value)
 
 	$: classes = clsx(
+		'ubeac-select',
 		'select',
 		'w-full',
 		variant && 'select-' + variant,

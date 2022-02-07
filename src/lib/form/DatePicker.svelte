@@ -35,7 +35,7 @@
 
             const lnk = document.createElement('link')
 
-            lnk.id = 'date-picker-style'
+            lnk.id = 'ubeac-date-picker-style'
             lnk.type = "text/css"
             lnk.rel = "stylesheet"
             lnk.href = "https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/" + theme + ".css";
@@ -73,4 +73,4 @@
 
 </script>
 
-<input {...$$restProps} class="w-full input input-{size} input-{variant}" class:input-bordered={bordered} bind:this={el}>
+<input {...$$restProps} class="w-full ubeac-date-picker input input-{size} input-{variant}" class:input-bordered={bordered} bind:this={el}>

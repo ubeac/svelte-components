@@ -28,6 +28,7 @@
 	export let name;
 
 	$: classes = clsx(
+		'ubeac-toggle',
 		'toggle',
 		'mx-2',
 		'my-1',
@@ -39,7 +40,7 @@
 
 </script>
 
-<label class="flex flex-row items-center form-control">
+<label class="ubeac-toggle-label flex flex-row items-center form-control">
 	<input {disabled} {name} type="checkbox" bind:checked class={classes} />
 	<slot />
 </label>

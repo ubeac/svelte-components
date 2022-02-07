@@ -29,6 +29,7 @@
 	const name = getContext('radio:name')
 	
 	$: classes = clsx(
+		'ubeac-radio',
 		'radio',
 		'mx-2',
 		'my-1',
@@ -38,7 +39,7 @@
 	)
 </script>
 
-<label class="flex flex-row items-center form-control">
-	<input {disabled} type="radio" {name} class={classes} on:change {checked} />
+<label class="ubeac-radio-label flex flex-row items-center form-control">
+	<input {disabled} {checked} {name} type="radio" class={classes} on:change />
 	<slot />
 </label>

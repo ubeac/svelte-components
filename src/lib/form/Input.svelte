@@ -68,6 +68,7 @@
 	export let id = getContext('form:id') ?? ''
 
 	$: classes = clsx(
+		'ubeac-input',
 		'input',
 		'w-full',
 		size && 'input-' + size,

@@ -11,8 +11,6 @@
 	export let id = getContext('form:id') ?? ''
 </script>
 
-<label for={id} class="label pb-0.5 {className}">
-	<span class="label-text font-bold">
+<label for={id} class="ubeac-label pb-0.5 label label-text {className}">
 		<slot />
-	</span>
 </label>

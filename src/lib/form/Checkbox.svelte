@@ -29,6 +29,7 @@
 	export let name = getContext('form:name') ?? ''
 
 	$: classes = clsx(
+		"ubeac-checkbox-input",
 		"checkbox",
 		"mx-2",
 		"rounded",
@@ -39,7 +40,7 @@
 	);
 </script>
 
-<label class="flex flex-row items-center form-control">
+<label class="ubeac-checkbox-label flex flex-row items-center form-control">
   <input {...$$restProps} {disabled} {name} on:change type="checkbox" bind:checked class={classes} />
   <slot />
 </label>

@@ -188,7 +188,7 @@
     class="border-opacity-60 bg-opacity-50"
     circle
   >
-    <Icon name="fas-angle-left" />
+    <Icon icon="fa-solid:angle-left" />
   </Button>
   <Button
     slot="next-btn"
@@ -197,7 +197,7 @@
     class="border-opacity-60 bg-opacity-50"
     circle
   >
-    <Icon name="fas-angle-right" />
+    <Icon icon="fa-solid:angle-right" />
   </Button>
 
   {#each iamges as image}
@@ -278,7 +278,7 @@
   <svelte:fragment slot="title">Dropdown</svelte:fragment>
   <Menu>
     <MenuItem>
-      <Icon slot="prefix" name="fas-user" />
+      <Icon slot="prefix" icon="fa-solid:user" />
       Item 1
     </MenuItem>
     <MenuItem>Item 2</MenuItem>
@@ -302,13 +302,13 @@
 <Menu class="m-2 w-80" rounded compact>
   <MenuTitle>first</MenuTitle>
   <MenuItem iconOnly>
-    <Icon slot="prefix" name="fas-cog" />
-    Item 1</MenuItem
-  >
-  <MenuItem iconOnly>
-    <Icon slot="prefix" name="fas-cog" />
-    Item 2</MenuItem
-  >
+    <Icon slot="prefix" icon="fa-solid:cog" />
+    Item 1
+  </MenuItem>
+  <MenuItem>
+    <Icon slot="prefix" icon="fa-solid:cog" />
+    Item 2
+  </MenuItem>
   <MenuTitle>second</MenuTitle>
   <MenuItem>Item 3</MenuItem>
   <MenuItem>Item 4</MenuItem>
@@ -479,8 +479,16 @@
 
 <Typography size="headline4">Icon</Typography>
 
-<Icon name="bell" />
-<Icon class="text-red-800" name="bell" />
+<Typography size="headline3">
+  <Icon icon="mdi:alarm" />
+  <Icon color="black" class="text-red-800" icon="bx:bxs-dashboard" />
+  <Icon class="text-blue-800" icon="uil:dashboard" />
+  <Icon color="red" class="text-gray-800" icon="bx:bxs-ambulance" />
+  <Icon class="text-indigo-400" icon="bx:bx-hotel" />
+</Typography>
+<Typography class="text-green-800 !text-3xl">
+  Hello World! <Icon width="2em" height="2em" inline icon="fa-solid:cog" />
+</Typography>
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>
 

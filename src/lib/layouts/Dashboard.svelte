@@ -24,7 +24,8 @@
   })
 
   export let title=""
-
+  export let themeButton = true;
+  
   export let sidebarMode = 'open'  // open | close | mini
   export let navbarMode = 'wide'  // wide | tight
   export let navbarColor = 'neutral'  // base | neutral | primary
@@ -38,7 +39,7 @@
       
       <svelte:fragment slot="start">
         {#if $$slots.sidebar}
-          <label for={id} class="btn btn-square btn-ghost lg:inline-flex"
+          <label for={id} class="btn btn-square btn-sm btn-ghost lg:inline-flex"
             class:lg:hidden={["open","mini"].includes(sidebarMode)}
             >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -48,19 +49,17 @@
       </svelte:fragment>
       
       <svelte:fragment slot="end">
-
-        <div>
-          {#if browser && currentTheme == "light"}
+        {#if browser && themeButton}
+          {#if currentTheme == "light"}
             <button class="btn btn-ghost btn-sm btn-square" on:click={() => setTheme("dark")}>
               <Icon size="sm" name="fas-sun" />
             </button>
-            {/if}
-          {#if browser && currentTheme == "dark"}
+          {:else if currentTheme == "dark"}
             <button class="btn btn-ghost btn-sm btn-square" on:click={() => setTheme("light")}>
               <Icon size="sm" name="fas-moon" />
             </button>
           {/if}
-        </div>
+        {/if}
 
         <slot name="navbar-end" />
 
@@ -88,20 +87,17 @@
           </svelte:fragment>
           <svelte:fragment slot="end">
 
-            <slot name="navbar-end" />
-
-            <div>
-              {#if browser && currentTheme == "light"}
+            {#if browser && themeButton}
+              {#if currentTheme == "light"}
                 <button class="btn btn-ghost btn-sm btn-square" on:click={() => setTheme("dark")}>
                   <Icon size="sm" name="fas-sun" />
                 </button>
-                {/if}
-              {#if browser && currentTheme == "dark"}
+              {:else if currentTheme == "dark"}
                 <button class="btn btn-ghost btn-sm btn-square" on:click={() => setTheme("light")}>
                   <Icon size="sm" name="fas-moon" />
                 </button>
               {/if}
-            </div>
+            {/if}
             
           </svelte:fragment>
         </Navbar>

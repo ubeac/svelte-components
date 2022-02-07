@@ -64,6 +64,7 @@
 
 	$: classes = clsx(
 		'card', 
+		'overflow-visible',
 		'bg-base-100', 
 		shadow && shadows[shadow], 
 		bordered && 'border border-base-300', 

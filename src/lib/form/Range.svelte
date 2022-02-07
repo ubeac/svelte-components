@@ -7,13 +7,13 @@
 
 	/**
 	 * color of range
-	 * @type { import('./types').Variant }
+	 * @type { import('../types').Variant }
 	 *  */
 	export let variant = undefined
 
 	/**
 	 * size of range
-	 * @type {import('./types').Size}
+	 * @type {import('../types').Size}
 	 */
 	export let size = undefined
 
@@ -36,6 +36,7 @@
 	export let id = getContext('form:id') ?? name
 
 	$:classes = clsx(
+		"ubeac-range",
 		"range",
 		size && 'range-' + size,
 		variant && 'range-' + variant,

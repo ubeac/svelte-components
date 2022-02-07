@@ -22,13 +22,13 @@
 
 	/**
 	 * specify the variant of select
-	 * @type {import('./types').Variant}
+	 * @type {import('../types').Variant}
 	 */
 	export let variant = undefined
 
 	/**
 	 * size of select
-	 * @type {import('./types').Size}
+	 * @type {import('../types').Size}
 	 */
 	export let size = undefined
 
@@ -53,6 +53,7 @@
 	$: setContext('select:value', value)
 
 	$: classes = clsx(
+		'ubeac-select',
 		'select',
 		'w-full',
 		variant && 'select-' + variant,
@@ -62,7 +63,7 @@
 	)
 </script>
 
-<select {disabled} {id} {name} tabindex="0" class={classes} bind:value>
+<select {...$$restProps} {placeholder} {disabled} {id} {name} tabindex="0" class={classes} bind:value>
 	<option disabled selected value={null}>{placeholder}</option>
 	<slot />
 </select>

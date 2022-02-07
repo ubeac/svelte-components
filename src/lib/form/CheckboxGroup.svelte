@@ -73,6 +73,7 @@
     }
 
     $: classes = clsx(
+        "ubeac-checkbox",
         "checkbox",
         "mx-2",
         "rounded",
@@ -85,7 +86,7 @@
 
 <FormGroup {inline}>
     {#each options as option}
-        <label class="flex flex-row items-center form-control">
+        <label class="ubeac-checkbox-label flex flex-row items-center form-control">
             <input {name} bind:group={selected} type="checkbox" value={getKey(option)} class={classes} />
             {getText(option)}
         </label>

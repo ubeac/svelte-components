@@ -24,6 +24,7 @@
 	setContext('form:id', id)
 
 	$: classes = clsx(
+		'ubeac-form-group',
 		'form-control',
 		'w-full',
 		inline && [

@@ -1,16 +1,19 @@
 <script>
 	import { getContext } from 'svelte'
 
+	let className = ''
+	export {className as class}
+
     /** @type {boolean} */
 	const head = getContext('head')
 </script>
 
 {#if head}
-	<th class="!whitespace-pre-wrap">
+	<th class={className}>
 		<slot />
 	</th>
 {:else}
-	<td class="!whitespace-pre-wrap">
+	<td class={className}>
 		<slot />
 	</td>
 {/if}

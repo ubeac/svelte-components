@@ -56,7 +56,7 @@ import { Typography } from '$lib';
 
 <button
 	{...$$restProps}
-	class="btn btn-{variant} btn-{size} {className}"
+	class="btn btn-{variant} btn-{size} typography-button {className}"
 	class:btn-circle={circle}
 	class:btn-square={square}
 	class:btn-outline={outline}
@@ -70,8 +70,6 @@ import { Typography } from '$lib';
 	class:p-0={compact}
 	on:click>
 	<slot name="prefix" />
-	<Typography size="button">
-		<slot />
-	</Typography>
+	<slot />
 	<slot name="suffix" />
 </button>

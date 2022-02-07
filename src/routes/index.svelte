@@ -41,10 +41,20 @@
     TextArea,
     Toggle,
   } from "$lib/index.js";
-  import DatePicker from "$lib/form/DatePicker.svelte";
-  import GoogleMap from "$lib/map/GoogleMap.svelte";
-  import AutoComplete from "$lib/form/AutoComplete.svelte";
-  import Typography from "$lib/typography/Typography.svelte";
+  import { GoogleMap } from "$lib/index.js";
+  import { DatePicker } from "$lib/index.js";
+  import { AutoComplete } from "$lib/index.js";
+  import { Grid } from "$lib/index.js";
+  import { Typography } from "$lib/index.js";
+
+  import {
+    FormInput,
+    FormSelect,
+    FormRange,
+    FormTextArea,
+    FormDatePicker,
+    FormAutoComplete,
+  } from "$lib/index.js";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -80,6 +90,29 @@
   var iamges = [1, 2, 3, 4, 5, 6, 7];
 
   let autoCompleteValue = "";
+  $: console.log({ autoCompleteValue });
+
+  let formInputEmailValue = "";
+  $: console.log({ type: typeof formInputEmailValue, formInputEmailValue });
+  let formInputPasswordValue = "";
+  $: console.log({
+    type: typeof formInputPasswordValue,
+    formInputPasswordValue,
+  });
+  let formInputNumberValue = 0;
+  $: console.log({ type: typeof formInputNumberValue, formInputNumberValue });
+
+  let formSelectValue = "";
+  $: console.log({ formSelectValue });
+
+  let formSelectLanguageValue = "";
+  $: console.log({ formSelectLanguageValue });
+
+  let formRangeValue = 0;
+  $: console.log({ formRangeValue });
+
+  let formTextAreaValue = "";
+  $: console.log({ formTextAreaValue });
 </script>
 
 <Navbar fixed shadow>
@@ -113,6 +146,122 @@
 <Typography size="button">button</Typography>
 <Typography size="overline">overline</Typography>
 
+<Grid cols={2} class="p-4 gap-4">
+  <Card>
+    <CardTitle>FormInput</CardTitle>
+    <FormInput
+      type="email"
+      label="email"
+      class="mt-2"
+      bind:value={formInputEmailValue}
+      placeholder="Your Email address"
+      id="something"
+    />
+    <FormInput
+      type="password"
+      label="password"
+      class="mt-2"
+      bind:value={formInputPasswordValue}
+    />
+    <FormInput
+      type="number"
+      label="number"
+      class="mt-2"
+      bind:value={formInputNumberValue}
+    />
+  </Card>
+
+  <Card>
+    <CardTitle>FormSelect</CardTitle>
+    <FormSelect
+      options={["one", "two", "three", "four", "five"]}
+      placeholder="choose a number"
+      label="numbers"
+      class="mt-2"
+      bind:value={formSelectValue}
+      id="something"
+    />
+    <FormSelect
+      label="languages"
+      class="mt-2"
+      options={["js", "java", "c++", "python", "html", "css", "php"]}
+      placeholder="choose a language"
+      bind:value={formSelectLanguageValue}
+      id="something"
+    />
+  </Card>
+  <Card>
+    <CardTitle>FormRange</CardTitle>
+    <FormRange
+      label="range input {formRangeValue}"
+      max={1000}
+      bind:value={formRangeValue}
+    />
+  </Card>
+  <Card>
+    <CardTitle>FormTextArea</CardTitle>
+    <FormTextArea
+      placeholder="this is placeholder of text area"
+      label="Text area"
+      bind:value={formTextAreaValue}
+    />
+  </Card>
+
+  <Card>
+    <CardTitle>FormAutoComplete</CardTitle>
+
+    <FormAutoComplete
+      key="id"
+      text="title"
+      label="FormAutoComplete (Accommodation types)"
+      fetch={async (query) => {
+        return fetch(
+          "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
+        )
+          .then((res) => res.json())
+          .then((result) => result.data);
+      }}
+      bind:value={autoCompleteValue}
+      let:option
+    >
+      <div>{option.title}</div>
+    </FormAutoComplete>
+
+    <FormGroup class="mt-2">
+      <Label>AutoComplete (Accommodation types)</Label>
+      <AutoComplete
+        key="id"
+        text="title"
+        fetch={async (query) => {
+          return fetch(
+            "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
+          )
+            .then((res) => res.json())
+            .then((result) => result.data);
+        }}
+        bind:value={autoCompleteValue}
+        let:option
+      >
+        <div>{option.title}</div>
+      </AutoComplete>
+    </FormGroup>
+  </Card>
+
+  <Card>
+    <CardTitle>FormDatePicker</CardTitle>
+    <FormGroup>
+      <Label>Single Day (DatePicker)</Label>
+      <DatePicker bind:value={dateValue} />
+    </FormGroup>
+    <FormDatePicker
+      class="mt-2"
+      label="FormDatePicker Range"
+      range
+      bind:value={dateRange}
+    />
+  </Card>
+</Grid>
+
 <Alert />
 <Card />
 
@@ -126,32 +275,10 @@
 </AvatarGroup>
 
 <FormGroup>
-  <Label>Auto Complete (Accommodation types)</Label>
-  <AutoComplete
-    key="id"
-    text="title"
-    fetch={async (query) => {
-      return fetch(
-        "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
-      )
-        .then((res) => res.json())
-        .then((result) => result.data);
-    }}
-    bind:value={autoCompleteValue}
-    let:text
-  >
-    <div>{text}</div>
-  </AutoComplete>
-</FormGroup>
-
-<FormGroup>
   <Label>Single Day</Label>
   <DatePicker bind:value={dateValue} />
 </FormGroup>
-<FormGroup>
-  <Label>Date Range</Label>
-  <DatePicker range bind:value={dateRange} />
-</FormGroup>
+<FormDatePicker label="FormDatePicker Range" range bind:value={dateRange} />
 
 <Typography size="headline4">Badge</Typography>
 <Badge variant="secondary">New</Badge>
@@ -479,8 +606,11 @@
 
 <Typography size="headline4">Icon</Typography>
 
-<Icon name="bell" />
-<Icon class="text-red-800" name="bell" />
+<Icon icon="mdi:alarm" />
+<Icon class="text-red-800 inline" icon="bx:bxs-dashboard" />
+<Icon class="text-red-800 inline" icon="uil:dashboard" />
+<Icon class="text-red-800 inline" icon="bx:bxs-ambulance" />
+<Icon class="text-red-800 inline" icon="bx:bx-hotel" />
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>
 

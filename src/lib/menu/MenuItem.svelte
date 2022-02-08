@@ -19,6 +19,8 @@
 	/** set active style */
 	export let active = false
 
+	export let hasSubmenu = $$slots.submenu
+
 	export let isSubmenuOpen = false;
 
 	function toggleSubmenu() {
@@ -26,7 +28,7 @@
 	}
 
 	function onClick() {
-		if($$slots.submenu)
+		if(hasSubmenu)
 			toggleSubmenu()
 		dispatch('click')
 	} 
@@ -39,21 +41,19 @@
       <div class="w-full">
         <slot />
       </div>
-    {/if}
-    <slot name="suffix">
-
-    {#if $$slots.submenu}
-      {#if isSubmenuOpen}
-        <Icon class="text-2xl" icon="la:angle-up"/>
-      {:else}
-        <Icon class="text-2xl" icon="la:angle-down" />
-      {/if}
-    {/if}
-	
-	  </slot>
+			<slot name="suffix">
+				{#if hasSubmenu}
+					{#if isSubmenuOpen}
+						<Icon class="text-2xl" icon="la:angle-up"/>
+					{:else}
+						<Icon class="text-2xl" icon="la:angle-down" />
+					{/if}
+				{/if}
+			</slot>
+		{/if}
 	</a>
 </li>
 
-{#if $$slots.submenu && isSubmenuOpen}
+{#if hasSubmenu && isSubmenuOpen}
 	<slot name="submenu"/>
 {/if}

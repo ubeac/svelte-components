@@ -52,11 +52,11 @@
         {#if browser && themeButton}
           {#if currentTheme == "light"}
             <button class="btn btn-ghost btn-sm btn-square" on:click={() => setTheme("dark")}>
-              <Icon size="sm" name="fas-sun" />
+              <Icon class="text-2xl" icon="la:sun" />
             </button>
           {:else if currentTheme == "dark"}
             <button class="btn btn-ghost btn-sm btn-square" on:click={() => setTheme("light")}>
-              <Icon size="sm" name="fas-moon" />
+              <Icon class="text-2xl" icon="la:moon" />
             </button>
           {/if}
         {/if}
@@ -90,11 +90,11 @@
             {#if browser && themeButton}
               {#if currentTheme == "light"}
                 <button class="btn btn-ghost btn-sm btn-square" on:click={() => setTheme("dark")}>
-                  <Icon size="sm" name="fas-sun" />
+                  <Icon class="text-2xl" icon="fas-sun" />
                 </button>
               {:else if currentTheme == "dark"}
                 <button class="btn btn-ghost btn-sm btn-square" on:click={() => setTheme("light")}>
-                  <Icon size="sm" name="fas-moon" />
+                  <Icon class="text-2xl" icon="fas-moon" />
                 </button>
               {/if}
             {/if}
@@ -131,9 +131,9 @@
           <div class="flex justify-end">
             <button class="m-1 btn btn-square btn-sm btn-ghost" on:click={() => (sidebarMode == 'mini' ? sidebarMode = 'open' : sidebarMode = 'mini')}>
               {#if sidebarMode === "mini"}
-                <Icon name="fas-caret-right" />
+                <Icon class="text-2xl" icon="la:caret-right" />
               {:else}
-                <Icon name="fas-caret-left" />
+                <Icon class="text-2xl" icon="la:caret-left" />
               {/if}
             </button>
           </div>

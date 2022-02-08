@@ -1,4 +1,6 @@
 <script>
+import Icon from '$lib/icon/Icon.svelte';
+
 	import clsx from 'clsx';
 
 	let className = ''
@@ -58,11 +60,15 @@
 		class:opacity-50={show} />
 {/if}
 <div class={classes}>
-	<div class="flex flex-row justify-between items-center mb-4">
-		<span class="p-2 text-xl font-semibold">
-			<slot name="title">Title</slot>
-		</span>
-		<div on:click={close} class="text-2xl m-4 mt-3">&times;</div>
-	</div>
+	<slot name="header">
+		<div class="flex flex-row justify-between items-center mb-4">
+			<span class="p-2 text-xl font-semibold">
+				<slot name="title">Title</slot>
+			</span>
+			<div on:click={close} class="text-2xl m-4 mt-3">
+				<Icon icon="la:times" class="text-3xl"/>
+			</div>
+		</div>
+	</slot>
 	<slot />
 </div>

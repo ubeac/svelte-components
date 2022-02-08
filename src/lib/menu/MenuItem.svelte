@@ -44,9 +44,9 @@
 
     {#if $$slots.submenu}
       {#if isSubmenuOpen}
-        <Icon name="fas-angle-up"/>
+        <Icon class="text-2xl" icon="la:angle-up"/>
       {:else}
-        <Icon name="fas-angle-down" />
+        <Icon class="text-2xl" icon="la:angle-down" />
       {/if}
     {/if}
 	

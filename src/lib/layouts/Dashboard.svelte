@@ -115,9 +115,9 @@
       <div class="drawer-side"
       >
         <label for={id} class="drawer-overlay"></label> 
-        <div class="flex flex-col overflow-y-auto border-r border-black border-opacity-5"
+        <div class="flex flex-col overflow-y-visible border-r border-black border-opacity-5"
           class:w-60={sidebarMode !== "mini"}
-          class:w-14={sidebarMode === "mini"}
+          class:w-16={sidebarMode === "mini"}
 
           class:bg-base-100={sidebarColor === "base"}
           class:text-base-content={sidebarColor === "base"}

@@ -30,7 +30,7 @@
     <Dropdown position="bottom" end>
       <svelte:fragment slot="title">
         <Button variant="ghost" square size="sm">
-          <Icon size="sm" name="fas-sliders-h" />
+          <Icon class="text-2xl" icon="la:sliders-h" />
         </Button>
       </svelte:fragment>
       <Card class="w-64 p-4 mt-6 shadow-2xl bg-base-100 text-base-content sm:w-80">
@@ -63,53 +63,53 @@
   <svelte:fragment slot="sidebar">
     <Menu class="py-2 bg-transparent grow" compact=true>
       <MenuItem iconOnly={sidebarMode == "mini"}>
-        <Icon size="sm" slot="prefix" name="fas-home" />
+        <Icon slot="prefix" class="text-2xl" icon="la:home" />
         Item 1
       </MenuItem>
       <MenuItem iconOnly={sidebarMode == "mini"}>
-        <Icon size="sm" slot="prefix" name="fas-th-large" />
+        <Icon slot="prefix" class="text-2xl" icon="la:th-large" />
         Item 2
       </MenuItem>
       <MenuItem iconOnly={sidebarMode == "mini"}>
-        <Icon size="sm" slot="prefix" name="fas-th-large" />
+        <Icon slot="prefix" class="text-2xl" icon="la:th-large" />
         Some Nested Items
         <Menu slot="submenu" class="py-2 bg-transparent" compact=true>
           <MenuItem iconOnly={sidebarMode == "mini"}>
-            <Icon size="sm" slot="prefix" name="fas-home" />
+            <Icon slot="prefix" class="text-2xl" icon="la:home" />
             Item 1
           </MenuItem>
           <MenuItem iconOnly={sidebarMode == "mini"}>
-            <Icon size="sm" slot="prefix" name="fas-th-large" />
+            <Icon slot="prefix" class="text-2xl" icon="la:th-large" />
             Item 2
           </MenuItem>
           <MenuItem iconOnly={sidebarMode == "mini"}>
-            <Icon size="sm" slot="prefix" name="fas-file" />
+            <Icon slot="prefix" class="text-2xl" icon="la:file" />
             Item 3
           </MenuItem>
           <MenuItem iconOnly={sidebarMode == "mini"}>
-            <Icon size="sm" slot="prefix" name="fas-magic" />
+            <Icon slot="prefix" class="text-2xl" icon="la:magic" />
             Item 4
           </MenuItem>
           <MenuItem iconOnly={sidebarMode == "mini"}>
-            <Icon size="sm" slot="prefix" name="fas-layer-group" />
+            <Icon slot="prefix" class="text-2xl" icon="la:layer-group" />
             Item 5
           </MenuItem>
           <MenuItem iconOnly={sidebarMode === "mini"}>
-            <Icon size="sm" slot="prefix" name="fas-table" />
+            <Icon slot="prefix" class="text-2xl" icon="la:table" />
             Item 6
           </MenuItem>
         </Menu>
       </MenuItem>
       <MenuItem iconOnly={sidebarMode == "mini"}>
-        <Icon size="sm" slot="prefix" name="fas-magic" />
+        <Icon slot="prefix" class="text-2xl" icon="la:magic" />
         Item 4
       </MenuItem>
       <MenuItem iconOnly={sidebarMode == "mini"}>
-        <Icon size="sm" slot="prefix" name="fas-layer-group" />
+        <Icon slot="prefix" class="text-2xl" icon="la:layer-group" />
         Item 5
       </MenuItem>
       <MenuItem iconOnly={sidebarMode === "mini"}>
-        <Icon size="sm" slot="prefix" name="fas-table" />
+        <Icon slot="prefix" class="text-2xl" icon="la:table" />
         Item 6
       </MenuItem>
     </Menu>
@@ -152,7 +152,7 @@
 
         <div class="flex items-center justify-end gap-4 m-4 mb-0">
           <Button class="gap-2" size="xs">
-            <Icon name="fas-plus" size="xs" />
+            <Icon class="text-2xl" icon="la:plus" size="xs" />
             Add new
           </Button>
         </div>
@@ -176,26 +176,10 @@
             <Cell>2018-09-14</Cell>
             <Cell>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
+                <Icon class="text-2xl" icon="la:pen" />
               </Button>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
-              </Button>
-            </Cell>
-          </TableRow>
-          <TableRow>
-            <Cell>1</Cell>
-            <Cell>michael23</Cell>
-            <Cell>Michael</Cell>
-            <Cell>Jordan</Cell>
-            <Cell>Mossie_Marvin@yahoo.com</Cell>
-            <Cell>2018-09-14</Cell>
-            <Cell>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
-              </Button>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
+                <Icon class="text-2xl" icon="la:trash"/>
               </Button>
             </Cell>
           </TableRow>
@@ -208,26 +192,10 @@
             <Cell>2018-09-14</Cell>
             <Cell>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
+                <Icon class="text-2xl" icon="la:pen" />
               </Button>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
-              </Button>
-            </Cell>
-          </TableRow>
-          <TableRow>
-            <Cell>1</Cell>
-            <Cell>michael23</Cell>
-            <Cell>Michael</Cell>
-            <Cell>Jordan</Cell>
-            <Cell>Mossie_Marvin@yahoo.com</Cell>
-            <Cell>2018-09-14</Cell>
-            <Cell>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
-              </Button>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
+                <Icon class="text-2xl" icon="la:trash"/>
               </Button>
             </Cell>
           </TableRow>
@@ -240,10 +208,42 @@
             <Cell>2018-09-14</Cell>
             <Cell>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
+                <Icon class="text-2xl" icon="la:pen" />
               </Button>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
+                <Icon class="text-2xl" icon="la:trash"/>
+              </Button>
+            </Cell>
+          </TableRow>
+          <TableRow>
+            <Cell>1</Cell>
+            <Cell>michael23</Cell>
+            <Cell>Michael</Cell>
+            <Cell>Jordan</Cell>
+            <Cell>Mossie_Marvin@yahoo.com</Cell>
+            <Cell>2018-09-14</Cell>
+            <Cell>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:pen" />
+              </Button>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:trash"/>
+              </Button>
+            </Cell>
+          </TableRow>
+          <TableRow>
+            <Cell>1</Cell>
+            <Cell>michael23</Cell>
+            <Cell>Michael</Cell>
+            <Cell>Jordan</Cell>
+            <Cell>Mossie_Marvin@yahoo.com</Cell>
+            <Cell>2018-09-14</Cell>
+            <Cell>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:pen" />
+              </Button>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:trash"/>
               </Button>
             </Cell>
           </TableRow>
@@ -266,7 +266,7 @@
 
         <div class="flex items-center justify-end gap-4 m-4 mb-0">
           <Button class="gap-2" size="xs">
-            <Icon name="fas-plus" size="xs" />
+            <Icon class="text-2xl" icon="la:plus" size="xs" />
             Add new
           </Button>
         </div>
@@ -286,24 +286,10 @@
             <Cell>2018-09-14</Cell>
             <Cell>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
+                <Icon class="text-2xl" icon="la:pen" />
               </Button>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
-              </Button>
-            </Cell>
-          </TableRow>
-          <TableRow>
-            <Cell>1</Cell>
-            <Cell>Jordan</Cell>
-            <Cell>Mossie_Marvin@yahoo.com</Cell>
-            <Cell>2018-09-14</Cell>
-            <Cell>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
-              </Button>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
+                <Icon class="text-2xl" icon="la:trash"/>
               </Button>
             </Cell>
           </TableRow>
@@ -314,24 +300,10 @@
             <Cell>2018-09-14</Cell>
             <Cell>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
+                <Icon class="text-2xl" icon="la:pen" />
               </Button>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
-              </Button>
-            </Cell>
-          </TableRow>
-          <TableRow>
-            <Cell>1</Cell>
-            <Cell>Jordan</Cell>
-            <Cell>Mossie_Marvin@yahoo.com</Cell>
-            <Cell>2018-09-14</Cell>
-            <Cell>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
-              </Button>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
+                <Icon class="text-2xl" icon="la:trash"/>
               </Button>
             </Cell>
           </TableRow>
@@ -342,10 +314,38 @@
             <Cell>2018-09-14</Cell>
             <Cell>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
+                <Icon class="text-2xl" icon="la:pen" />
               </Button>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
+                <Icon class="text-2xl" icon="la:trash"/>
+              </Button>
+            </Cell>
+          </TableRow>
+          <TableRow>
+            <Cell>1</Cell>
+            <Cell>Jordan</Cell>
+            <Cell>Mossie_Marvin@yahoo.com</Cell>
+            <Cell>2018-09-14</Cell>
+            <Cell>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:pen" />
+              </Button>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:trash"/>
+              </Button>
+            </Cell>
+          </TableRow>
+          <TableRow>
+            <Cell>1</Cell>
+            <Cell>Jordan</Cell>
+            <Cell>Mossie_Marvin@yahoo.com</Cell>
+            <Cell>2018-09-14</Cell>
+            <Cell>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:pen" />
+              </Button>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:trash"/>
               </Button>
             </Cell>
           </TableRow>
@@ -366,7 +366,7 @@
 
         <div class="flex items-center justify-end gap-4 m-4 mb-0">
           <Button class="gap-2" size="xs">
-            <Icon name="fas-plus" size="xs" />
+            <Icon class="text-2xl" icon="la:plus" size="xs" />
             Add new
           </Button>
         </div>
@@ -386,24 +386,10 @@
             <Cell>2018-09-14</Cell>
             <Cell>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
+                <Icon class="text-2xl" icon="la:pen" />
               </Button>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
-              </Button>
-            </Cell>
-          </TableRow>
-          <TableRow>
-            <Cell>1</Cell>
-            <Cell>Jordan</Cell>
-            <Cell>Mossie_Marvin@yahoo.com</Cell>
-            <Cell>2018-09-14</Cell>
-            <Cell>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
-              </Button>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
+                <Icon class="text-2xl" icon="la:trash"/>
               </Button>
             </Cell>
           </TableRow>
@@ -414,24 +400,10 @@
             <Cell>2018-09-14</Cell>
             <Cell>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
+                <Icon class="text-2xl" icon="la:pen" />
               </Button>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
-              </Button>
-            </Cell>
-          </TableRow>
-          <TableRow>
-            <Cell>1</Cell>
-            <Cell>Jordan</Cell>
-            <Cell>Mossie_Marvin@yahoo.com</Cell>
-            <Cell>2018-09-14</Cell>
-            <Cell>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
-              </Button>
-              <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
+                <Icon class="text-2xl" icon="la:trash"/>
               </Button>
             </Cell>
           </TableRow>
@@ -442,10 +414,38 @@
             <Cell>2018-09-14</Cell>
             <Cell>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-pen" size="sm" />
+                <Icon class="text-2xl" icon="la:pen" />
               </Button>
               <Button square variant="ghost" size="sm">
-                <Icon name="fas-trash" size="sm" />
+                <Icon class="text-2xl" icon="la:trash"/>
+              </Button>
+            </Cell>
+          </TableRow>
+          <TableRow>
+            <Cell>1</Cell>
+            <Cell>Jordan</Cell>
+            <Cell>Mossie_Marvin@yahoo.com</Cell>
+            <Cell>2018-09-14</Cell>
+            <Cell>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:pen" />
+              </Button>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:trash"/>
+              </Button>
+            </Cell>
+          </TableRow>
+          <TableRow>
+            <Cell>1</Cell>
+            <Cell>Jordan</Cell>
+            <Cell>Mossie_Marvin@yahoo.com</Cell>
+            <Cell>2018-09-14</Cell>
+            <Cell>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:pen" />
+              </Button>
+              <Button square variant="ghost" size="sm">
+                <Icon class="text-2xl" icon="la:trash"/>
               </Button>
             </Cell>
           </TableRow>

@@ -380,13 +380,27 @@
 />
 
 <Typography size="headline4">Collapse</Typography>
-<div class="flex p-2 space-x-2">
-  <Collapse arrow>
-    <svelte:fragment slot="title">Title of collapse</svelte:fragment>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta,
-    libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet
-    praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
-  </Collapse>
+<div class="flex items-start p-2 space-x-2">
+  <div>
+    <Collapse arrow>
+      <svelte:fragment slot="title">Title of collapse</svelte:fragment>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta,
+      libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet
+      praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+    </Collapse>
+    <Collapse arrow>
+      <svelte:fragment slot="title">Title of collapse</svelte:fragment>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta,
+      libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet
+      praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+    </Collapse>
+    <Collapse arrow>
+      <svelte:fragment slot="title">Title of collapse</svelte:fragment>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta,
+      libero nemo dignissimos fugiat error nisi nostrum molestiae esse aliquam. Eveniet
+      praesentium eum nisi officiis recusandae, error facilis! Necessitatibus, quo.
+    </Collapse>
+  </div>
   <Collapse plus click>
     <svelte:fragment slot="title">Title of collapse</svelte:fragment>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem soluta,
@@ -616,7 +630,6 @@
 <Typography class="text-green-800 !text-3xl">
   Hello World! <Icon width="2em" height="2em" inline icon="fa-solid:cog" />
 </Typography>
-
 
 <div class="p-4 bg-gray-200 text-red-600">Svelte App</div>
 

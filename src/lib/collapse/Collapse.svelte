@@ -1,51 +1,75 @@
 <script>
-	let className = ''
-	export { className as class }
+  import { Icon } from "$lib/index";
 
-	/**
-	 * adds arrow icon
-	 */
-	export let arrow = false
+  let className = "";
+  export { className as class };
 
-	/**
-	 * adds plus/minus icon
-	 */
-	export let plus = false
+  /**
+   * adds arrow icon
+   */
+  export let arrow = false;
 
-	/**
-	 * force open
-	 */
-	export let open = false
+  /**
+   * adds plus/minus icon
+   */
+  export let plus = true;
 
-	/**
-	 * force close
-	 */
-	export let close = false
+  /**
+   * force open
+   */
+  export let open = false;
 
-	/**
-	 * open/close with click instead of focus
-	*/
-	export let click = false
+  /**
+   * force close
+   */
+  export let close = false;
+
+  /**
+   * open/close with click instead of focus
+   */
+  export let click = false;
+
+  // close collapse if 'click' is false
+  function onBlur() {
+    if (click) return;
+    isOpen = false;
+  }
+
+  let isOpen = false;
+  let iconName = "";
+
+  $: active = open ? true : close ? false : isOpen;
+
+  $: {
+    if (arrow) {
+      iconName = active ? "la:angle-up" : "la:angle-down";
+    } else if (plus) {
+      iconName = active ? "la:minus" : "la:plus";
+    }
+  }
 </script>
 
 <div
-	tabindex="0"
-	class="collapse pb-0 {className}"
-	class:collapse-open={open}
-	class:collapse-close={close}
-	class:collapse-plus={plus}
-	class:collapse-arrow={arrow}>
-	{#if click}
-		<input type="checkbox" />
-	{/if}
-	<div class="border border-base-300 collapse-title">
-		<slot name="title" />
-	</div>
-
-	<!-- tailwind: !p-0 => !important -->
-	<div class="collapse-content !p-0">
-		<div class="w-full h-full p-4 border-b border-l border-r bg-base-100 border-base-300">
-			<slot />
-		</div>
-	</div>
+  on:blur={onBlur}
+  tabindex="0"
+  class="ubeac-collapse flex flex-col border border-base-300"
+>
+  <div
+    class="ubeac-collapse-title px-4 py-2 bg-base-100 flex flex-row items-center justify-between transition typography-headline6"
+    class:bg-base-200={active}
+    on:click={() => (isOpen = !isOpen)}
+  >
+    <slot name="title" />
+    {#if iconName}
+      <Icon icon={iconName} />
+    {/if}
+  </div>
+  <div
+    class="ubeac-collapse-content bg-base-100 px-4 border-base-300 max-h-0 typography-body1 transition-all overflow-hidden"
+    class:!max-h-min={active}
+    class:border-t={active}
+    class:py-4={active}
+  >
+    <slot />
+  </div>
 </div>

@@ -12,7 +12,7 @@
   /**
    * adds plus/minus icon
    */
-  export let plus = true;
+  export let plus = false;
 
   /**
    * force open
@@ -52,7 +52,7 @@
 <div
   on:blur={onBlur}
   tabindex="0"
-  class="ubeac-collapse flex flex-col border border-base-300"
+  class="ubeac-collapse flex flex-col border border-base-300 {className}"
 >
   <div
     class="ubeac-collapse-title px-4 py-2 bg-base-100 flex flex-row items-center justify-between transition typography-headline6"

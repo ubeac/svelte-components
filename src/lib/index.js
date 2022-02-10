@@ -22,6 +22,7 @@ export { default as AutoComplete } from "./form/AutoComplete.svelte";
 export { default as Checkbox } from "./form/Checkbox.svelte";
 export { default as CheckboxGroup } from "./form/CheckboxGroup.svelte";
 export { default as DatePicker } from "./form/DatePicker.svelte";
+export { default as Editor } from "./editor/Editor.svelte";
 export { default as FormGroup } from "./form/FormGroup.svelte";
 export { default as Input } from "./form/Input.svelte";
 export { default as Label } from "./form/Label.svelte";

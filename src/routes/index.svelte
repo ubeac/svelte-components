@@ -435,11 +435,8 @@
 <Link hover href="#">top</Link>
 
 <Typography size="headline4">Map</Typography>
-<!-- <GoogleMap /> -->
 <GoogleAutoComplete on:change={console.log} />
-<Typography size="body1">
-  Cannot show GoogleMap Component without loading it's script
-</Typography>
+<GoogleMap />
 
 <Typography size="headline4">Menu</Typography>
 <Menu class="m-2 w-80" rounded compact>

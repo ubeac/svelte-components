@@ -275,7 +275,7 @@
 <Alert />
 <Card />
 
-<Avatar size="sm" online label="SM" />
+<Avatar class="custom-avatar" size="sm" online label="SM" />
 <Avatar size="md" online label="MD" />
 
 <AvatarGroup size="lg">
@@ -646,5 +646,17 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 20px;
+  }
+
+  :global(.custom-avatar) :global(.ubeac-avatar-text) {
+    background-color: red;
+  }
+
+  :global(.custom-avatar) {
+    padding: 4px;
+  }
+
+  :global(.ubeac-avatar) :global(.ubeac-avatar-image) {
+    filter: blur(4px);
   }
 </style>

@@ -23,7 +23,11 @@
     | "overline" = "body1";
 </script>
 
-<div class="typography typography-{size} {className}" class:inline>
+<div
+  {...$$restProps}
+  class="typography typography-{size} {className}"
+  class:inline
+>
   <slot />
 </div>
 

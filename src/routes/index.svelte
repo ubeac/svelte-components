@@ -56,6 +56,7 @@
     FormAutoComplete,
   } from "$lib/index.js";
   import GoogleAutoComplete from "$lib/map/GoogleAutoComplete.svelte";
+  import Editor from "$lib/editor/Editor.svelte";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -114,6 +115,9 @@
 
   let formTextAreaValue = "";
   $: console.log({ formTextAreaValue });
+
+  let editorValue = "";
+  $: console.log({ editorValue });
 </script>
 
 <Navbar fixed shadow>
@@ -262,6 +266,11 @@
     />
   </Card>
 </Grid>
+
+<FormGroup class="p-4">
+  <Label>Editor</Label>
+  <Editor bind:value={editorValue} />
+</FormGroup>
 
 <Alert />
 <Card />
@@ -435,8 +444,8 @@
 <Link hover href="#">top</Link>
 
 <Typography size="headline4">Map</Typography>
-<GoogleAutoComplete on:change={console.log} />
-<GoogleMap />
+<!-- <GoogleAutoComplete on:change={console.log} /> -->
+<!-- <GoogleMap /> -->
 
 <Typography size="headline4">Menu</Typography>
 <Menu class="m-2 w-80" rounded compact>

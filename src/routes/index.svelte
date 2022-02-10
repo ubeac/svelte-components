@@ -55,6 +55,7 @@
     FormDatePicker,
     FormAutoComplete,
   } from "$lib/index.js";
+  import GoogleAutoComplete from "$lib/map/GoogleAutoComplete.svelte";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -435,6 +436,7 @@
 
 <Typography size="headline4">Map</Typography>
 <!-- <GoogleMap /> -->
+<GoogleAutoComplete on:change={console.log} />
 <Typography size="body1">
   Cannot show GoogleMap Component without loading it's script
 </Typography>

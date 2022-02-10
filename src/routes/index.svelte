@@ -272,7 +272,13 @@
   <Editor bind:value={editorValue} />
 </FormGroup>
 
-<Alert />
+<Alert>
+  <Icon slot="icon" icon="la:cog" />
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur exercitationem
+  impedit tempora, veritatis deserunt, sint officiis rem vitae voluptas voluptate
+  sed nulla cumque repellat, asperiores doloremque? Iure, nihil debitis.
+  <Button slot="action">Close</Button>
+</Alert>
 <Card />
 
 <Avatar size="sm" online label="SM" />
@@ -646,5 +652,17 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 20px;
+  }
+
+  :global(.ubeac-alert-icon) {
+    font-size: 64px;
+    color: green;
+  }
+
+  :global(.ubeac-alert) {
+    border: 1px solid black;
+    padding: 32px;
+    margin: 32px;
+    width: calc(100% - 64px);
   }
 </style>

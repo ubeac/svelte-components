@@ -9,11 +9,11 @@
 </script>
 
 {#if head}
-	<th class={className}>
+	<th class="ubeac-table-cell ubeac-table-header-cell {className}">
 		<slot />
 	</th>
 {:else}
-	<td class={className}>
+	<td class="ubeac-table-cell ubeac-table-body-cell {className}">
 		<slot />
 	</td>
 {/if}

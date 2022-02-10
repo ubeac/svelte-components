@@ -1,5 +1,5 @@
 <script>
-	import { setContext } from 'svelte'
+	import { setContext } from 'svelte';
 
 	let className = ''
 	export { className as class }
@@ -7,6 +7,6 @@
 	setContext('head', true)
 </script>
 
-<tr class={className}>
+<tr class="ubeac-table-header {className}">
 	<slot />
 </tr>

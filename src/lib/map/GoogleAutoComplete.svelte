@@ -1,4 +1,6 @@
 <script>
+  import { auto } from "@popperjs/core";
+
   import { createEventDispatcher, onMount, onDestroy } from "svelte";
 
   export let initial = "";
@@ -79,9 +81,20 @@
   });
 </script>
 
+{#if !autocomplete}
+  <div
+    {...$$restProps}
+    class="border border-neutral p-2 py-4 map w-full text-center "
+  >
+    Cannot use GoogleAutoComplete without loading it's map script
+    <br />
+    You should add the script tag for google map in head section of your html
+  </div>
+{/if}
 <input
   {...$$restProps}
   class="input w-full input-bordered"
+  class:hidden={!autocomplete}
   type="text"
   {placeholder}
   bind:value={initial}

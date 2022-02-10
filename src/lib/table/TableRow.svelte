@@ -9,6 +9,6 @@
 	export let active = false
 </script>
 
-<tr class={className} class:active class:hover>
+<tr class="ubeac-table-row {className}" class:active class:hover>
 	<slot />
 </tr>

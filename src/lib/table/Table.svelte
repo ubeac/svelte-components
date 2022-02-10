@@ -9,8 +9,8 @@
 	export let compact = true
 </script>
 
-<div class="overflow-x-auto">
-  <table class="table w-full {className}" class:table-zebra={zebra} class:table-compact={compact}>
+<div class="ubeac-table-parent overflow-x-auto">
+  <table class="ubeac-table table w-full {className}" class:table-zebra={zebra} class:table-compact={compact}>
     <thead>
       <slot name="header" />
     </thead>

@@ -412,8 +412,8 @@
   </Card>
   <Divider vertical>VS</Divider>
 
-  <Card shadow position="full">
-    <img class="max-w-sm" slot="image" src="/small/img-1.jpg" alt="test" />
+  <Card shadow>
+    <img class="max-w-sm" src="/small/img-1.jpg" alt="test" />
     <CardBody>
       <CardTitle>Another Card</CardTitle>
       this is content of card

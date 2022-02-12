@@ -232,7 +232,7 @@
       />
     </CardBody>
   </Card>
-  <Card>
+  <Card class="hover-border">
     <CardHeader>FormTextArea</CardHeader>
     <CardBody>
       <FormTextArea
@@ -688,5 +688,16 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 20px;
+  }
+  :global(.hover-border) {
+    transition: all 0.2s ease;
+  }
+
+  :global(.hover-border):hover {
+    border: 1px solid blue !important;
+  }
+
+  :global(.ubeac-card):hover {
+    border: 1 px solid black;
   }
 </style>

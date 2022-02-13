@@ -59,6 +59,8 @@
   import Editor from "$lib/editor/Editor.svelte";
   import CardBody from "$lib/card/CardBody.svelte";
   import CardHeader from "$lib/card/CardHeader.svelte";
+  import Form from "$lib/form/Form.svelte";
+  import LoadingBar from "$lib/progress/LoadingBar.svelte";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -120,12 +122,28 @@
 
   let editorValue = "";
   $: console.log({ editorValue });
+
+  let formFormInputValue = "";
+  $: console.log({ formFormInputValue });
+
+  let loadingRef = null;
+  let loading2Ref = null;
+  let loading3Show = true;
+
+  let cardLoadingBarRef;
 </script>
+
+<LoadingBar bind:this={loadingRef} variant="primary" show />
+<LoadingBar bind:this={loading2Ref} duration={2000} show variant="secondary" />
+<LoadingBar bind:show={loading3Show} variant="accent" indeterminate />
 
 <Navbar fixed shadow>
   <svelte:fragment slot="start">
-    <Button variant="ghost">Left</Button>
-    <Button variant="ghost">Another</Button>
+    <Button on:click={() => loadingRef.done()} variant="ghost">Left</Button>
+    <Button on:click={() => loading2Ref.done()} variant="ghost">Another</Button>
+    <Button on:click={() => (loading3Show = !loading3Show)} variant="ghost"
+      >Loading 3</Button
+    >
   </svelte:fragment>
 
   <svelte:fragment slot="center">Svelte Components</svelte:fragment>
@@ -138,6 +156,25 @@
 <br />
 <br />
 <br />
+
+<Button on:click={() => loadingRef.push(20)}>Add Task For loading 1</Button>
+<Button on:click={() => loadingRef.pop(20)}>remove Task From loading 1</Button>
+
+<div class="p-4">
+  <Card>
+    <LoadingBar show bind:this={cardLoadingBarRef} />
+    <CardBody>
+      <CardTitle class="flex ">Test Loading Bar</CardTitle>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti culpa pariatur
+      error id corporis ratione architecto magnam voluptatem nihil odit ipsum asperiores
+      vitae, officiis quisquam hic dolorem ex eius quaerat.
+      <CardActions>
+        <Button on:click={() => cardLoadingBarRef.push(20)}>Add Task</Button>
+        <Button on:click={() => cardLoadingBarRef.pop(20)}>remove Task</Button>
+      </CardActions>
+    </CardBody>
+  </Card>
+</div>
 
 <Typography size="headline1">Headline1</Typography>
 <Typography size="headline2">Headline2</Typography>
@@ -527,13 +564,37 @@
   <PaginationItem>Next</PaginationItem>
 </Pagination>
 
+<Card class="w-1/2 mx-auto">
+  <CardHeader>Form Example</CardHeader>
+  <CardBody>
+    <Form action="#">
+      <FormInput name="name" label="name" bind:value={formFormInputValue} />
+      <FormInput name="email" label="email" bind:value={formInputEmailValue} />
+      <Button class="mt-4" type="submit">Submit</Button>
+    </Form>
+  </CardBody>
+</Card>
+
+<div class="p-4">
+  <Card>
+    <CardHeader>Form Inline Example</CardHeader>
+    <CardBody>
+      <Form inline action="#">
+        <FormInput label="name" bind:value={formFormInputValue} />
+        <FormInput label="email" bind:value={formInputEmailValue} />
+        <Button type="submit">Submit</Button>
+      </Form>
+    </CardBody>
+  </Card>
+</div>
+
 <Typography size="headline4" class="typography-headline4">Popover</Typography>
 <Button id="pop-target">Open</Button>
 <Popover hover target="pop-target">
   <div>Hello from Popover</div>
 </Popover>
 
-<form>
+<Form>
   <FormGroup id="email" name="email">
     <Label>Email:</Label>
     <Input variant="success" type="email" />
@@ -599,7 +660,7 @@
       <Option value="Fourth" />
     </Select>
   </FormGroup>
-</form>
+</Form>
 
 <Typography size="headline4">Spinner</Typography>
 <Spinner />

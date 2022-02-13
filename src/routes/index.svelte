@@ -190,92 +190,104 @@
 <Typography size="button">button</Typography>
 <Typography size="overline">overline</Typography>
 
+<div class="p-5">
+  <Card>
+    <CardHeader>Featured</CardHeader>
+    <CardBody>
+      <CardTitle>Special title treatment</CardTitle>
+      <p>
+        With supporting text below as a natural lead-in to additional content.
+      </p>
+      <CardActions>
+        <Button>Go somewhere</Button>
+      </CardActions>
+    </CardBody>
+  </Card>
+</div>
+
 <Grid cols={2} class="p-4 gap-4">
   <Card>
-    <CardTitle>FormInput</CardTitle>
-    <FormInput
-      type="email"
-      label="email"
-      class="mt-2"
-      bind:value={formInputEmailValue}
-      placeholder="Your Email address"
-      id="something"
-    />
-    <FormInput
-      type="password"
-      label="password"
-      class="mt-2"
-      bind:value={formInputPasswordValue}
-    />
-    <FormInput
-      type="number"
-      label="number"
-      class="mt-2"
-      bind:value={formInputNumberValue}
-    />
+    <CardHeader>Form Input Header</CardHeader>
+    <img alt="" src="/small/img-2.jpg" />
+    <CardBody>
+      <CardTitle>FormInput</CardTitle>
+      <FormInput
+        type="email"
+        label="email"
+        class="mt-2"
+        bind:value={formInputEmailValue}
+        placeholder="Your Email address"
+        id="something"
+      />
+      <FormInput
+        type="password"
+        label="password"
+        class="mt-2"
+        bind:value={formInputPasswordValue}
+      />
+      <FormInput
+        type="number"
+        label="number"
+        class="mt-2"
+        bind:value={formInputNumberValue}
+      />
+      <CardActions position="end">
+        <Button variant="ghost">Cancel</Button>
+        <Button>Save</Button>
+      </CardActions>
+    </CardBody>
   </Card>
 
   <Card>
-    <CardTitle>FormSelect</CardTitle>
-    <FormSelect
-      options={["one", "two", "three", "four", "five"]}
-      placeholder="choose a number"
-      label="numbers"
-      class="mt-2"
-      bind:value={formSelectValue}
-      id="something"
-    />
-    <FormSelect
-      label="languages"
-      class="mt-2"
-      options={["js", "java", "c++", "python", "html", "css", "php"]}
-      placeholder="choose a language"
-      bind:value={formSelectLanguageValue}
-      id="something"
-    />
+    <CardBody>
+      <CardTitle>FormSelect</CardTitle>
+      <FormSelect
+        options={["one", "two", "three", "four", "five"]}
+        placeholder="choose a number"
+        label="numbers"
+        class="mt-2"
+        bind:value={formSelectValue}
+        id="something"
+      />
+      <FormSelect
+        label="languages"
+        class="mt-2"
+        options={["js", "java", "c++", "python", "html", "css", "php"]}
+        placeholder="choose a language"
+        bind:value={formSelectLanguageValue}
+        id="something"
+      />
+    </CardBody>
   </Card>
   <Card>
-    <CardTitle>FormRange</CardTitle>
-    <FormRange
-      label="range input {formRangeValue}"
-      max={1000}
-      bind:value={formRangeValue}
-    />
+    <CardHeader>FormRange</CardHeader>
+    <CardBody>
+      <FormRange
+        label="range input {formRangeValue}"
+        max={1000}
+        bind:value={formRangeValue}
+      />
+    </CardBody>
   </Card>
-  <Card>
-    <CardTitle>FormTextArea</CardTitle>
-    <FormTextArea
-      placeholder="this is placeholder of text area"
-      label="Text area"
-      bind:value={formTextAreaValue}
-    />
+  <Card class="hover-border">
+    <CardHeader>FormTextArea</CardHeader>
+    <CardBody>
+      <FormTextArea
+        placeholder="this is placeholder of text area"
+        label="Text area"
+        bind:value={formTextAreaValue}
+      />
+    </CardBody>
   </Card>
 
   <Card>
-    <CardTitle>FormAutoComplete</CardTitle>
+    <CardHeader>FormAutoComplete</CardHeader>
 
-    <FormAutoComplete
-      key="id"
-      text="title"
-      label="FormAutoComplete (Accommodation types)"
-      fetch={async (query) => {
-        return fetch(
-          "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
-        )
-          .then((res) => res.json())
-          .then((result) => result.data);
-      }}
-      bind:value={autoCompleteValue}
-      let:option
-    >
-      <div>{option.title}</div>
-    </FormAutoComplete>
-
-    <FormGroup class="mt-2">
-      <Label>AutoComplete (Accommodation types)</Label>
-      <AutoComplete
+    <CardBody>
+      <FormAutoComplete
         key="id"
         text="title"
+        label="FormAutoComplete (Accommodation types)"
         fetch={async (query) => {
           return fetch(
             "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
@@ -287,22 +299,43 @@
         let:option
       >
         <div>{option.title}</div>
-      </AutoComplete>
-    </FormGroup>
+      </FormAutoComplete>
+
+      <FormGroup class="mt-2">
+        <Label>AutoComplete (Accommodation types)</Label>
+        <AutoComplete
+          key="id"
+          text="title"
+          fetch={async (query) => {
+            return fetch(
+              "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
+            )
+              .then((res) => res.json())
+              .then((result) => result.data);
+          }}
+          bind:value={autoCompleteValue}
+          let:option
+        >
+          <div>{option.title}</div>
+        </AutoComplete>
+      </FormGroup>
+    </CardBody>
   </Card>
 
   <Card>
-    <CardTitle>FormDatePicker</CardTitle>
-    <FormGroup>
-      <Label>Single Day (DatePicker)</Label>
-      <DatePicker bind:value={dateValue} />
-    </FormGroup>
-    <FormDatePicker
-      class="mt-2"
-      label="FormDatePicker Range"
-      range
-      bind:value={dateRange}
-    />
+    <CardHeader>FormDatePicker</CardHeader>
+    <CardBody>
+      <FormGroup>
+        <Label>Single Day (DatePicker)</Label>
+        <DatePicker bind:value={dateValue} />
+      </FormGroup>
+      <FormDatePicker
+        class="mt-2"
+        label="FormDatePicker Range"
+        range
+        bind:value={dateRange}
+      />
+    </CardBody>
   </Card>
 </Grid>
 
@@ -312,7 +345,6 @@
 </FormGroup>
 
 <Alert />
-<Card />
 
 <Avatar size="sm" online label="SM" />
 <Avatar size="md" online label="MD" />
@@ -400,24 +432,32 @@
 >
 
 <Typography size="headline4">Card</Typography>
-<div class="flex space-x-2 space-y-2 flex-col sm:flex-row">
-  <Card>
-    <CardTitle slot="title">Card Title</CardTitle>
-    <CardActions slot="actions">
-      <div>Action 1</div>
-      <div>Action 2</div>
-    </CardActions>
-    this is content of card
+<div class="flex w-full space-x-2 space-y-2 items-center flex-col sm:flex-row">
+  <Card class="w-full max-w-sm">
+    <CardBody>
+      <CardTitle>Card Title</CardTitle>
+
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis
+      sit consequuntur doloribus vero unde facilis iste accusamus commodi
+      similique. Assumenda exercitationem incidunt blanditiis fuga
+      necessitatibus recusandae aliquam amet doloribus.
+      <CardActions>
+        <div>Action 1</div>
+        <div>Action 2</div>
+      </CardActions>
+    </CardBody>
   </Card>
   <Divider vertical>VS</Divider>
 
-  <Card shadow position="full">
-    <CardTitle slot="title">Another Card</CardTitle>
-    <CardActions slot="actions">
-      <div>Action</div>
-    </CardActions>
-    this is content of card
-    <img class="max-w-sm" slot="image" src="/small/img-1.jpg" alt="test" />
+  <Card shadow>
+    <img class="max-w-sm" src="/small/img-1.jpg" alt="test" />
+    <CardBody>
+      <CardTitle>Another Card</CardTitle>
+      this is content of card
+      <CardActions>
+        <div>Action</div>
+      </CardActions>
+    </CardBody>
   </Card>
 </div>
 <Divider />
@@ -709,5 +749,16 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 20px;
+  }
+  :global(.hover-border) {
+    transition: all 0.2s ease;
+  }
+
+  :global(.hover-border):hover {
+    border: 1px solid blue !important;
+  }
+
+  :global(.ubeac-card):hover {
+    border: 1 px solid black;
   }
 </style>

@@ -1,15 +1,18 @@
 <script>
-	import { Typography } from "$lib/index.js";
+  import { Typography } from "$lib/index.js";
 
-	let className = ''
-	export { className as class }
+  let className = "";
+  export { className as class };
 
-	/**
-	 * centered text
-	 */
-	export let center = false
+  /**
+   * centered text
+   */
+  export let center = false;
 </script>
 
-<Typography size="headline5" class="m-2 {className} {center ? 'text-center':''}">
-	<slot />
+<Typography
+  size="headline5"
+  class="ubeac-card-title mb-3 {className} {center ? 'text-center' : ''}"
+>
+  <slot />
 </Typography>

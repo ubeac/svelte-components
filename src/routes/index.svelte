@@ -272,7 +272,13 @@
   <Editor bind:value={editorValue} />
 </FormGroup>
 
-<Alert />
+<Alert>
+  <Icon slot="icon" icon="la:cog" />
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur exercitationem
+  impedit tempora, veritatis deserunt, sint officiis rem vitae voluptas voluptate
+  sed nulla cumque repellat, asperiores doloremque? Iure, nihil debitis.
+  <Button slot="action">Close</Button>
+</Alert>
 <Card />
 
 <Avatar class="custom-avatar" size="sm" online label="SM" />

@@ -48,15 +48,15 @@
 </script>
 
 <div
-	class="avatar {sizes[size]} {className}"
+	class="ubeac-avatar avatar {sizes[size]} {className}"
 	class:online
 	class:offline
 	class:placeholder={label && !image}>
 	{#if typeof image !== 'undefined'}
-		<img class={shapes[shape]} src={image} alt={label} />
+		<img class="ubeac-avatar-image {shapes[shape]}" src={image} alt={label} />
 	{:else if label}
 		<span
-			class="w-full h-full {shapes[
+			class="ubeac-avatar-text w-full h-full {shapes[
 				shape
 			]} bg-neutral-focus text-neutral-content text-center flex items-center justify-center">
 			{label}

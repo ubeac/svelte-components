@@ -344,9 +344,15 @@
   <Editor bind:value={editorValue} />
 </FormGroup>
 
-<Alert />
+<Alert>
+  <Icon slot="icon" icon="la:cog" />
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur exercitationem
+  impedit tempora, veritatis deserunt, sint officiis rem vitae voluptas voluptate
+  sed nulla cumque repellat, asperiores doloremque? Iure, nihil debitis.
+  <Button slot="action">Close</Button>
+</Alert>
 
-<Avatar size="sm" online label="SM" />
+<Avatar class="custom-avatar" size="sm" online label="SM" />
 <Avatar size="md" online label="MD" />
 
 <AvatarGroup size="lg">
@@ -750,6 +756,19 @@
     font-weight: 600;
     margin-top: 20px;
   }
+
+  :global(.custom-avatar) :global(.ubeac-avatar-text) {
+    background-color: red;
+  }
+
+  :global(.custom-avatar) {
+    padding: 4px;
+  }
+
+  :global(.ubeac-avatar) :global(.ubeac-avatar-image) {
+    filter: blur(4px);
+  }
+  
   :global(.hover-border) {
     transition: all 0.2s ease;
   }

@@ -1,47 +1,49 @@
 <script>
-	import { fade } from 'svelte/transition'
-	// import defaults from './default'
-	// import Icon from './Icon.svelte'
+  import { Icon } from "$lib";
 
-	let className = ''
-	export { className as class }
+  import { fade } from "svelte/transition";
+  // import defaults from './default'
+  // import Icon from './Icon.svelte'
 
-	/**
-	 * variany of alert
-	 * @type { import('./types').Variant }
-	 */
-	export let variant = 'info'
+  let className = "";
+  export { className as class };
 
-	/**
-	 * set `true` if alert is open
-	 * @type {boolean}
-	 */
-	export let open = true
+  /**
+   * variany of alert
+   * @type { import('../types').Variant }
+   */
+  export let variant = "info";
 
+  /**
+   * set `true` if alert is open
+   * @type {boolean}
+   */
+  export let open = true;
 </script>
 
 {#if open}
-	<div transition:fade={{ duration: 100 }} class="alert alert-{variant} {className}">
-		<div class="flex w-full">
-			<div class="flex items-center justify-center mr-4 text-center">
-				<slot name="icon">
-                    <!-- TODO: add default icon -->
-					<!-- <Icon size="sm" name={defaults.states[state].icon} /> -->
-				</slot>
-			</div>
-			<div class="flex flex-col flex-1">
-				<div class="font-semibold">
-					<slot class="font-semibold" name="title" />
-				</div>
-				<slot />
-			</div>
-			<slot name="action">
-        <button class="btn btn-xs btn-ghost btn-circle" on:click={() => (open = !open)}>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current">   
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>                       
-          </svg>
-        </button>
-			</slot>
-		</div>
-	</div>
+  <div
+    transition:fade={{ duration: 100 }}
+    class="ubeac-alert alert alert-{variant} flex w-full {className}"
+  >
+    <div
+      class="ubeac-alert-icon flex items-center justify-center mr-4 text-center"
+    >
+      <slot name="icon">
+        <Icon icon="fa-solid:info" />
+      </slot>
+    </div>
+    <div class="ubeac-alert-content flex flex-col flex-1 typography-body1">
+      <slot class="font-semibold" name="title" />
+      <slot />
+    </div>
+    <slot name="action">
+      <button
+        class="ubeac-alert-close-btn btn btn-xs btn-ghost btn-circle"
+        on:click={() => (open = !open)}
+      >
+        <Icon icon="fa-solid:times" />
+      </button>
+    </slot>
+  </div>
 {/if}

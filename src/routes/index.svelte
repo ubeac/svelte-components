@@ -57,6 +57,10 @@
   } from "$lib/index.js";
   import GoogleAutoComplete from "$lib/map/GoogleAutoComplete.svelte";
   import Editor from "$lib/editor/Editor.svelte";
+  import CardBody from "$lib/card/CardBody.svelte";
+  import CardHeader from "$lib/card/CardHeader.svelte";
+  import Form from "$lib/form/Form.svelte";
+  import LoadingBar from "$lib/progress/LoadingBar.svelte";
 
   let drawerOpen = false;
   let modalOpen = false;
@@ -118,12 +122,28 @@
 
   let editorValue = "";
   $: console.log({ editorValue });
+
+  let formFormInputValue = "";
+  $: console.log({ formFormInputValue });
+
+  let loadingRef = null;
+  let loading2Ref = null;
+  let loading3Show = true;
+
+  let cardLoadingBarRef;
 </script>
+
+<LoadingBar bind:this={loadingRef} variant="primary" show />
+<LoadingBar bind:this={loading2Ref} duration={2000} show variant="secondary" />
+<LoadingBar bind:show={loading3Show} variant="accent" indeterminate />
 
 <Navbar fixed shadow>
   <svelte:fragment slot="start">
-    <Button variant="ghost">Left</Button>
-    <Button variant="ghost">Another</Button>
+    <Button on:click={() => loadingRef.done()} variant="ghost">Left</Button>
+    <Button on:click={() => loading2Ref.done()} variant="ghost">Another</Button>
+    <Button on:click={() => (loading3Show = !loading3Show)} variant="ghost"
+      >Loading 3</Button
+    >
   </svelte:fragment>
 
   <svelte:fragment slot="center">Svelte Components</svelte:fragment>
@@ -136,6 +156,25 @@
 <br />
 <br />
 <br />
+
+<Button on:click={() => loadingRef.push(20)}>Add Task For loading 1</Button>
+<Button on:click={() => loadingRef.pop(20)}>remove Task From loading 1</Button>
+
+<div class="p-4">
+  <Card>
+    <LoadingBar show bind:this={cardLoadingBarRef} />
+    <CardBody>
+      <CardTitle class="flex ">Test Loading Bar</CardTitle>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti culpa pariatur
+      error id corporis ratione architecto magnam voluptatem nihil odit ipsum asperiores
+      vitae, officiis quisquam hic dolorem ex eius quaerat.
+      <CardActions>
+        <Button on:click={() => cardLoadingBarRef.push(20)}>Add Task</Button>
+        <Button on:click={() => cardLoadingBarRef.pop(20)}>remove Task</Button>
+      </CardActions>
+    </CardBody>
+  </Card>
+</div>
 
 <Typography size="headline1">Headline1</Typography>
 <Typography size="headline2">Headline2</Typography>
@@ -151,92 +190,104 @@
 <Typography size="button">button</Typography>
 <Typography size="overline">overline</Typography>
 
+<div class="p-5">
+  <Card>
+    <CardHeader>Featured</CardHeader>
+    <CardBody>
+      <CardTitle>Special title treatment</CardTitle>
+      <p>
+        With supporting text below as a natural lead-in to additional content.
+      </p>
+      <CardActions>
+        <Button>Go somewhere</Button>
+      </CardActions>
+    </CardBody>
+  </Card>
+</div>
+
 <Grid cols={2} class="p-4 gap-4">
   <Card>
-    <CardTitle>FormInput</CardTitle>
-    <FormInput
-      type="email"
-      label="email"
-      class="mt-2"
-      bind:value={formInputEmailValue}
-      placeholder="Your Email address"
-      id="something"
-    />
-    <FormInput
-      type="password"
-      label="password"
-      class="mt-2"
-      bind:value={formInputPasswordValue}
-    />
-    <FormInput
-      type="number"
-      label="number"
-      class="mt-2"
-      bind:value={formInputNumberValue}
-    />
+    <CardHeader>Form Input Header</CardHeader>
+    <img alt="" src="/small/img-2.jpg" />
+    <CardBody>
+      <CardTitle>FormInput</CardTitle>
+      <FormInput
+        type="email"
+        label="email"
+        class="mt-2"
+        bind:value={formInputEmailValue}
+        placeholder="Your Email address"
+        id="something"
+      />
+      <FormInput
+        type="password"
+        label="password"
+        class="mt-2"
+        bind:value={formInputPasswordValue}
+      />
+      <FormInput
+        type="number"
+        label="number"
+        class="mt-2"
+        bind:value={formInputNumberValue}
+      />
+      <CardActions position="end">
+        <Button variant="ghost">Cancel</Button>
+        <Button>Save</Button>
+      </CardActions>
+    </CardBody>
   </Card>
 
   <Card>
-    <CardTitle>FormSelect</CardTitle>
-    <FormSelect
-      options={["one", "two", "three", "four", "five"]}
-      placeholder="choose a number"
-      label="numbers"
-      class="mt-2"
-      bind:value={formSelectValue}
-      id="something"
-    />
-    <FormSelect
-      label="languages"
-      class="mt-2"
-      options={["js", "java", "c++", "python", "html", "css", "php"]}
-      placeholder="choose a language"
-      bind:value={formSelectLanguageValue}
-      id="something"
-    />
+    <CardBody>
+      <CardTitle>FormSelect</CardTitle>
+      <FormSelect
+        options={["one", "two", "three", "four", "five"]}
+        placeholder="choose a number"
+        label="numbers"
+        class="mt-2"
+        bind:value={formSelectValue}
+        id="something"
+      />
+      <FormSelect
+        label="languages"
+        class="mt-2"
+        options={["js", "java", "c++", "python", "html", "css", "php"]}
+        placeholder="choose a language"
+        bind:value={formSelectLanguageValue}
+        id="something"
+      />
+    </CardBody>
   </Card>
   <Card>
-    <CardTitle>FormRange</CardTitle>
-    <FormRange
-      label="range input {formRangeValue}"
-      max={1000}
-      bind:value={formRangeValue}
-    />
+    <CardHeader>FormRange</CardHeader>
+    <CardBody>
+      <FormRange
+        label="range input {formRangeValue}"
+        max={1000}
+        bind:value={formRangeValue}
+      />
+    </CardBody>
   </Card>
-  <Card>
-    <CardTitle>FormTextArea</CardTitle>
-    <FormTextArea
-      placeholder="this is placeholder of text area"
-      label="Text area"
-      bind:value={formTextAreaValue}
-    />
+  <Card class="hover-border">
+    <CardHeader>FormTextArea</CardHeader>
+    <CardBody>
+      <FormTextArea
+        placeholder="this is placeholder of text area"
+        label="Text area"
+        bind:value={formTextAreaValue}
+      />
+    </CardBody>
   </Card>
 
   <Card>
-    <CardTitle>FormAutoComplete</CardTitle>
+    <CardHeader>FormAutoComplete</CardHeader>
 
-    <FormAutoComplete
-      key="id"
-      text="title"
-      label="FormAutoComplete (Accommodation types)"
-      fetch={async (query) => {
-        return fetch(
-          "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
-        )
-          .then((res) => res.json())
-          .then((result) => result.data);
-      }}
-      bind:value={autoCompleteValue}
-      let:option
-    >
-      <div>{option.title}</div>
-    </FormAutoComplete>
-
-    <FormGroup class="mt-2">
-      <Label>AutoComplete (Accommodation types)</Label>
-      <AutoComplete
+    <CardBody>
+      <FormAutoComplete
         key="id"
         text="title"
+        label="FormAutoComplete (Accommodation types)"
         fetch={async (query) => {
           return fetch(
             "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
@@ -248,22 +299,43 @@
         let:option
       >
         <div>{option.title}</div>
-      </AutoComplete>
-    </FormGroup>
+      </FormAutoComplete>
+
+      <FormGroup class="mt-2">
+        <Label>AutoComplete (Accommodation types)</Label>
+        <AutoComplete
+          key="id"
+          text="title"
+          fetch={async (query) => {
+            return fetch(
+              "https://packageapi.tripsupport.ca/api/Resource/GetAccommodationTypes"
+            )
+              .then((res) => res.json())
+              .then((result) => result.data);
+          }}
+          bind:value={autoCompleteValue}
+          let:option
+        >
+          <div>{option.title}</div>
+        </AutoComplete>
+      </FormGroup>
+    </CardBody>
   </Card>
 
   <Card>
-    <CardTitle>FormDatePicker</CardTitle>
-    <FormGroup>
-      <Label>Single Day (DatePicker)</Label>
-      <DatePicker bind:value={dateValue} />
-    </FormGroup>
-    <FormDatePicker
-      class="mt-2"
-      label="FormDatePicker Range"
-      range
-      bind:value={dateRange}
-    />
+    <CardHeader>FormDatePicker</CardHeader>
+    <CardBody>
+      <FormGroup>
+        <Label>Single Day (DatePicker)</Label>
+        <DatePicker bind:value={dateValue} />
+      </FormGroup>
+      <FormDatePicker
+        class="mt-2"
+        label="FormDatePicker Range"
+        range
+        bind:value={dateRange}
+      />
+    </CardBody>
   </Card>
 </Grid>
 
@@ -279,7 +351,6 @@
   sed nulla cumque repellat, asperiores doloremque? Iure, nihil debitis.
   <Button slot="action">Close</Button>
 </Alert>
-<Card />
 
 <Avatar class="custom-avatar" size="sm" online label="SM" />
 <Avatar size="md" online label="MD" />
@@ -367,24 +438,32 @@
 >
 
 <Typography size="headline4">Card</Typography>
-<div class="flex space-x-2 space-y-2 flex-col sm:flex-row">
-  <Card>
-    <CardTitle slot="title">Card Title</CardTitle>
-    <CardActions slot="actions">
-      <div>Action 1</div>
-      <div>Action 2</div>
-    </CardActions>
-    this is content of card
+<div class="flex w-full space-x-2 space-y-2 items-center flex-col sm:flex-row">
+  <Card class="w-full max-w-sm">
+    <CardBody>
+      <CardTitle>Card Title</CardTitle>
+
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis
+      sit consequuntur doloribus vero unde facilis iste accusamus commodi
+      similique. Assumenda exercitationem incidunt blanditiis fuga
+      necessitatibus recusandae aliquam amet doloribus.
+      <CardActions>
+        <div>Action 1</div>
+        <div>Action 2</div>
+      </CardActions>
+    </CardBody>
   </Card>
   <Divider vertical>VS</Divider>
 
-  <Card shadow position="full">
-    <CardTitle slot="title">Another Card</CardTitle>
-    <CardActions slot="actions">
-      <div>Action</div>
-    </CardActions>
-    this is content of card
-    <img class="max-w-sm" slot="image" src="/small/img-1.jpg" alt="test" />
+  <Card shadow>
+    <img class="max-w-sm" src="/small/img-1.jpg" alt="test" />
+    <CardBody>
+      <CardTitle>Another Card</CardTitle>
+      this is content of card
+      <CardActions>
+        <div>Action</div>
+      </CardActions>
+    </CardBody>
   </Card>
 </div>
 <Divider />
@@ -491,13 +570,37 @@
   <PaginationItem>Next</PaginationItem>
 </Pagination>
 
+<Card class="w-1/2 mx-auto">
+  <CardHeader>Form Example</CardHeader>
+  <CardBody>
+    <Form action="#">
+      <FormInput name="name" label="name" bind:value={formFormInputValue} />
+      <FormInput name="email" label="email" bind:value={formInputEmailValue} />
+      <Button class="mt-4" type="submit">Submit</Button>
+    </Form>
+  </CardBody>
+</Card>
+
+<div class="p-4">
+  <Card>
+    <CardHeader>Form Inline Example</CardHeader>
+    <CardBody>
+      <Form inline action="#">
+        <FormInput label="name" bind:value={formFormInputValue} />
+        <FormInput label="email" bind:value={formInputEmailValue} />
+        <Button type="submit">Submit</Button>
+      </Form>
+    </CardBody>
+  </Card>
+</div>
+
 <Typography size="headline4" class="typography-headline4">Popover</Typography>
 <Button id="pop-target">Open</Button>
 <Popover hover target="pop-target">
   <div>Hello from Popover</div>
 </Popover>
 
-<form>
+<Form>
   <FormGroup id="email" name="email">
     <Label>Email:</Label>
     <Input variant="success" type="email" />
@@ -563,7 +666,7 @@
       <Option value="Fourth" />
     </Select>
   </FormGroup>
-</form>
+</Form>
 
 <Typography size="headline4">Spinner</Typography>
 <Spinner />
@@ -664,5 +767,17 @@
 
   :global(.ubeac-avatar) :global(.ubeac-avatar-image) {
     filter: blur(4px);
+  }
+  
+  :global(.hover-border) {
+    transition: all 0.2s ease;
+  }
+
+  :global(.hover-border):hover {
+    border: 1px solid blue !important;
+  }
+
+  :global(.ubeac-card):hover {
+    border: 1 px solid black;
   }
 </style>

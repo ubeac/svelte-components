@@ -1,5 +1,5 @@
 <script>
-  import { Icon } from "$lib";
+  import { Icon } from "$lib/index.js";
 
   import { fade } from "svelte/transition";
   // import defaults from './default'
@@ -30,7 +30,7 @@
       class="ubeac-alert-icon flex items-center justify-center mr-4 text-center"
     >
       <slot name="icon">
-        <Icon icon="fa-solid:info" />
+        <Icon class="text-2xl" icon="fa-solid:info" />
       </slot>
     </div>
     <div class="ubeac-alert-content flex flex-col flex-1 typography-body1">

@@ -51,16 +51,15 @@
   $: if (show) start();
 
   $: max = initialMax + tasksLength;
-  $: console.log(max);
 </script>
 
 <div
-  class="ubeac-loading relative h-1 bg-{variant} bg-opacity-20"
+  class="ubeac-loading overflow-hidden relative h-1 bg-{variant} bg-opacity-20"
   class:hidden={!show}
 >
   <div
     style="width: {($value * 100) / max}%; left: 0"
-    class="ubeac-loading-bar absolute h-1 bg-{variant}"
+    class="ubeac-loading-bar absolute h-full bg-{variant}"
     class:left-0={indeterminate}
     class:indeterminate
   />

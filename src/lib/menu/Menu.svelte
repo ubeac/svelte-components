@@ -41,7 +41,7 @@
 </script>
 
 <ul
-	class="menu overflow-visible bg-base-200 {shadows[shadow]} {className}"
+	class="ubeac-menu menu overflow-visible bg-base-200 {shadows[shadow]} {className}"
 	class:rounded-box={rounded}
 	class:horizontal
 	class:compact={compact}

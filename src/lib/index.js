@@ -9,6 +9,8 @@ export { default as ButtonGroup } from "./button/ButtonGroup.svelte";
 export { default as Card } from "./card/Card.svelte";
 export { default as CardTitle } from "./card/CardTitle.svelte";
 export { default as CardActions } from "./card/CardActions.svelte";
+export { default as CardBody } from "./card/CardBody.svelte";
+export { default as CardHeader } from "./card/CardHeader.svelte";
 export { default as Carousel } from "./carousel/Carousel.svelte";
 export { default as CarouselItem } from "./carousel/CarouselItem.svelte";
 export { default as Collapse } from "./collapse/Collapse.svelte";

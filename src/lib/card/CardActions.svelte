@@ -15,6 +15,10 @@
   };
 </script>
 
-<div class="ubeac-card-actions gap-4 pt-4 items-center {positions[position]} {className}">
+<div
+  class="ubeac-card-actions pt-4 flex gap-4 items-center {positions[
+    position
+  ]} {className}"
+>
   <slot />
 </div>

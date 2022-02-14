@@ -3,7 +3,7 @@
 	export { className as class }
 </script>
 
-<li class="menu-title {className}">
+<li class="ubeac-menu-title menu-title {className}">
 	<span class="text-current">
 		<slot />
 	</span>

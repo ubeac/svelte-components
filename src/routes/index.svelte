@@ -19,7 +19,7 @@
   import { Modal, ModalActions } from "$lib/index.js";
   import { Navbar } from "$lib/index.js";
   import { Pagination, PaginationItem } from "$lib/index.js";
-  import { Popover } from "$lib/index.js";
+  // import { Popover } from "$lib/index.js";
   import { Progress } from "$lib/index.js";
   import { Stack } from "$lib/index.js";
   import { Spinner } from "$lib/index.js";
@@ -55,7 +55,7 @@
     FormDatePicker,
     FormAutoComplete,
   } from "$lib/index.js";
-  import GoogleAutoComplete from "$lib/map/GoogleAutoComplete.svelte";
+  // import GoogleAutoComplete from "$lib/map/GoogleAutoComplete.svelte";
   import Editor from "$lib/editor/Editor.svelte";
   import CardBody from "$lib/card/CardBody.svelte";
   import CardHeader from "$lib/card/CardHeader.svelte";
@@ -596,9 +596,9 @@
 
 <Typography size="headline4" class="typography-headline4">Popover</Typography>
 <Button id="pop-target">Open</Button>
-<Popover hover target="pop-target">
+<!-- <Popover hover target="pop-target">
   <div>Hello from Popover</div>
-</Popover>
+</Popover> -->
 
 <Form>
   <FormGroup id="email" name="email">
